@@ -1,0 +1,4 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "react-i18n.i18nPaths": "public/locales,src/shared/config/i18n"
+}

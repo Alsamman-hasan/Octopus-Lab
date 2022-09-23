@@ -1,0 +1,72 @@
+@import "app/styles/variables/fotns";
+
+
+.SecondBlock{
+  width:100%;
+  margin-top: 140px;
+}
+
+.span8{
+  text-align: start;
+  @include Ti1;
+  color: var(--black-color);
+  span{
+    color: var(--blue-color);
+  }
+}
+
+.span4 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.SecondBlockTitle{
+  @include Ti4;
+  color: var(--black-color);
+}
+
+.SecondBlockSubTitle{
+  @include Text2;
+  color: var(--black-color);
+}
+
+
+@media screen and (max-width: 768px) {
+  .MuiBox-root{
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .SecondBlockTitle{
+    @include Ti4;
+  }
+
+  .SecondBlockSubTitle{
+    @include Text3;
+  }
+  .span8{
+    @include Ti1;
+  }
+}
+
+
+@media screen and (max-width:650px) {
+  .SecondBlockTitle{
+    @include Ti5;
+  }
+
+  .svg {
+    width: 36.69px;
+    height: 52px;
+  }
+
+  .SecondBlockSubTitle{
+    @include Text3;
+  }
+  .span8{
+    @include Ti2;
+  }
+}
+
+

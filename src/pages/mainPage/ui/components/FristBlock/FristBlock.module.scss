@@ -1,0 +1,93 @@
+@import "app/styles/variables/fotns";
+
+.FristBlock {
+
+}
+.FristBlockTitles{
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: var(--purple-color);
+  display: flex;
+  flex-direction: column;
+  :first-child {
+    padding-left: 30%;
+  }
+}
+
+.FristBlockContiner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.FristBlockSubTitles{
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: var(--purple-color);
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  :first-child {
+    text-align: start;
+  }
+  :last-child {
+    text-align: end;
+  }
+}
+
+.FristBlockDes {
+  width: 243px;
+  @include Text2;
+  color: var(--black-color);
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .FristBlockTitles {
+    font-size: 80px;
+    line-height: 89px;
+  }
+  .FristBlockSubTitles{
+    font-size: 44px;
+    line-height: 55px;
+  }
+}
+
+
+@media screen and (max-width:650px) {
+  .FristBlockTitles{
+    font-size: 40px;
+    line-height: 49px;
+    :first-child {
+      padding-left: 45%;
+    }
+  }
+
+  .FristBlockContiner{
+    display: flex;
+    flex-direction:column-reverse;
+  }
+
+  .FristBlockSubTitles{
+    font-size: 24px;
+    line-height: 29px;
+    display:flex;
+    width: 100%;
+    :first-child {
+      text-align: center;
+    }
+  }
+  .FristBlockDes {
+    width: 221px;
+    @include Text3;
+  }
+}
+
+

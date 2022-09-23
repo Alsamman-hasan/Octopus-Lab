@@ -1,0 +1,30 @@
+@import "app/styles/variables/fotns";
+
+.LangSwitcher {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.choose {
+  @include Ti5;
+}
+
+.notChose {
+  @include Ti6;
+}
+
+.en {
+  cursor: pointer;
+}
+
+.ru {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .LangSwitcher {
+    display: none;
+  }
+}

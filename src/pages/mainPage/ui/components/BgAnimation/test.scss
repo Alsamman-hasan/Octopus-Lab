@@ -1,0 +1,70 @@
+
+
+@keyframes caindo {
+  from {
+    top: -600px;
+    // transform: rotate(0deg);
+  }
+  to {
+    top: 600px;
+    // transform: rotate(360deg)
+  }
+}
+
+
+#banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: inherit;;
+}
+
+#banner .caindo {
+  position: absolute;
+  top: -20px;
+}
+
+#banner .caindo#cabeca1 {
+  // left: 10%;
+  // animation: caindo 8s linear infinite;
+}
+
+#banner .caindo#cabeca2 {
+  // left: 20%;
+  animation: caindo 7s linear infinite;
+}
+
+#banner .caindo#cabeca3 {
+  // left: 30%;
+  animation: caindo 5s linear infinite;
+}
+
+#banner .caindo#cabeca4 {
+  // left: 40%;
+  animation: caindo 2s linear infinite;
+}
+
+#banner .caindo#cabeca5 {
+  // left: 50%;
+  animation: caindo 6s linear infinite;
+}
+
+#banner .caindo#cabeca6 {
+  // left: 60%;
+  animation: caindo 1s linear infinite;
+}
+
+#banner .caindo#cabeca7 {
+  // left: 70%;
+  animation: caindo 2s linear infinite;
+}
+
+#banner .caindo#cabeca8 {
+  // left: 80%;
+  animation: caindo 8s linear infinite;
+}
+
+#banner .caindo img {
+  width: 100px; 
+}

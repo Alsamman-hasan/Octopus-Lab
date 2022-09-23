@@ -1,0 +1,46 @@
+@import "app/styles/variables/fotns";
+
+.page {
+  flex-direction: column;
+  overflow-x: hidden;
+  align-items: center;
+  display: flex;
+  margin-top: 0;
+  height: 1800px;
+}
+
+.content-page {
+  z-index: 2;
+  // display: flex;
+  height: 1000px;
+  padding: 0;
+  flex-grow: 1;
+  padding: 180px  200px 0;
+  width: 100%;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1400px) {
+  .content-page {
+    padding: 180px 40px 0px 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-page {
+    padding: 180px 40px 0px 40px;
+  }
+}
+
+
+@media screen and (max-width:650px) {
+  .content-page {
+    padding: 149px 10px 16px 10px;
+  }
+}
+

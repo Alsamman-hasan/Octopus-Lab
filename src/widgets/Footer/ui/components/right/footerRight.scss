@@ -1,0 +1,117 @@
+@import "app/styles/variables/fotns";
+
+.footerRight {
+  width: 50%;
+}
+
+.footerRight-container {
+  padding: 53px 0 74px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerRight-header {
+  span {
+    @include Text2;
+
+    color: var(--grey-color);
+  }
+}
+
+.footerRight-info {
+  border-bottom: 1px solid #ffffff2c;
+}
+
+.footerRight-manager {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_name {
+    @include Text2;
+
+    color: var(--white-color);
+  }
+
+  &_position {
+    @include Text3;
+
+    opacity: 0.6;
+    color: var(--grey-color);
+  }
+
+  &_img {
+    position: relative;
+  }
+
+  &_onlin {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 4px;
+    right: 3px;
+    background-color: var(--oline-color);
+  }
+}
+
+.footerRight-btn {
+  max-width: 317px;
+  margin-top: 37px;
+}
+
+.footerRight-contacts {
+  padding: 53px 0 23px 60px;
+  display: flex;
+  flex-direction: column;
+
+  &_header {
+    @include Ti3;
+
+    color: var(--white-color);
+  }
+
+  &_item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 24px;
+
+    span {
+      @include Text2;
+
+      color: var(--white-color);
+    }
+  }
+}
+
+.footerRight-social {
+  padding: 23px 0 0 60px;
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .footerRight {
+    width: 100%;
+  }
+
+  .footerRight-text {
+    margin-bottom: 26px;
+  }
+
+  .footerRight-container {
+    padding: 24px 0;
+  }
+
+  .footerRight-btn {
+    display: flex;
+    justify-content: center;
+  }
+}

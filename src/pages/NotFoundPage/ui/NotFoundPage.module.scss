@@ -1,0 +1,9 @@
+@import "app/styles/variables/fotns";
+
+.NotFoundPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include Ti2;
+  height: 500px;
+}

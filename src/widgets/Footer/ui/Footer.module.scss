@@ -1,0 +1,56 @@
+@import "app/styles/variables/fotns";
+
+.footerWrapper {
+  background-color: var(--purple-color);
+  width: 100%;
+}
+
+.content {
+  padding: 80px 200px 37px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  padding: 80px 200px 37px;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    color: var(--grey-color);
+
+    @include Text3;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .content {
+    padding: 80px 80px 37px;
+  }
+
+  .footer {
+    padding: 80px 80px 37px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 40px 40px 37px;
+  }
+
+  .footer {
+    padding: 40px 40px 37px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    padding: 40px 10px 37px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    padding: 40px 10px 37px;
+  }
+}

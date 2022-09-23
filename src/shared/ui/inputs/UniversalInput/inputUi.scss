@@ -1,0 +1,45 @@
+@import "../../../../app/styles/variables/fotns";
+
+
+.input-container {
+  margin-bottom: 28px;
+  .MuiInputBase-input {
+    border-bottom: 1px solid #ffffff2c !important; 
+    @include Text2;
+    color: var(--grey-color) !important;
+    padding-left: 12px;
+  }
+
+  .MuiInputBase-input:hover {
+    border-bottom: 1px solid #ffffff75 !important; 
+  }
+
+  .MuiInputBase-input:focus {
+    border-bottom: 1px solid #ffffff75 !important; 
+  }
+
+  .MuiInputLabel-root {
+    margin-left: 12px;
+    @include Text2;
+    opacity: 0.6;
+    color: var(--grey-color) !important;
+  }
+
+
+  .MuiInputBase-colorPrimary::before {
+    border: none;
+  }
+
+  .MuiInputBase-colorPrimary::after {
+    border: none;
+  }
+
+  .MuiInputBase-colorPrimary {
+    border: none;
+  }
+
+
+  .MuiInputBase-colorPrimary:hover:not(.Mui-disabled):before {
+    border:none;
+  }
+}

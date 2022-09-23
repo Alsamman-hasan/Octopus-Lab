@@ -1,0 +1,97 @@
+// .BgAnimation{
+//   width: 100%;
+//   height: 750px;
+//   position: absolute;
+//   img{
+//     width: 100%;
+//   }
+// }
+
+// img{
+//   position: absolute;
+//   height:200px;
+//   // background: linear-gradient(transparent, #fff);
+//   // background: src("shared/assets/animation/cercol.svg") no-repeat center center ;
+//   border-bottom-left-radius: 5px;
+//   border-bottom-right-radius: 5px;
+//   animation: animate 5s linear infinite ;
+// }
+
+// img:nth-child(3n+1) {
+//   // background: linear-gradient(transparent,src("/src/shared/assets/animation/Vector.png"));
+//   // background: src("shared/assets/animation/cercol.svg");
+
+// }
+
+// img:nth-child(3n+2) {
+//   // background: linear-gradient(transparent, rgb(18, 65, 196));
+//   // background: src("shared/assets/animation/long.svg");
+
+// }
+
+// img:nth-child(3n+3) {
+//   // background: linear-gradient(transparent, rgb(196, 98, 6));
+//   // background:src("shared/assets/animation/notlong.svg");
+
+// }
+
+// img:nth-child(5n+4) {
+//   // background: linear-gradient(transparent, rgb(196, 98, 6));
+//   // background: src("../../../../../shared/assets/animation/short.svg");
+// }
+
+// img:nth-child(5n+5) {
+//   // background: linear-gradient(transparent, rgb(196, 98, 6));
+//   // background: src("../../../../../shared/assets/animation/soLong.svg");
+
+// }
+
+
+// @keyframes animate {
+//   0%{
+//     transform: translateY(-200px);
+//   }
+
+//   100%{
+//     transform: translateY(calc(750px - 200px));
+//   }
+// }
+
+
+.BgAnimation{
+  width: 100%;
+}
+
+#ani {
+  position: relative;
+}
+
+img{
+  position: absolute;
+  animation: animate 5s linear infinite ;
+}
+
+
+@keyframes animate {
+  0%{
+    transform: translateY(-100px);
+  }
+
+  100%{
+    transform: translateY(calc(750px));
+  }
+}
+
+
+@media screen and (max-width:650px) {
+  @keyframes animate {
+  0%{
+    transform: translateY(-100px);
+  }
+
+  100%{
+    transform: translateY(calc(300px));
+  }
+}
+ 
+}
