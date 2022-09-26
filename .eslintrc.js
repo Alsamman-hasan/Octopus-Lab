@@ -38,7 +38,6 @@ module.exports = {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
-    "no-unused-vars": "warn",
     "no-plusplus": "off",
     "i18next/no-literal-string": ["warn", { markupOnly: true }],
     "jsx-a11y/click-events-have-key-events": "off",
@@ -47,6 +46,7 @@ module.exports = {
       "double",
       { avoidEscape: true, allowTemplateLiterals: true },
     ],
+    "max-len": ["error", { code: 100, ignoreComments: true, ignoreUrls: true }],
   },
   globals: {
     __IS_DEV__: true,

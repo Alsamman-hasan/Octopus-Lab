@@ -12,17 +12,24 @@ describe("classNamestest", () => {
 
   test("with mods", () => {
     const expected = "somthing additionalClass1 additionalClass2 hovered scrollble"
-    expect(classNames("somthing", {hovered: true, scrollble: true}, ["additionalClass1", "additionalClass2"])).toBe(expected);
+    expect(classNames("somthing", 
+      {hovered: true, scrollble: true}, 
+      ["additionalClass1", "additionalClass2"]
+    )).toBe(expected);
   })
 
   test("with mods false", () => {
     const expected = "somthing additionalClass1 additionalClass2 hovered"
-    expect(classNames("somthing", { hovered: true, scrollble: false }, ["additionalClass1", "additionalClass2"])).toBe(expected);
+    expect(classNames("somthing", 
+      { hovered: true, scrollble: false }, 
+      ["additionalClass1", "additionalClass2"])).toBe(expected);
   })
 
   test("with mods undefined", () => {
     const expected = "somthing additionalClass1 additionalClass2 hovered"
-    expect(classNames("somthing", { hovered: true, scrollble: undefined }, ["additionalClass1", "additionalClass2"])).toBe(expected);
+    expect(classNames("somthing", 
+      { hovered: true, scrollble: undefined }, 
+      ["additionalClass1", "additionalClass2"])).toBe(expected);
   })
 
 
