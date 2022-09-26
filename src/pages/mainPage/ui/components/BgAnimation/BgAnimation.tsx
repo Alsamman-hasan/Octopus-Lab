@@ -21,7 +21,7 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   })
 
   const rianAnimation = (winWidth: number) => {
-    const amount = winWidth / 10; 
+    const amount = 10; 
     const body = document.getElementById("ani")
     let i = 0 ;
     while(i < amount) {
@@ -92,7 +92,7 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   }
 
   useEffect(() => {
-    rianAnimation(winWidth);
+    // rianAnimation(winWidth);
   }, [winWidth])
 
   return (

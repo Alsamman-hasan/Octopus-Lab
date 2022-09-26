@@ -1,0 +1,101 @@
+@import "app/styles/variables/fotns";
+
+
+.OurWorks {
+  margin-top: 180px;
+}
+
+.OurWorksTitle{
+  @include Ti1;
+  color: var(--balck-color);
+  span{
+    color: var(--blue-color);
+  }
+}
+.Table{
+  border-top: 1px solid #D9D9D9 ;
+  margin-top: 40px;
+  margin-bottom: 197px;
+  width: 100%;
+  margin-left: 0;
+}
+
+.OurWorksItem {
+  padding: 0 !important;
+  border-bottom: 1px solid #D9D9D9 ;
+  &:nth-child(3n +1) {
+    border-right: 1px solid #D9D9D9  ;
+  } 
+  &:nth-child(3n +2) {
+    border-right: 1px solid #D9D9D9  ;
+  } 
+}
+
+.Item {
+  height: 260px;
+  padding: 20px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+.ItemTitle {
+  @include Ti4;
+  color: var(--balck-color);
+}
+ 
+.ItemSubTitle {
+  @include Text2;
+  color: var(--balck-color);
+}
+
+@media screen and (max-width:900px) {
+  .OurWorksItem {
+    &:nth-child(3n +3) {
+      border-right: 1px solid #D9D9D9  ;
+    } 
+    &:nth-child(even) {
+      border-right: none;
+    } 
+  }
+}
+
+@media screen and (max-width:600px) {
+  .OurWorks {
+    margin-top: 80px;
+  }
+
+  .OurWorksTitle{
+    @include Ti2;
+  }
+
+  .OurWorksItem {
+    &:nth-child(3n +3) {
+      border-right: none;
+    } 
+    &:nth-child(even) {
+      border-right: none;
+    } 
+
+    &:nth-child(odd) {
+      border-right: none;
+    } 
+  }
+
+  .Item {
+    padding: 10px;
+    height: 150px;
+  }
+  .ItemTitle {
+    @include Ti5;
+  }
+  
+  .ItemSubTitle {
+    @include Text3;
+  }
+
+  .Table{
+    border:1px solid #D9D9D9 ;
+  }
+
+}
+

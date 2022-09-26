@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { FC, ReactElement, ReactSVGElement } from "react";
+import { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import Box from "@mui/material/Box";

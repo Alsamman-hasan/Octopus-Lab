@@ -1,7 +1,7 @@
 @import "app/styles/variables/fotns";
 
 .FristBlock {
-
+  height: 750px;
 }
 .FristBlockTitles{
   font-family: Montserrat, sans-serif;
@@ -50,6 +50,9 @@
 
 
 @media screen and (max-width: 768px) {
+  .FristBlock {
+    height: 558px;
+  }
   .FristBlockTitles {
     font-size: 80px;
     line-height: 89px;
@@ -62,6 +65,10 @@
 
 
 @media screen and (max-width:650px) {
+  .FristBlock {
+    height: 478px;
+  }
+
   .FristBlockTitles{
     font-size: 40px;
     line-height: 49px;
@@ -89,5 +96,4 @@
     @include Text3;
   }
 }
-
 

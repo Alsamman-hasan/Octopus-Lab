@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useState } from "react";
 import "./footerLeft.scss";
 import { ButtonDiscktopBlue } from "shared/ui/Buttons";

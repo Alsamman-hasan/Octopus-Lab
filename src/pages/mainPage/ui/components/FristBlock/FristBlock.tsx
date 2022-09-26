@@ -1,6 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
+import { motion } from "framer-motion";
+import { yAnimation } from "shared/lib/Animations/Animations";
 import cls from "./FristBlock.module.scss";
 
 export interface FristBlockProps {
@@ -9,9 +11,16 @@ export interface FristBlockProps {
 export const FristBlock = ({ className }: FristBlockProps) => {
   const { t } = useTranslation("common")
   return (
-    <div className={classNames(cls.FristBlock, {}, [className])}>
+    <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      variants={yAnimation}
+      viewport={{ amount: 0.1, once: true }}
+      custom={1}
+      className={classNames(cls.FristBlock, {}, [className])}
+    >
       <div className={classNames(cls.FristBlockTitles)}>
-        <span>
+        <span >
           {t("верстка")}
         </span>
         <span>
@@ -31,6 +40,6 @@ export const FristBlock = ({ className }: FristBlockProps) => {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 };

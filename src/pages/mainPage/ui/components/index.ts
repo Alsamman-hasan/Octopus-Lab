@@ -1,5 +1,7 @@
-export { SecondBlock } from "./SecondBlock/SecondBlock";
+export { BgAnimation } from "./BgAnimation/BgAnimation";
 
 export { FristBlock } from "./FristBlock/FristBlock";
 
-export { BgAnimation } from "./BgAnimation/BgAnimation";
+export { SecondBlock } from "./SecondBlock/SecondBlock";
+
+export { OurWorks } from "./OurWorks/OurWorks";

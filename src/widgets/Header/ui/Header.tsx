@@ -22,7 +22,13 @@ export const Header = ({ className }: FooterProps) => {
   });
 
   return (
-    <div className={classNames(cls.headerWrapper, { [cls.scrollEvent]: isScroll }, [className])} id="coords" >
+    <div 
+      className={classNames(
+        cls.headerWrapper, 
+        { [cls.scrollEvent]: isScroll }
+        , [className])} 
+      id="coords" 
+    >
       <div className={classNames(cls.contetn, {}, [className])}>
         <div className={classNames(cls.logo, {}, [className])}>
           <LogoSVG />
