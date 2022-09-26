@@ -6,7 +6,7 @@ import Long from "shared/assets/animation/long.svg"
 import NotLong from "shared/assets/animation/notlong.svg"
 import Short from "shared/assets/animation/short.svg"
 import SoLong from "shared/assets/animation/soLong.svg"
-import "./test.scss";
+import "./ref.scss";
 
 export interface BgAnimationProps {
   className?: string;
