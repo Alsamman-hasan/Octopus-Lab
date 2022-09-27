@@ -8,7 +8,7 @@
     "node": "17.4.0"
   },
   "scripts": {
-    "start": "webpack serve --env",
+    "start": "serve -s build",
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack  --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" ",
