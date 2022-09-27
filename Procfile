@@ -1,2 +1,2 @@
 # web: npm install --dev
-web: npm start
+web: npm run build:prod
