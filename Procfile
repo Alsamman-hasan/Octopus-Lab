@@ -1,4 +1,4 @@
 web: npm install 
-web: npm run dev 
+web: npm run start 
 
 # web: node app.js
