@@ -3,7 +3,8 @@
 .FristBlock {
   height: 750px;
 }
-.FristBlockTitles{
+
+.FristBlockTitles {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
   font-size: 120px;
@@ -12,17 +13,18 @@
   color: var(--purple-color);
   display: flex;
   flex-direction: column;
+
   :first-child {
     padding-left: 30%;
   }
 }
 
-.FristBlockContiner{
+.FristBlockContiner {
   display: flex;
   justify-content: space-between;
 }
 
-.FristBlockSubTitles{
+.FristBlockSubTitles {
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -33,9 +35,11 @@
   display: flex;
   flex-direction: column;
   width: 60%;
+
   :first-child {
     text-align: start;
   }
+
   :last-child {
     text-align: end;
   }
@@ -43,57 +47,61 @@
 
 .FristBlockDes {
   width: 243px;
+
   @include Text2;
+
   color: var(--black-color);
 }
-
-
 
 @media screen and (max-width: 768px) {
   .FristBlock {
     height: 558px;
   }
+
   .FristBlockTitles {
     font-size: 80px;
     line-height: 89px;
   }
-  .FristBlockSubTitles{
+
+  .FristBlockSubTitles {
     font-size: 44px;
     line-height: 55px;
   }
 }
 
-
-@media screen and (max-width:650px) {
+@media screen and (max-width: 650px) {
   .FristBlock {
     height: 478px;
   }
 
-  .FristBlockTitles{
+  .FristBlockTitles {
     font-size: 40px;
     line-height: 49px;
+
     :first-child {
       padding-left: 45%;
     }
   }
 
-  .FristBlockContiner{
+  .FristBlockContiner {
     display: flex;
-    flex-direction:column-reverse;
+    flex-direction: column-reverse;
   }
 
-  .FristBlockSubTitles{
+  .FristBlockSubTitles {
     font-size: 24px;
     line-height: 29px;
-    display:flex;
+    display: flex;
     width: 100%;
+
     :first-child {
       text-align: center;
     }
   }
+
   .FristBlockDes {
     width: 221px;
+
     @include Text3;
   }
 }
-

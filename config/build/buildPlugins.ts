@@ -10,7 +10,7 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
   const {paths, isDev} = options;
   const reactPlugins = isDev && [
     new webpack.HotModuleReplacementPlugin(), 
-    // new ReactRefreshWebpackPlugin()
+    new ReactRefreshWebpackPlugin()
   ]
   return [
     new webpack.ProgressPlugin(),

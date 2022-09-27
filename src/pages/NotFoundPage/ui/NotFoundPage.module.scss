@@ -1,10 +1,12 @@
 @import "app/styles/variables/fotns";
 
-.NotFoundPage{
+.NotFoundPage {
   display: flex;
   justify-content: center;
   align-items: center;
+
   @include Ti2;
+
   height: 700px;
   flex-direction: column;
   gap: 25px;

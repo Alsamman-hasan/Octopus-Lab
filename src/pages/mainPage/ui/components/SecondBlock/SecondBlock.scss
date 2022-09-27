@@ -1,17 +1,17 @@
 @import "app/styles/variables/fotns";
 
-
-.SecondBlock{
-  width:100%;
-  // height: 544px;
-  // margin-top: 140px;
+.SecondBlock {
+  width: 100%;
 }
 
-.span8{
+.span8 {
   text-align: start;
+
   @include Ti1;
+
   color: var(--black-color);
-  span{
+
+  span {
     color: var(--blue-color);
   }
 }
@@ -22,38 +22,39 @@
   gap: 12px;
 }
 
-.SecondBlockTitle{
+.SecondBlockTitle {
   @include Ti4;
+
   color: var(--black-color);
 }
 
-.SecondBlockSubTitle{
+.SecondBlockSubTitle {
   @include Text2;
+
   color: var(--black-color);
 }
-
 
 @media screen and (max-width: 768px) {
-  .MuiBox-root{
+  .MuiBox-root {
     display: flex !important;
     flex-direction: column;
   }
 
-  .SecondBlockTitle{
+  .SecondBlockTitle {
     @include Ti4;
   }
 
-  .SecondBlockSubTitle{
+  .SecondBlockSubTitle {
     @include Text3;
   }
-  .span8{
+
+  .span8 {
     @include Ti1;
   }
 }
 
-
-@media screen and (max-width:650px) {
-  .SecondBlockTitle{
+@media screen and (max-width: 650px) {
+  .SecondBlockTitle {
     @include Ti5;
   }
 
@@ -62,12 +63,11 @@
     height: 52px;
   }
 
-  .SecondBlockSubTitle{
+  .SecondBlockSubTitle {
     @include Text3;
   }
-  .span8{
+
+  .span8 {
     @include Ti2;
   }
 }
-
-

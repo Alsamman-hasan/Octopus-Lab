@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { TextField } from "@mui/material";
 import { IInputsProps } from "../types";
-import "./inputPhone.scss";
 
 const InputPhone: FC<IInputsProps> = ({
   value,
