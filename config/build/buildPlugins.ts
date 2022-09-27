@@ -27,6 +27,6 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
     new BundleAnalyzerPlugin({
       openAnalyzer: true,
     }),
-    ...reactPlugins
+    // ...reactPlugins
   ]
 }
