@@ -12,7 +12,8 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix ",
     "unit": "jest --config ./config/jest/jest.config.ts",
-    "heroku": "node app"
+    "heroku": "node app",
+    "heroku-prebuild": "npm install --start"
   },
   "keywords": [],
   "author": "",
