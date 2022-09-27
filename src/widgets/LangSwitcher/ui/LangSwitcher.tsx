@@ -18,20 +18,29 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   }
   return (
     <div className={classNames(cls.LangSwitcher, {}, [className])}>
-      <div
-        onKeyPress={() => {}}
+      <button
+        type='button'
         onClick={() => onChangeLang("ru")}
-        className={classNames(cls.ru, { [cls.choose]: lang === "ru", [cls.notChose]: lang === "en" }, [className])}
+        className={classNames(cls.ru, 
+          { 
+            [cls.choose]: lang === "ru", 
+            [cls.notChose]: lang === "en" 
+          }, 
+          [className])}
       >
         ru
-      </div>
+      </button>
       <span>|</span>
-      <div
+      <button
+        type='button'
         onClick={() => onChangeLang("en")}
-        className={classNames(cls.en, { [cls.choose]: lang === "en", [cls.notChose]: lang === "ru" }, [className])}
+        className={classNames(cls.en, 
+          { [cls.choose]: lang === "en", [cls.notChose]: lang === "ru" }, 
+          [className]
+        )}
       >
         en
-      </div>
+      </button>
     </div>
   )
 };

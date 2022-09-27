@@ -4,23 +4,39 @@
   display: flex;
   gap: 2px;
   align-items: center;
-  text-transform: uppercase;
+  
 }
 
 .choose {
-  @include Ti5;
+  font-weight: 500;
+  width: 25px;
+  height: 20px;
+  text-transform: uppercase;
 }
 
 .notChose {
-  @include Ti6;
+  font-weight: 300;
+  width: 25px;
+  height: 20px;
+  text-transform: uppercase;
 }
 
 .en {
   cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  @include Ti6;
 }
 
 .ru {
   cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  @include Ti6;
 }
 
 @media screen and (max-width: 650px) {
