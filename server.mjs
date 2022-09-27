@@ -6,7 +6,7 @@ const sslRedirect = herokuSSLRedirect.default;
 
 const app = express();
 app.use(sslRedirect());
-app.use(express.static(path.join("./dist")));
+app.use(express.static(path.join("./build")));
 app.set("port", process.env.PORT || 8080);
 
 const server = app.listen(app.get("port"), () => {
