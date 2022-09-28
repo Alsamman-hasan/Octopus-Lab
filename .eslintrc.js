@@ -41,6 +41,7 @@ module.exports = {
     "no-plusplus": "off",
     "i18next/no-literal-string": ["warn", { markupOnly: true }],
     "jsx-a11y/click-events-have-key-events": "off",
+    "react/no-array-index-key":"off",
     quotes: [
       "error",
       "double",

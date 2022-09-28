@@ -1,0 +1,68 @@
+@import "app/styles/variables/fotns";
+
+
+.Illustrations{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.IllusContainer{
+  display: flex;
+  justify-content: space-between;
+  height: 1209px;
+  margin-top: 40px;
+}
+.IllusTitle{
+  z-index: 1;
+  @include Ti1;
+  color: var(--balck-color);
+  span {
+    color: var(--blue-color);
+  }
+}
+
+.IllusRightBlok {
+  flex: 2;
+}
+
+.IllusLeftBlok{
+  flex: 1;
+  overflow:hidden;
+  position: relative;
+ 
+}
+
+.img {
+  position: absolute;
+  // width: 100%;
+  animation: animate 3s linear infinite;
+}
+
+.imgMob {
+  position: absolute;
+  width: 100%;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(calc(-10px));
+  }
+}
+
+@media screen and (max-width: 650px) {
+  @keyframes animate {
+    0% {
+      transform: translateY(-250px);
+    }
+
+    100% {
+      transform: translateY(calc(-150px));
+    }
+  }
+}

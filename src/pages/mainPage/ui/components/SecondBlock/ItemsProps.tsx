@@ -1,19 +1,17 @@
 /* eslint-disable i18next/no-literal-string */
 import { ReactElement } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import Box from "@mui/material/Box";
 
 export interface IItems {
-  svgItem: ReactElement<any, any>;
+  svgItem: ReactElement;
   title: string;
   subTitle: string;
-  key: string;
 }
 
 const Item = (props: IItems) => {
-  const { svgItem, title, subTitle, key } = props;
+  const { svgItem, title, subTitle } = props;
   return (
-    <Box gridColumn="span 4" key={key}>
+    <div>
       <div className={classNames("span4")}>
         {svgItem}
         <span className={classNames("SecondBlockTitle")} >
@@ -23,7 +21,7 @@ const Item = (props: IItems) => {
           {subTitle}
         </span>
       </div>
-    </Box>
+    </div>
   )
 }
 

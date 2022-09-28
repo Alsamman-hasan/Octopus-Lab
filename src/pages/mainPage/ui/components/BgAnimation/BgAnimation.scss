@@ -1,34 +1,43 @@
 .BgAnimation {
   width: 100%;
+  position: absolute;
+  height: 750px;
 }
 
 #ani {
   position: relative;
 }
 
-img {
+.img {
   position: absolute;
-  animation: animate 5s linear infinite;
+  // width: 100%;
+  animation: animate 3s linear infinite;
+}
+
+.imgMob {
+  position: absolute;
+  width: 100%;
+  animation: animate 3s linear infinite;
 }
 
 @keyframes animate {
   0% {
-    transform: translateY(-100px);
+    transform: translateY(-250px);
   }
 
   100% {
-    transform: translateY(calc(700px));
+    transform: translateY(calc(-100px));
   }
 }
 
 @media screen and (max-width: 650px) {
   @keyframes animate {
     0% {
-      transform: translateY(-100px);
+      transform: translateY(-250px);
     }
 
     100% {
-      transform: translateY(calc(470px));
+      transform: translateY(calc(-150px));
     }
   }
 }

@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LogoSVG } from "shared/assets/icons/svg/desktopSVG";
 import { classNames } from "shared/lib/classNames/classNames";
-import { scrollFun } from "shared/lib/scrollFunction/scrollFun";
 import { ButtonDiscktopPurple } from "shared/ui/Buttons";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import cls from "./header.module.scss";
@@ -15,17 +14,19 @@ export interface FooterProps {
 
 export const Header = ({ className }: FooterProps) => {
   const { t } = useTranslation("common");
-  const [isScroll, setIsScroll] = useState(false);
-
-  window.addEventListener("scroll", () => {
-    setIsScroll(scrollFun("coords"));
-  });
+  const [scroll, setScroll] = useState(0);
+  const onScroll = useCallback(() => setScroll(Math.round(window.scrollY)), []);
+  useEffect(() => {
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
 
   return (
     <div 
       className={classNames(
         cls.headerWrapper, 
-        { [cls.scrollEvent]: isScroll }
+        { [cls.scrollEvent]: scroll > 10 }
         , [className])} 
       id="coords" 
     >

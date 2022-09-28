@@ -2,10 +2,11 @@
 
 .page {
   flex-direction: column;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   align-items: center;
   display: flex;
   margin-top: 0;
+  width: 100%;
 }
 
 .content-page {

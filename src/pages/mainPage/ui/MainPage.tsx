@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 
 import { classNames } from "shared/lib/classNames/classNames";
-import { BgAnimation, FristBlock, OurWorks, SecondBlock } from "./components";
+import { BgAnimation, FristBlock, Illustrations, OurWorks, SecondBlock } from "./components";
 import cls from "./mainPage.module.scss";
 
 const MainPage = () => {
@@ -14,6 +14,7 @@ const MainPage = () => {
         <FristBlock />
         <SecondBlock />
         <OurWorks />
+        <Illustrations/>
       </div>
     </div>
   )
