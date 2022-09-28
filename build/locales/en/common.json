@@ -1,0 +1,45 @@
+{
+  "User Agreement": "User Agreement",
+  "Обсудить проект": "Discuss project",
+  "верстка": "layout",
+  "и фронтенд": "frontend",
+  "для digital-агентств, продуктовых компаний и фриланс-команд": "for digital agencies, product companies and freelance teams",
+  "любой": "any",
+  "сложности": "complexity",
+  "Обновить страницу": "Realod Page",
+  "произошла непредвиденная ошибка": "an unexpected error occurred",
+  "Лендинги": "Landings",
+  "Короткие и длинные": {
+    " Адаптив, скорость загрузки, микроанимации, семантика и SEO-френдли разметка": {
+      "": "Short and long. Responsive, loading speed, micro-animations, semantics and SEO-friendly markup."
+    }
+  },
+  "Интернет-магазины и другие сайты": "Online stores and other sites",
+  "Страницы с интерактивом, формами, корзинами": {
+    " Доступные интерфейсы для пользователей": {
+      "": "Pages with interactive, forms, baskets. Available user interfaces."
+    }
+  },
+  "Сервисы": "Services",
+  "Медиа, агрегаторы": {
+    " Большое количество страниц с похожими компонентами": {
+      "": "Media, aggregators. A large number of pages with similar components."
+    }
+  },
+  "Админки и дэшборды": "Admins and Dashboards",
+  "Много графиков и полей,где важна максимальная реиспользуемость компонентов": {
+    "": "Many graphs and fields where the maximum reusability of components is important."
+  },
+  "Библиотеки компонентов и дизайн- системы": "Component libraries and design systems",
+  "То, с чем дальше вы будете работать": {
+    " Можем сделать отдельно или собрать в рамках проекта": {
+      "": "What will you work with next. We can make separately or assemble as part of the project."
+    }
+  },
+  "Email рассылки": "Email newsletters",
+  "Особый вид боли — верстальщики плачут, но верстают": {
+    "": "A special kind of pain - typesetters cry, but typeset."
+  },
+  "Что мы": "What are we",
+  "делаем": "doing"
+}

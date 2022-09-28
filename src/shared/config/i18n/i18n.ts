@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable quotes */
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
@@ -11,12 +13,21 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    lng: "ru",
     fallbackLng: "ru",
     debug: __IS_DEV__,
-
+    detection: {
+      order: ["path", "cookie", "htmlTag", "localStorage", "subdomain"],
+      caches: ["cookie"],
+    },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
-    }
+    },
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    },
+
+
   });
 
 
