@@ -6,8 +6,8 @@ import Box from "@mui/material/Box";
 import "./SecondBlock.scss";
 import { motion } from "framer-motion";
 import { yAnimation } from "shared/lib/Animations/Animations";
+import { DiversitySVG, ManySVG, MedalSVG, StartupSVG } from "shared/assets/icons/svg/desktopSVG";
 import Item from "./ItemsProps";
-import { ItemsProps } from "./helpers";
 
 export interface SecondBlockProps {
   className?: string;
@@ -16,6 +16,28 @@ export interface SecondBlockProps {
 
 export const SecondBlock = ({ className }: SecondBlockProps) => {
   const { t } = useTranslation("secondBlock")
+  const ItemsProps = [
+    {
+      svgItem: <StartupSVG />,
+      title: t("Быстро запускаем проекты в работу"),
+      subTitle: t("У нас отлаженные процессы оценки проекта, согласования договора и NDA. Работаем с электронным документооборотом."),
+    },
+    {
+      svgItem: <MedalSVG />,
+      title: t("Усиливаем экспертизу вашей команды"),
+      subTitle: t("Думаем за вас о UX, самостоятельно делаем микроанимации и адаптив, подчищаем косяки дизайна."),
+    },
+    {
+      svgItem: <DiversitySVG />,
+      title: t("Беремся за проекты любой сложности"),
+      subTitle: t("Делаем верстку и фронтенд любой сложности — от простых лендингов до больших сервисов"),
+    },
+    {
+      svgItem: <ManySVG />,
+      title: t("Сокращаем расходы на производство"),
+      subTitle: t("Стараемся быть гибкими, чтобы подстроиться под ваши требования и процессы."),
+    }
+  ]
   return (
     <motion.div 
       initial="hidden"
