@@ -12,16 +12,16 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const {i18n } = useTranslation()
   const [lang, setLang] = useState("ru");
 
-  const onChangeLang = (value: string) => {
-    i18n.changeLanguage(value)
-    setLang(value);
-    console.log(value)
-  }
+  const changeLanguage = async (lng: string) => {
+    setLang(lng);
+    i18n.changeLanguage(lng);
+  } 
+
   return (
     <div className={classNames(cls.LangSwitcher, {}, [className])}>
       <button
         type='button'
-        onClick={() => onChangeLang("ru")}
+        onClick={() => changeLanguage("ru")}
         className={classNames(cls.ru, 
           { 
             [cls.choose]: lang === "ru", 
@@ -34,7 +34,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       <span>|</span>
       <button
         type='button'
-        onClick={() => onChangeLang("en")}
+        onClick={() => changeLanguage("en")}
         className={classNames(cls.en, 
           { [cls.choose]: lang === "en", [cls.notChose]: lang === "ru" }, 
           [className]

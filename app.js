@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable consistent-return */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 // const express = require("express");
