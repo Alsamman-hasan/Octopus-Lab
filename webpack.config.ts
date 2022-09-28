@@ -11,6 +11,7 @@ export default (env: BuildEnv) => {
     entry: path.resolve(__dirname, "src", "index.tsx"),
     build: path.resolve(__dirname, "build"),
     html: path.resolve(__dirname, "public", "index.html"),
+    icon: path.resolve(__dirname, "public", "OctopusLogo.svg"),
     src: path.resolve(__dirname, "src")
   }
 

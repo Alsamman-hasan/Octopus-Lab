@@ -15,6 +15,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const onChangeLang = (value: string) => {
     i18n.changeLanguage(value)
     setLang(value);
+    console.log(value)
   }
   return (
     <div className={classNames(cls.LangSwitcher, {}, [className])}>

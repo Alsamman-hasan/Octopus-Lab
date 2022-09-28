@@ -12,7 +12,7 @@ export interface IItems {
 }
 
 const Item = forwardRef(({ title, subTitle, key }: IItems, ref: LegacyRef<HTMLDivElement>) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation("translation")
   return (
     <div className={classNames(cls.Item)} key={key} ref={ref}> 
       <div className={classNames(cls.ItemTitle)} >

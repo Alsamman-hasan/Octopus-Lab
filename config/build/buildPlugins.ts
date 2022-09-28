@@ -16,6 +16,7 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
+      favicon: paths.icon
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",
