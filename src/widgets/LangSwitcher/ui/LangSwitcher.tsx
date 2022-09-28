@@ -1,5 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import { useState } from "react";
