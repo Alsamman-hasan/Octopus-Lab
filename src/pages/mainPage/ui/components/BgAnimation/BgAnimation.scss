@@ -17,7 +17,13 @@
 .imgMob {
   position: absolute;
   width: 100%;
-  animation: animate 3s linear infinite;
+  animation: animateMob 3s linear infinite;
+}
+
+.img12 {
+  position: absolute;
+  width: 100%;
+  animation: animate12 3s linear infinite;
 }
 
 @keyframes animate {
@@ -30,8 +36,55 @@
   }
 }
 
+@keyframes animateMob {
+  0% {
+    transform: translateY(-250px);
+  }
+
+  100% {
+    transform: translateY(calc(-100px));
+  }
+}
+
+
+@keyframes animate12 {
+  0% {
+    transform: translateY(-1450px);
+  }
+
+  100% {
+    transform: translateY(calc(-1350px));
+  }
+}
+
+
+@media screen and (max-width: 990px) {
+  @keyframes animate12 {
+    0% {
+      transform: translateY(-1250px);
+    }
+
+    100% {
+      transform: translateY(calc(-1050px));
+    }
+  }
+}
+
+
+@media screen and (max-width: 790px) {
+  @keyframes animate12 {
+    0% {
+      transform: translateY(-1050px);
+    }
+
+    100% {
+      transform: translateY(calc(-850px));
+    }
+  }
+}
+
 @media screen and (max-width: 650px) {
-  @keyframes animate {
+  @keyframes animateMob {
     0% {
       transform: translateY(-250px);
     }
@@ -43,7 +96,6 @@
 }
 
 @media screen and (max-width: 2800px) {
-  
   .img {
     position: absolute;
     width: 100%;
@@ -51,11 +103,10 @@
   }
   @keyframes animate {
     0% {
-      transform: translateY(-250px);
+      transform: translateY(-350px);
     }
-
     100% {
-      transform: translateY(calc(-150px));
+      transform: translateY(calc(-250px));
     }
   }
 }
