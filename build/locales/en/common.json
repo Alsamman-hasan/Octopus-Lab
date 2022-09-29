@@ -41,5 +41,33 @@
     "": "A special kind of pain - typesetters cry, but typeset."
   },
   "Что мы": "What are we",
-  "делаем": "doing"
+  "делаем": "doing",
+  "как мы": "How do we",
+  "работаем": "work",
+  "Делаем пресейл": "Making a presale",
+  "За 1 день оцениваем проект вилкой, определяем сложность и собираем команду, которая лучше справится с этим проектом": {
+    "": "For 1 day, we evaluate the project with a fork, determine the complexity and assemble a team that will better cope with this project."
+  },
+  "Согласовываем детали": "We coordinate the details",
+  "Команда внимательно изучает проект, задает вопросы и уточняет оценку": {
+    "": "The team carefully examines the project, asks questions and refines the estimate."
+  },
+  "Запускаем проект": "Launching a project",
+  "К этому времени договор согласован, и мы начинаем работу": {
+    " Создаем чат для оперативного общения и добавляем туда необходимых": {
+      "": "By this time, the contract has been agreed, and we begin work. We create a chat for operational communication and add the necessary ones there."
+    }
+  },
+  "Работаем над проектом": "We are working on a project",
+  "Пишем код в согласованном процессе, показываем промежуточный результат, тестируем, задаем вопросы": {
+    "": "We write the code in a coordinated process, show the intermediate result, test, ask questions."
+  },
+  "Финальное тестирование": "Final testing",
+  "Перед сдачей проекта отдаем на полное финальное тестирование, полируем и отдаем": {
+    "": "Before the delivery of the project, we give it to the full final testing, polish and give it back."
+  },
+  "Сопровождаем после сдачи": "Accompanying after the completion",
+  "Остаемся на связи пока проект не будет в релизе, даем гарантию 60 дней": {
+    "": "We stay in touch until the project is released, we give a 60-day guarantee."
+  }
 }

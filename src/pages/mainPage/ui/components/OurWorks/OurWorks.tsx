@@ -4,7 +4,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import Grid from "@mui/material/Grid";
 import { motion } from "framer-motion";
-import { yAnimation, xAnimation } from "shared/lib/Animations/Animations";
+import { yAnimation } from "shared/lib/Animations/Animations";
 import cls from "./OurWorks.module.scss";
 import { MItem } from "./Item";
 import { ItemsProps } from "./helpers";
@@ -26,7 +26,7 @@ export const OurWorks = ({ className }: OurWorksProps) => {
       className={classNames(cls.OurWorks, {}, [className])}
     >
       <motion.h1
-        variants={xAnimation}
+        variants={yAnimation}
         custom={2}
         className={classNames(cls.OurWorksTitle)}
       >
@@ -53,7 +53,7 @@ export const OurWorks = ({ className }: OurWorksProps) => {
               className={classNames(cls.OurWorksItem)}
             >
               <MItem
-                variants={xAnimation}
+                variants={yAnimation}
                 custom={3}
                 title={el.title}
                 subTitle={el.subTitle}
