@@ -12,7 +12,8 @@ export default (env: BuildEnv) => {
     build: path.resolve(__dirname, "build"),
     html: path.resolve(__dirname, "public", "index.html"),
     icon: path.resolve(__dirname, "public", "OctopusLogo.svg"),
-    src: path.resolve(__dirname, "src")
+    src: path.resolve(__dirname, "src"),
+    locales: path.resolve(__dirname, "public", "locales")
   }
 
   const mode =  env.mode || "development";

@@ -41,3 +41,21 @@
     }
   }
 }
+
+@media screen and (max-width: 2800px) {
+  
+  .img {
+    position: absolute;
+    width: 100%;
+    animation: animate 3s linear infinite;
+  }
+  @keyframes animate {
+    0% {
+      transform: translateY(-250px);
+    }
+
+    100% {
+      transform: translateY(calc(-150px));
+    }
+  }
+}

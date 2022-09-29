@@ -3,6 +3,7 @@ import webpack, { WebpackPluginInstance }  from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
+import CopyPlugin from "copy-webpack-plugin";    
 import { IBuildOptioins } from "./types/config";
 
 
@@ -17,6 +18,7 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
     new HtmlWebpackPlugin({
       template: paths.html,
       favicon: paths.icon
+
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",
@@ -27,6 +29,11 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
     }),
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: "locales" },
+      ],
     }),
     ...reactPlugins
   ]

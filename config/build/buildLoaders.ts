@@ -10,6 +10,7 @@ export function buildLoaders({ isDev }: IBuildOptioins): webpack.RuleSetRule[] {
     use: ["@svgr/webpack"],
   }
 
+  const jsonLoader = { test: /\.json$/, type: "json"  }
   const babelLoader = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
@@ -70,6 +71,7 @@ export function buildLoaders({ isDev }: IBuildOptioins): webpack.RuleSetRule[] {
     fileLoader,
     svgLoader,
     babelLoader,
+    jsonLoader,
     typesctiptLoader,
     cssLoader
   ]
