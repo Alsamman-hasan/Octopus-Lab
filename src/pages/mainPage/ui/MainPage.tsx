@@ -6,6 +6,7 @@ import {
   FristBlock, 
   Illustrations, 
   OurWorks, 
+  Projects, 
   SecondBlock 
 } from "widgets/MainComponents";
 import cls from "./mainPage.module.scss";
@@ -21,6 +22,7 @@ const MainPage = () => {
         <SecondBlock />
         <OurWorks />
         <Illustrations/>
+        <Projects/>
       </div>
     </div>
   )

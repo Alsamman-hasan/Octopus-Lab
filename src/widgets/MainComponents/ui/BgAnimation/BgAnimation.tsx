@@ -107,13 +107,13 @@
 //   )
 // };
 
-import { useCallback, useEffect, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import Desktop from "shared/assets/patternFirstScreen.png"
 import Desktop12 from "shared/assets/Group1200.png"
 import mobile from "shared/assets/mobile.png"
 
 import "./BgAnimation.scss";
+import { useWinWidth } from "shared/lib/WindowWidth/WindowWidth";
 
 export interface BgAnimationProps {
   className?: string;
@@ -121,22 +121,16 @@ export interface BgAnimationProps {
 
 
 export const BgAnimation = ({ className }: BgAnimationProps) => {
-  const [winWidth, setWinWidth] = useState(window.innerWidth)
-  const onWinWigth = useCallback(() => setWinWidth(Math.round(window.innerWidth)), []);
-  useEffect(() => {
-    onWinWigth();
-    window.addEventListener("resize", onWinWigth);
-    return () => window.removeEventListener("resize", onWinWigth);
-  }, [onWinWigth]);
+  const winWidth = useWinWidth();
 
   const sesplayImages = () => {
     if (winWidth > 1200) {
-      return <img className={classNames("img")} src={Desktop} alt="animation"/>
+      return <img className={classNames("img")} src={Desktop} alt="animation" />
     } if (winWidth < 1200 && winWidth > 650) {
       return <img className={classNames("img12")} src={Desktop12} alt="animationMo" />
     } if (winWidth < 650) {
       return <img className={classNames("imgMob")} src={mobile} alt="animationMo" />
-    } 
+    }
     return null
   }
 

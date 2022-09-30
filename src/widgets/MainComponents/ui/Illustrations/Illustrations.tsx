@@ -19,7 +19,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
       initial="hidden"
       whileInView="visible"
       variants={yAnimation}
-      viewport={{ amount: 0.2, once: false }}
+      viewport={{ amount: 0.2, once: true }}
       custom={2}
       className={classNames(cls.Illustrations, {}, [className])}
     >
@@ -43,7 +43,6 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
           initial="hidden"
           whileInView="visible"
           variants={yAnimation}
-          viewport={{ amount: 0.2}}
           custom={2}
           className={classNames(cls.IllusRightBlok)}
         >

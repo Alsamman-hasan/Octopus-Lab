@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LogoSVG } from "shared/assets/icons/svg/desktopSVG";
 import { classNames } from "shared/lib/classNames/classNames";
+import { useScrollHook } from "shared/lib/scrollHook/scrollHook";
 import { ButtonDiscktopPurple } from "shared/ui/Buttons";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import cls from "./header.module.scss";
@@ -14,13 +14,7 @@ export interface FooterProps {
 
 export const Header = ({ className }: FooterProps) => {
   const { t } = useTranslation("common");
-  const [scroll, setScroll] = useState(0);
-  const onScroll = useCallback(() => setScroll(Math.round(window.scrollY)), []);
-  useEffect(() => {
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [onScroll]);
+  const scroll = useScrollHook();
 
   return (
     <div 
