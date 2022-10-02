@@ -9,11 +9,7 @@ import { IBuildOptioins } from "./types/config";
 
 export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
   const {paths, isDev} = options;
-  const reactPlugins = isDev && [
-    new webpack.HotModuleReplacementPlugin(), 
-    new ReactRefreshWebpackPlugin()
-  ]
-  return [
+  const plugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -35,6 +31,10 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
         { from: paths.locales, to: "locales" },
       ],
     }),
-    ...reactPlugins
   ]
+  if(isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin())
+    plugins.push(new ReactRefreshWebpackPlugin())
+  }
+  return plugins; 
 }

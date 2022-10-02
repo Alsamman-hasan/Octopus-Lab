@@ -196,3 +196,41 @@
     }
   }
 }
+
+
+
+.anim {
+  position: relative;
+  width: 320px;
+  img{
+    position: absolute;
+    animation: animate 5s linear infinite ;
+  }
+}
+
+
+
+
+@keyframes animate {
+  0%{
+    transform: translateY(-100px);
+  }
+
+  100%{
+    transform: translateY(calc(400px));
+  }
+}
+
+
+@media screen and (max-width:650px) {
+  @keyframes animate {
+  0%{
+    transform: translateY(-100px);
+  }
+
+  100%{
+    transform: translateY(calc(300px));
+  }
+}
+ 
+}

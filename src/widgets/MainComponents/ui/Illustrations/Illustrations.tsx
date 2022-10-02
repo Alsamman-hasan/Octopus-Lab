@@ -8,6 +8,7 @@ import {  yAnimation } from "shared/lib/Animations/Animations";
 import cls from "./Illustrations.module.scss";
 import { stepsProps } from "./helper";
 import { MStep } from "./Step";
+import { AnimationBloc } from "./Animation";
 
 export interface IllustrationsProps {
   className?: string;
@@ -36,7 +37,8 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
       <div className={classNames(cls.IllusContainer, {}, [className])}>
         <div className={classNames(cls.IllusLeftBlok)}>
           <div className={classNames(cls.continer)}>
-            <img className={classNames(cls.img)} src={group} alt="animation" />
+            <AnimationBloc/>
+            {/* <img className={classNames(cls.img)} src={group} alt="animation" /> */}
           </div>
         </div>
         <motion.div
