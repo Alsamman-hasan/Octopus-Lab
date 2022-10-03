@@ -10,6 +10,7 @@ export interface FooterProps {
 
 export const Footer = ({ className }: FooterProps) => {
   const { t } = useTranslation();
+  
   return (
     <div className={classNames(cls.footerWrapper, {}, [className])}>
       <div className={classNames(cls.content, {}, [className])} >
