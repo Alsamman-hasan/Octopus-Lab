@@ -2,10 +2,11 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion";
 import group from "shared/assets/mobile.png"
-import {  yAnimation } from "shared/lib/Animations/Animations";
+import { yAnimation } from "shared/lib/Animations/Animations";
 import cls from "./Illustrations.module.scss";
 import { stepsProps } from "./helper";
 import { MStep } from "./Step";
+import { AnimationBloc } from "./Animation";
 
 export interface IllustrationsProps {
   className?: string;
@@ -31,10 +32,13 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
           {t("работаем")}
         </span>
       </motion.h1>
-      <div className={classNames(cls.IllusContainer, {}, [className])}>
-        <div className={classNames(cls.IllusLeftBlok)}>
-          <div className={classNames(cls.continer)}>
-            <img className={classNames(cls.img)} src={group} alt="animation" />
+      <div className={classNames(cls.IllusRow)}>
+        <div className={classNames(cls.IllusContainer, {}, [className])}>
+          <div className={classNames(cls.IllusLeftBlok)}>
+            <div className={classNames(cls.continer)}>
+              <img className={classNames(cls.img)} src={group} alt="animation" />
+              {/* <AnimationBloc/> */}
+            </div>
           </div>
         </div>
         <motion.div
