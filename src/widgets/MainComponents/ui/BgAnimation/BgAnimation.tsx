@@ -89,7 +89,7 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   }
 
   useEffect(() => {
-    // rianAnimation(winWidth);
+    rianAnimation(winWidth);
   }, [winWidth])
 
   return (

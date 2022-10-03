@@ -79,7 +79,7 @@ export const AnimationBloc = () => {
     }
   }
   useEffect(() => {
-    rianAnimation(320)
+    // rianAnimation(320)
   }, [])
   return (
     <div id="anim" className={cls.anim} />
