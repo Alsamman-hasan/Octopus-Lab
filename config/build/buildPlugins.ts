@@ -23,9 +23,6 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
     new CopyPlugin({
       patterns: [
         { from: paths.locales, to: "locales" },
@@ -35,6 +32,10 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
   if(isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
     plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),);
+ 
   }
 
   return plugins;
