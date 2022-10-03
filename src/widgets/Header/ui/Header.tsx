@@ -32,7 +32,7 @@ export const Header = ({ className }: FooterProps) => {
           <div className={classNames(cls.btn, {}, [className])}>
             <ButtonDiscktopPurple
               text={t("Обсудить проект")}
-              style={{ backgroundColor: "#450072" }}
+              style={{ backgroundColor: "red" }}
             />
           </div>
           <LangSwitcher/>
