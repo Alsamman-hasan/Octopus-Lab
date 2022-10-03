@@ -18,7 +18,7 @@ export const Footer = ({ className }: FooterProps) => {
       </div>
       <div className={classNames(cls.footer, {}, [className])}>
         <span>2022</span>
-        <span>Copyright © Octopus Lab</span>
+        <span>{t("Copyright © Octopus Lab")}</span>
         <span>{t("User Agreement")}</span>
       </div>
     </div>

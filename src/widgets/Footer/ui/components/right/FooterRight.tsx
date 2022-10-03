@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import "./footerRight.scss";
 import Avatar from "shared/assets/avatar.svg";
 import { FacebookSVG, InstagramSVG, TelegramSVG, VkSVG } from "shared/assets/icons/svg/social";
@@ -52,7 +53,7 @@ const FooterRight = () => {
         </div>
         <div className={classNames("footerRight-contacts_item")}>
           <PhoneSVG />
-          <span>nashapochta@gmail.com</span>
+          <span>{t("nashapochta@gmail.com")}</span>
         </div>
       </div>
       <div className={classNames("footerRight-social")}>

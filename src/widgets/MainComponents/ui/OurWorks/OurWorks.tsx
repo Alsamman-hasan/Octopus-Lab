@@ -1,5 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
-/* eslint-disable max-len */
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import Grid from "@mui/material/Grid";

@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import Vector from "shared/assets/project/Vector.svg"
 import { useWinWidth } from "shared/lib/WindowWidth/WindowWidth";
@@ -16,7 +15,7 @@ export interface ProjectItemProps {
 
 export const ProjectItem = (props: ProjectItemProps) => {
   const winWidth = useWinWidth();
-  const { title, subTitle, img, link, id, open} = props;
+  const { title, subTitle, img, link, id, open } = props;
   return (
     <>
       <span

@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import { motion } from "framer-motion";
 import { yAnimation } from "shared/lib/Animations/Animations";
