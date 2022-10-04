@@ -1,13 +1,32 @@
 @import "app/styles/variables/fotns";
+@keyframes tranformer {
+  0% {
+    background-color: rgba(255, 255, 255,0 );
+  }
+  100% {
+    background-color: var(--white-color);
+  }
+}
+
+@keyframes tranformerClose {
+  0% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255,0 );
+  }
+}
 
 .headerWrapper {
   position: fixed;
   display: flex;
-  background-color: rgba(18,18,18,0);
+  // background-color: rgba(18,18,18,0);
   flex-direction: column;
   box-shadow: none;
   width: 100%;
   z-index: 6;
+  animation-name: tranformerClose;
+  animation-duration: 0.5s;
 }
 
 .contetn {
@@ -25,8 +44,10 @@
 }
 
 .scrollEvent {
-  box-shadow: 0 8px 12px rgb(17 0 29 / 8%);
+  box-shadow: 0 0px 7px rgb(17 0 29 / 8%);
   background-color: var(--white-color);
+  animation-name: tranformer;
+  animation-duration: 0.7s;
 }
 
 @media screen and (max-width: 1400px) {
