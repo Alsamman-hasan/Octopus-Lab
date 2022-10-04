@@ -34,6 +34,22 @@
   color: var(--black-color);
 }
 
+@media screen and (max-width: 1400px) {
+  .SecondBlock {
+    max-width: 1200px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .SecondBlock {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+}
+
+
 @media screen and (max-width: 768px) {
   .MuiBox-root {
     display: flex !important;
@@ -54,6 +70,10 @@
 }
 
 @media screen and (max-width: 650px) {
+  .SecondBlock {
+    width: 100%;
+    padding: 0;
+  }
   .SecondBlockTitle {
     @include Ti5;
   }

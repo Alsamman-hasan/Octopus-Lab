@@ -54,6 +54,21 @@
   color: var(--balck-color);
 }
 
+@media screen and (max-width: 1400px) {
+  .OurWorks {
+    max-width: 1200px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .OurWorks {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+}
+
 @media screen and (max-width: 900px) {
   .OurWorksItem {
     &:nth-child(3n +3) {
@@ -69,6 +84,7 @@
 @media screen and (max-width: 600px) {
   .OurWorks {
     margin-top: 80px;
+    padding: 0;
   }
 
   .OurWorksTitle {
