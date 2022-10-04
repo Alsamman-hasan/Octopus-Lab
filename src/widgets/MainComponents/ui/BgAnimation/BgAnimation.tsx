@@ -1,5 +1,5 @@
 
-import {useEffect } from "react";
+import {useEffect, useMemo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import SoLong from "shared/assets/animation/Vector.png"
 import SoLong2 from "shared/assets/animation/Vector2.png"
@@ -15,9 +15,10 @@ export interface BgAnimationProps {
 
 
 export const BgAnimation = ({ className }: BgAnimationProps) => {
-  const winWidth = useWinWidth();
+  const winWidths = useWinWidth();
+ 
   const rianAnimation = (winWidth: number) => {
-    const amount = 20 ; 
+    const amount = 15 ; 
 
     const body = document.getElementById("ani")
     let i = 0 ;
@@ -89,8 +90,8 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   }
 
   useEffect(() => {
-    rianAnimation(winWidth);
-  }, [winWidth])
+    rianAnimation(winWidths);
+  }, [winWidths])
 
   return (
     <div className={classNames("BgAnimation", {}, [className])} >

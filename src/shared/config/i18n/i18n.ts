@@ -13,8 +13,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: "ru",
-    fallbackLng: "ru",
+    lng: "en",
+    fallbackLng: "en",
     debug: __IS_DEV__,
     detection: {
       order: ["path", "cookie", "htmlTag", "localStorage", "subdomain"],

@@ -8,7 +8,7 @@ import cls from "./Illustrations.module.scss";
 
 export const AnimationBloc = () => {
   const rianAnimation = (winWidth: number) => {
-    const amount = 15;
+    const amount = 5;
 
     const body = document.getElementById("anim")
     let i = 0;
