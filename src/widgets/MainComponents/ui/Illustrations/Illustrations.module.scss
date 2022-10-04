@@ -8,15 +8,16 @@
 }
 
 .IllusContainer{
-  margin-top: 40px;
   position: sticky;
-  top: 120px;
+  top: 130px;
 }
 .IllusRow {
   position: relative;
   height: 100%;
 }
 .IllusTitle{
+  display:flex;
+  flex-direction:column;
   z-index: 1;
   @include Ti1;
   color: var(--balck-color);
@@ -32,7 +33,7 @@
   grid-template-columns: repeat(2, 50%);
   width: 70%;
   position: absolute;
-  top: 0;
+  top: 163px;
   height: 100%;
   right: 0;
 }
@@ -72,6 +73,7 @@
   overflow:hidden;
   position: relative;
   width: 30%;
+  margin-top: 40px;
 }
 
 .stepNumber{
@@ -112,6 +114,22 @@
   }
 }
 
+@media screen and (max-width: 1400px) {
+  .Illustrations {
+    max-width: 1200px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .Illustrations {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+}
+
+
 @media screen and (max-width: 950px) {
   .stepNumber{
     @include Ti2;
@@ -128,7 +146,11 @@
     display:none;
   }
   .IllusRightBlok {
-    width: 95%;
+    width: 100%;
+  }
+  .IllusContainer{
+    position: absolute;
+    top: 0;
   }
 }
 
@@ -140,7 +162,7 @@
     overflow-y: scroll;
   }
 
-   .IllusLeftBlok{
+  .IllusLeftBlok{
     display:none;
   }
   .MTop {
@@ -160,7 +182,7 @@
 @media screen and (max-width: 650px) {
   .Illustrations{
     margin-top: 80px;
-    // height: 955px;
+    padding: 0 10px;
   }
   .IllusContainer{
     margin-top: 28px;
