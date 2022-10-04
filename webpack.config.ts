@@ -12,6 +12,7 @@ export default (env: BuildEnv) => {
     build: path.resolve(__dirname, "build"),
     html: path.resolve(__dirname, "public", "index.html"),
     icon: path.resolve(__dirname, "public", "OctopusLogo.svg"),
+    redirect: path.resolve(__dirname, "public", "_redirects"),
     src: path.resolve(__dirname, "src"),
     locales: path.resolve(__dirname, "public", "locales")
   }

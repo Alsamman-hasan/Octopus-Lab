@@ -26,6 +26,7 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
     new CopyPlugin({
       patterns: [
         { from: paths.locales, to: "locales" },
+        { from: paths.redirect },
       ],
     }),
   ]
