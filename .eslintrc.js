@@ -57,6 +57,7 @@ module.exports = {
           "gridColumn",
           "variant",
           "autoComplete",
+          "viewBox",
         ],
       },
     ],
@@ -65,7 +66,15 @@ module.exports = {
       "double",
       { avoidEscape: true, allowTemplateLiterals: true },
     ],
-    "max-len": ["error", { code: 100, ignoreComments: true, ignoreUrls: true }],
+    "max-len": [
+      "error",
+      {
+        code: 100,
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

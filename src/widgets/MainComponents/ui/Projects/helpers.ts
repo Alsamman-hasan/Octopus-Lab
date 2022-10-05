@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Img from "shared/assets/project/img.png";
 
 export const projectItems = [

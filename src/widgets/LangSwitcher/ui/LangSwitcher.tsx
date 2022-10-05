@@ -1,5 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
-
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import { useState } from "react";
@@ -12,7 +10,7 @@ export interface LangSwitcherProps {
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
-  const {i18n } = useTranslation()
+  const {i18n, t } = useTranslation()
   const [lang, setLang] = useState("en");
 
 
@@ -36,7 +34,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
           }, 
           [className])}
       >
-        ru
+        {t("ru")}
       </button>
       <span>|</span>
       <button
@@ -47,7 +45,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
           [className]
         )}
       >
-        en
+        {t("en")}
       </button>
     </div>
   )

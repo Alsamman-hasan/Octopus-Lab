@@ -1,13 +1,17 @@
-import { CSSProperties } from "react";
 
-export interface ICustomButtonProps {
-  text?: string;
-  fullWidth?: boolean;
-  minWidth?: boolean | string;
-  disabled?: boolean;
-  onClick?: (value?: any) => void;
-  style?: CSSProperties;
-  typeButton?: "button" | "submit" | "reset" | undefined;
-  to?: string;
-  buttonPadding?: string;
+export enum ButtonTheme {
+  CLEAR = "clear",
+  OUTLINE = "outline",
+}
+
+export enum ButtonBgColor {
+  PURPLE = "Purple",
+  WHITE = "White",
+  BLUE = "Blue",
+}
+
+export enum ButtonSize {
+  SMALL = "Small",
+  MEDIUM = "Medium",
+  BIG = "Big",
 }

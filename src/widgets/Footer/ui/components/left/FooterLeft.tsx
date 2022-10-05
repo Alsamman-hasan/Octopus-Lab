@@ -1,10 +1,10 @@
-/* eslint-disable max-len */
 import { useState } from "react";
 import "./footerLeft.scss";
-import { ButtonDiscktopBlue } from "shared/ui/Buttons";
+import { Button } from "shared/ui/Buttons";
 import { InputInUi } from "shared/ui/inputs";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
+import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { IState } from "../../types";
 import { inputscollection } from "./constants";
 
@@ -42,11 +42,13 @@ const FooterLeft = () => {
       </div>
       <div className={classNames("footerLeft-footers")}>
         <div className={classNames("footerLeft-btn")}>
-          <ButtonDiscktopBlue
-            fullWidth
-            text={t("Оценить проект")}
-            style={{ background: "#17CEE0", padding: "16px 24px" }}
-          />
+          <Button
+            sizes={ButtonSize.BIG}
+            btnBg={ButtonBgColor.BLUE}
+            className="btn"
+          >
+            {t("Оценить проект")}
+          </Button>
         </div>
         <div className={classNames("footerLeft-text")}>
           <span>

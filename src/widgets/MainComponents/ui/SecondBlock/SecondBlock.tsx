@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import Box from "@mui/material/Box";

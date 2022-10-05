@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+
 import { forwardRef, LegacyRef } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
@@ -12,7 +12,14 @@ export interface StepProps {
   title: string;
   subTitle: string;
 }
-const Step = forwardRef(({ title, subTitle, MTopmM, number, MTop }: StepProps, ref: LegacyRef<HTMLDivElement>) => {
+const Step = forwardRef((
+  { 
+    title, 
+    subTitle, 
+    MTopmM, 
+    number, 
+    MTop 
+  }: StepProps, ref: LegacyRef<HTMLDivElement>) => {
   const { t } = useTranslation("common")
   return (
     <div className={classNames(cls.step, { [cls.MTopmM]: MTopmM, [cls.MTop]: MTop })} ref={ref}>

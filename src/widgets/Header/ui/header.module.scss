@@ -28,6 +28,9 @@
   animation-name: tranformerClose;
   animation-duration: 0.5s;
 }
+.HeaderBtn {
+  width: 261px;
+}
 
 .contetn {
   display: flex;
@@ -54,7 +57,6 @@
   .headerWrapper {
     width: 100%;
   }
-
   .contetn {
     max-width: 1200px;
     margin: 23px auto;
@@ -66,11 +68,14 @@
   .headerWrapper {
     width: 100%;
   }
-
   .contetn {
     width: 100%;
     margin: 23px auto;
     padding: 0 40px;
+  }
+
+  .HeaderBtn {
+    width: 250px;
   }
 }
 
@@ -83,6 +88,9 @@
     width: 100%;
     margin: 23px auto;
     padding: 0 40px;
+  }
+  .HeaderBtn {
+    width: 200px;
   }
 }
 
@@ -106,6 +114,10 @@
     width: 142px;
     height: 32px;
   }
+  .HeaderBtn {
+    width: 142px;
+    height: 32px;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -121,5 +133,8 @@
 
   .lan {
     display: none;
+  }
+  .HeaderBtn {
+    width: 142px;
   }
 }
