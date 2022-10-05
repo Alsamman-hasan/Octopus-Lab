@@ -5,6 +5,7 @@ import {
   Illustrations, 
   OurWorks, 
   Projects, 
+  RainTime, 
   SecondBlock 
 } from "widgets/MainComponents";
 import cls from "./mainPage.module.scss";
@@ -12,6 +13,7 @@ import cls from "./mainPage.module.scss";
 const MainPage = () => (
   <div className={classNames(cls.page)}>
     <BgAnimation />
+    {/* <RainTime/> */}
     <div
       className={classNames(cls["content-page"])}
     >
