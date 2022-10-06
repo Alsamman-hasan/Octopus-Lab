@@ -10,13 +10,14 @@ import cls from "./header.module.scss";
 
 export interface HeaderProps {
   className?: string;
+  onScrollToFooter?: () => void; 
 }
 
 
-export const Header = ({ className }: HeaderProps) => {
+export const Header = ({ className, onScrollToFooter }: HeaderProps) => {
   const { t } = useTranslation("common");
   const scroll = useScrollHook();
-
+  
   return (
     <div 
       className={classNames(
@@ -34,7 +35,7 @@ export const Header = ({ className }: HeaderProps) => {
             <Button
               sizes={ButtonSize.SMALL}
               btnBg={ButtonBgColor.PURPLE}
-              disabled={!true}
+              onClick={onScrollToFooter}
               className={cls.HeaderBtn}
             >
               {t("Обсудить проект")}

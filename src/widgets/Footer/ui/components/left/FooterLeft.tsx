@@ -5,8 +5,8 @@ import { InputInUi } from "shared/ui/inputs";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
-import { IState } from "../../types";
 import { inputscollection } from "./constants";
+import { IState } from "./types";
 
 const FooterLeft = () => {
   const { t } = useTranslation("Footer");
