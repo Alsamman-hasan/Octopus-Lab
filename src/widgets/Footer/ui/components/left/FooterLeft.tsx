@@ -14,7 +14,7 @@ const FooterLeft = () => {
 
   const onHandelChange = (params: string, value: string) => {
     setState((prev) => ({ ...prev, [params]: value }));
-    console.log(params);
+    // console.log(params);
   };
   
   return (
@@ -36,6 +36,7 @@ const FooterLeft = () => {
               fullWidth
               label={item.label}
               params={item.params}
+              typeInput={item.params === "phone" ? "number" : item.params}
             />
           </div>
         ))}

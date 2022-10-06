@@ -7,7 +7,7 @@ import SoLong3 from "shared/assets/animation/Vector3.png"
 import SoLong4 from "shared/assets/animation/Vector4.png"
 import SoLong5 from "shared/assets/animation/Vector5.png"
 import "./BgAnimation.scss";
-import { useWinWidth } from "shared/lib/WindowWidth/WindowWidth";
+import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
 
 export interface BgAnimationProps {
   className?: string;
@@ -15,8 +15,8 @@ export interface BgAnimationProps {
 
 
 export const BgAnimation = ({ className }: BgAnimationProps) => {
-  const winWidths = useWinWidth();
- 
+  const { width } = useWindowSize("resize")
+
   const rianAnimation = (winWidth: number) => {
     const amount = 50 ; 
 
@@ -96,14 +96,14 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   }
 
   useEffect(() => {
-    const num = winWidths - 10
+    const num = width - 10
     stopRain();
     rianAnimation(num);
-  }, [winWidths])
+  }, [width])
 
 
   useEffect(() => {
-    const num = winWidths - 10
+    const num = width - 10
     rianAnimation(num);
   }, [])
 

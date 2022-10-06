@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useWinWidth } from "shared/lib/WindowWidth/WindowWidth";
+import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
 import SoLong1 from "shared/assets/animation/Vector.png"
 import SoLong2 from "shared/assets/animation/Vector2.png"
 import SoLong3 from "shared/assets/animation/Vector3.png"
@@ -8,7 +8,7 @@ import SoLong5 from "shared/assets/animation/Vector5.png"
 import "./testRain.scss";
 
 export const RainTime = () => {
-  const winWidths = useWinWidth();
+  const { width } = useWindowSize("resize")
 
   const randRange = (minNum: number, maxNum: number) => {
     const difference = (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
@@ -18,7 +18,7 @@ export const RainTime = () => {
   const startRain = (numDrops: number) =>  {
     const rainSection = document.getElementById("Rain");
     for (let i = 1; i < numDrops; i++) {
-      const dropLeft = randRange(0, winWidths);
+      const dropLeft = randRange(0, width);
       const dropTop = randRange(-1000, 500);
 
       const drop = document.createElement("img");
@@ -57,13 +57,13 @@ export const RainTime = () => {
   }
 
   useEffect(() => {
-    const num = winWidths / 10
+    const num = width / 10
     stopRain();
     startRain(num)
-  }, [winWidths])
+  }, [width])
 
   useEffect(() => {
-    const num = winWidths / 10
+    const num = width / 10
     startRain(num);
   },[])
 

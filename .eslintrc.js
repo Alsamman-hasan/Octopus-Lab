@@ -43,7 +43,7 @@ module.exports = {
     "react/no-array-index-key": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/no-unused-prop-types": "warn",
-    "no-param-reassign":"off",
+    "no-param-reassign": "off",
     "i18next/no-literal-string": [
       "error",
       {
@@ -60,6 +60,7 @@ module.exports = {
           "variant",
           "autoComplete",
           "viewBox",
+          
         ],
       },
     ],
@@ -75,6 +76,7 @@ module.exports = {
         ignoreComments: true,
         ignoreUrls: true,
         ignoreStrings: true,
+        ignoreRegExpLiterals: true,
       },
     ],
   },
