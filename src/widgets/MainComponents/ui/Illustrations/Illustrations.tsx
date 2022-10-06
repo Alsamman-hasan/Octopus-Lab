@@ -39,7 +39,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
           </motion.h1>
           <div className={classNames(cls.IllusLeftBlok)}>
             <div className={classNames(cls.continer)}>
-              <img className={classNames(cls.img)} src={group} alt="animation" />
+              <img loading="lazy" className={classNames(cls.img)} src={group} alt="animation" />
               {/* <AnimationBloc/> */}
             </div>
           </div>

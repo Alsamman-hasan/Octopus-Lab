@@ -30,7 +30,7 @@ export const ProjectItem = (props: ProjectItemProps) => {
       {(open === id || width < 650) &&
         <div className={classNames(cls.ProjectsGroup_items)}>
           <div className={classNames(cls.ProjectsGroup_block1)}>
-            <img className={classNames(cls.ProjectsGroup_img)} src={img} alt="project" />
+            <img loading="lazy" className={classNames(cls.ProjectsGroup_img)} src={img} alt="project" />
             <span className={classNames(cls.ProjectsGroup_title)}
             >
               {title}
