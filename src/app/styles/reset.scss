@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size:100% ;
+}
+
 input,
 button,
 textarea,
@@ -15,6 +19,7 @@ select {
 body {
   margin: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   body {
