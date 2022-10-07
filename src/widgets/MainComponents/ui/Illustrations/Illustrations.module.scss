@@ -4,17 +4,20 @@
 .Illustrations{
   margin-top: 197px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 100%);
+  height: 1209px;
 }
 
 .IllusContainer{
-  display: flex;
-  justify-content: space-between;
-  height: 642px;
-  margin-top: 40px;
+  position: sticky;
+  top: 130px;
+}
+.IllusRow {
+  position: relative;
+  height: 100%;
 }
 .IllusTitle{
+  display:flex;
+  flex-direction:column;
   z-index: 1;
   @include Ti1;
   color: var(--balck-color);
@@ -28,10 +31,11 @@
   display: grid;
   grid-template-rows: 452px 320px 320px;
   grid-template-columns: repeat(2, 50%);
-  overflow: hidden;
-  overflow-y: scroll;
-  height: 641px;
-  width: 787px;
+  width: 70%;
+  position: absolute;
+  top: 163px;
+  height: 100%;
+  right: 0;
 }
 
 .IllusRightBlok::-webkit-scrollbar-thumb {
@@ -68,7 +72,8 @@
 .IllusLeftBlok{
   overflow:hidden;
   position: relative;
-  width: 366px;
+  width: 30%;
+  margin-top: 40px;
 }
 
 .stepNumber{
@@ -87,17 +92,17 @@
   color: var(--balck-color);
 }
 
-.img {
-  position: absolute;
-  // width: 100%;
-  animation: animate 3s linear infinite;
-}
+// .img {
+//   position: absolute;
+//   // width: 100%;
+//   animation: animate 3s linear infinite;
+// }
 
-.imgMob {
-  position: absolute;
-  width: 100%;
-  animation: animate 5s linear infinite;
-}
+// .imgMob {
+//   position: absolute;
+//   width: 100%;
+//   animation: animate 5s linear infinite;
+// }
 
 @keyframes animate {
   0% {
@@ -108,6 +113,22 @@
     transform: translateY(calc(-10px));
   }
 }
+
+@media screen and (max-width: 1400px) {
+  .Illustrations {
+    max-width: 1200px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .Illustrations {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+}
+
 
 @media screen and (max-width: 950px) {
   .stepNumber{
@@ -121,6 +142,16 @@
   .stepSubTitle{
     @include Text3;
   }
+  .IllusLeftBlok{
+    display:none;
+  }
+  .IllusRightBlok {
+    width: 100%;
+  }
+  .IllusContainer{
+    position: absolute;
+    top: 0;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -129,6 +160,10 @@
     flex-direction: column;
     overflow: hidden;
     overflow-y: scroll;
+  }
+
+  .IllusLeftBlok{
+    display:none;
   }
   .MTop {
     margin-top: 0;
@@ -147,7 +182,7 @@
 @media screen and (max-width: 650px) {
   .Illustrations{
     margin-top: 80px;
-    // height: 955px;
+    padding: 0 10px;
   }
   .IllusContainer{
     margin-top: 28px;
@@ -184,7 +219,7 @@
     margin-top: 0;
   }
   .MTopmM {
-      margin-top: 0;
+    margin-top: 0;
   }
   @keyframes animate {
     0% {
@@ -199,14 +234,15 @@
 
 
 
-.anim {
-  position: relative;
-  width: 320px;
-  img{
-    position: absolute;
-    animation: animate 5s linear infinite ;
-  }
-}
+
+// .anim {
+//   // position: relative;
+//   width: 320px;
+//   img{
+//     position: absolute;
+//     animation: animate 5s linear infinite ;
+//   }
+// }
 
 
 

@@ -1,7 +1,5 @@
-/* eslint-disable max-len */
-// import { useTranslation } from "react-i18next"
 
-// /* eslint-disable max-len */
+// import { useTranslation } from "react-i18next"
 // const { t } = useTranslation("common")
 // export const ItemsProps = [
 //   {

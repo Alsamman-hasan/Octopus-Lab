@@ -2,9 +2,10 @@ import "./footerRight.scss";
 import Avatar from "shared/assets/avatar.svg";
 import { FacebookSVG, InstagramSVG, TelegramSVG, VkSVG } from "shared/assets/icons/svg/social";
 import { EmailSVG, PhoneSVG } from "shared/assets/icons/svg/desktopSVG";
-import { ButtonDefault } from "shared/ui/Buttons";
+import { Button } from "shared/ui/Buttons";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
+import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 
 
 const FooterRight = () => {
@@ -20,8 +21,8 @@ const FooterRight = () => {
           </div>
           <div className={classNames("footerRight-manager")} >
             <div className={classNames("footerRight-manager_img")}>
-              <Avatar/>
-              <span className={classNames("footerRight-manager_onlin")}/>
+              <Avatar />
+              <span className={classNames("footerRight-manager_onlin")} />
             </div>
             <div className={classNames("footerRight-manager_info")}>
               <span className={classNames("footerRight-manager_name")}>
@@ -33,14 +34,13 @@ const FooterRight = () => {
             </div>
           </div>
           <div className={classNames("footerRight-btn")}>
-            <ButtonDefault
-              text={t("Написать в чат")}
-              style={{
-                padding: "12px 24px",
-                border: "1px solid #FFFFFF",
-                width: "100%",
-              }}
-            />
+            <Button
+              sizes={ButtonSize.MEDIUM}
+              btnBg={ButtonBgColor.NONCOLOR}
+              className="btn"
+            >
+              {t("Написать в чат")}
+            </Button>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ const FooterRight = () => {
         </div>
         <div className={classNames("footerRight-contacts_item")}>
           <PhoneSVG />
-          <span>nashapochta@gmail.com</span>
+          <span>{t("nashapochta@gmail.com")}</span>
         </div>
       </div>
       <div className={classNames("footerRight-social")}>

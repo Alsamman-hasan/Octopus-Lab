@@ -7,6 +7,7 @@ export interface BuildPaths {
   src: string;
   icon: string;
   locales: string;
+  redirect: string;
 }
 
 export interface IBuildOptioins {

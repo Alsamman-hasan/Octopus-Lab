@@ -6,9 +6,9 @@ import SoLong4 from "shared/assets/animation/Vector4.png"
 import SoLong5 from "shared/assets/animation/Vector5.png"
 import cls from "./Illustrations.module.scss";
 
-export const AnimationBloc = ( ) => {
+export const AnimationBloc = () => {
   const rianAnimation = (winWidth: number) => {
-    const amount = 8;
+    const amount = 5;
 
     const body = document.getElementById("anim")
     let i = 0;
@@ -79,9 +79,9 @@ export const AnimationBloc = ( ) => {
     }
   }
   useEffect(() => {
-    rianAnimation(320)
+    // rianAnimation(320)
   }, [])
   return (
-    <div id="anim" className={cls.anim} /> 
+    <div id="anim" className={cls.anim} />
   )
 };

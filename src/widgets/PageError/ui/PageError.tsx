@@ -1,6 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { ButtonDiscktopBlue } from "shared/ui/Buttons";
+import { Button} from "shared/ui/Buttons";
+import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import cls from "./PageError.module.scss";
 
 export interface PageErrorProps {
@@ -15,13 +16,17 @@ export const PageError = ({ className }: PageErrorProps) => {
 
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
-      <p className={classNames(cls.info, {}, [className])}>
+      <p className={classNames(cls.info)}>
         {t("произошла непредвиденная ошибка")}
       </p>
-      <ButtonDiscktopBlue
-        style={{ background: "#17CEE0", padding: "16px 24px" }}
+      <Button
+        sizes={ButtonSize.MEDIUM}
+        btnBg={ButtonBgColor.BLUE}
+        className={cls.btn}
         onClick={realodPage}
-        text={t("Обновить страницу")} />
+      >
+        {t("Обновить страницу")}
+      </Button>
     </div>
   )
 };

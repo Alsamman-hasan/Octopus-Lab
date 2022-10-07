@@ -1,12 +1,12 @@
-/* eslint-disable max-len */
 import { useState } from "react";
 import "./footerLeft.scss";
-import { ButtonDiscktopBlue } from "shared/ui/Buttons";
+import { Button } from "shared/ui/Buttons";
 import { InputInUi } from "shared/ui/inputs";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { IState } from "../../types";
+import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { inputscollection } from "./constants";
+import { IState } from "./types";
 
 const FooterLeft = () => {
   const { t } = useTranslation("Footer");
@@ -14,7 +14,7 @@ const FooterLeft = () => {
 
   const onHandelChange = (params: string, value: string) => {
     setState((prev) => ({ ...prev, [params]: value }));
-    console.log(params);
+    // console.log(params);
   };
   
   return (
@@ -36,17 +36,20 @@ const FooterLeft = () => {
               fullWidth
               label={item.label}
               params={item.params}
+              typeInput={item.params === "phone" ? "number" : item.params}
             />
           </div>
         ))}
       </div>
       <div className={classNames("footerLeft-footers")}>
         <div className={classNames("footerLeft-btn")}>
-          <ButtonDiscktopBlue
-            fullWidth
-            text={t("Оценить проект")}
-            style={{ background: "#17CEE0", padding: "16px 24px" }}
-          />
+          <Button
+            sizes={ButtonSize.BIG}
+            btnBg={ButtonBgColor.BLUE}
+            className="btn"
+          >
+            {t("Оценить проект")}
+          </Button>
         </div>
         <div className={classNames("footerLeft-text")}>
           <span>

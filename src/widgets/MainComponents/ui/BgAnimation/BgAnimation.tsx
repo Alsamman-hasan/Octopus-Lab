@@ -1,15 +1,13 @@
-/* eslint-disable max-len */
-/* eslint-disable i18next/no-literal-string */
-import {useEffect} from "react";
+
+import {useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import SoLong from "shared/assets/animation/Vector.png"
 import SoLong2 from "shared/assets/animation/Vector2.png"
 import SoLong3 from "shared/assets/animation/Vector3.png"
 import SoLong4 from "shared/assets/animation/Vector4.png"
 import SoLong5 from "shared/assets/animation/Vector5.png"
-import group from "shared/assets/patternFirstScreen.png"
 import "./BgAnimation.scss";
-import { useWinWidth } from "shared/lib/WindowWidth/WindowWidth";
+import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
 
 export interface BgAnimationProps {
   className?: string;
@@ -17,11 +15,10 @@ export interface BgAnimationProps {
 
 
 export const BgAnimation = ({ className }: BgAnimationProps) => {
-  const winWidth = useWinWidth();
+  const { width } = useWindowSize("resize")
 
   const rianAnimation = (winWidth: number) => {
-    // const amount = winWidth ? Math.round(winWidth / 15) : 20;
-    const amount = 10; 
+    const amount = 50 ; 
 
     const body = document.getElementById("ani")
     let i = 0 ;
@@ -42,14 +39,14 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
       const posX3 = Math.floor(Math.random() * winWidth);
       const posX4 = Math.floor(Math.random() * winWidth);
       const posX5 = Math.floor(Math.random() * winWidth);
-      const delay = Math.random() * -20;
+      const delay = Math.random() * 10;
       const duration = Math.random() * 5;
 
       drop.style.width = `${7.9}px`;
       drop.style.height = `${74.78}px`; 
       drop.style.left = `${posX}px`;
       drop.style.animationDelay = `${delay}s`;
-      drop.style.animationDuration = `${4 + duration}s`;
+      drop.style.animationDuration = `${ 2 + duration}s`;
 
 
       drop2.style.width = `${7.9}px`;
@@ -81,7 +78,6 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
       drop5.style.animationDelay = `${delay}s`;
       drop5.style.animationDuration = `${4 + duration}s`;
 
-
       body.appendChild(drop);
       body.appendChild(drop2);
       body.appendChild(drop3);
@@ -92,9 +88,24 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
     }
   }
 
+  const stopRain = () => {
+    const rainSection = document.getElementById("ani");
+    while (rainSection.hasChildNodes()) {
+      rainSection.removeChild(rainSection.lastChild);
+    }
+  }
+
   useEffect(() => {
-    rianAnimation(winWidth);
-  }, [winWidth])
+    const num = width - 10
+    stopRain();
+    rianAnimation(num);
+  }, [width])
+
+
+  useEffect(() => {
+    const num = width - 10
+    rianAnimation(num);
+  }, [])
 
   return (
     <div className={classNames("BgAnimation", {}, [className])} >

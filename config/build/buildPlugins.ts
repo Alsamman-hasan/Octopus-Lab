@@ -1,14 +1,14 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack, { WebpackPluginInstance }  from "webpack";
+import webpack, { WebpackPluginInstance } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
-import CopyPlugin from "copy-webpack-plugin";    
+import CopyPlugin from "copy-webpack-plugin";
 import { IBuildOptioins } from "./types/config";
 
 
-export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
-  const {paths, isDev} = options;
+export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
+  const { paths, isDev } = options;
   const plugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
@@ -23,18 +23,21 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[]{
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
     new CopyPlugin({
       patterns: [
         { from: paths.locales, to: "locales" },
+        { from: paths.redirect },
       ],
     }),
   ]
-  if(isDev) {
-    plugins.push(new webpack.HotModuleReplacementPlugin())
-    plugins.push(new ReactRefreshWebpackPlugin())
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),);
+
   }
-  return plugins; 
+
+  return plugins;
 }

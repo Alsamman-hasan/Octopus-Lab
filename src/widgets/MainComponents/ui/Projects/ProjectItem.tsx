@@ -1,7 +1,6 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import Vector from "shared/assets/project/Vector.svg"
-import { useWinWidth } from "shared/lib/WindowWidth/WindowWidth";
+import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
 import cls from "./Projects.module.scss";
 
 
@@ -15,23 +14,23 @@ export interface ProjectItemProps {
 }
 
 export const ProjectItem = (props: ProjectItemProps) => {
-  const winWidth = useWinWidth();
-  const { title, subTitle, img, link, id, open} = props;
+  const { width } = useWindowSize("resize")
+  const { title, subTitle, img, link, id, open } = props;
   return (
     <>
       <span
         className={classNames(
           cls.ProjectsGroupTitle,
           {
-            [cls.displayTitle]: (open === id || winWidth < 650)
+            [cls.displayTitle]: (open === id || width < 650)
           })}
       >
         {title}
       </span>
-      {(open === id || winWidth < 650) &&
+      {(open === id || width < 650) &&
         <div className={classNames(cls.ProjectsGroup_items)}>
           <div className={classNames(cls.ProjectsGroup_block1)}>
-            <img className={classNames(cls.ProjectsGroup_img)} src={img} alt="project" />
+            <img loading="lazy" className={classNames(cls.ProjectsGroup_img)} src={img} alt="project" />
             <span className={classNames(cls.ProjectsGroup_title)}
             >
               {title}

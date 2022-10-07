@@ -7,4 +7,5 @@ export interface IInputsProps {
   style?: CSSProperties;
   label?: string;
   params?: string;
+  typeInput?: string
 }

@@ -4,22 +4,25 @@
   display: flex;
   gap: 2px;
   align-items: center;
-  
 }
 
 .choose {
-  font-weight: 500;
+  font-weight: 600 !important;
   width: 25px;
   height: 20px;
   text-transform: uppercase;
-  color:red;
+  color: var(--balck-color);
 }
 
 .notChose {
-  font-weight: 300;
+  font-weight: 300 !important;
   width: 25px;
   height: 20px;
   text-transform: uppercase;
+}
+
+.displaySwit {
+  display: none;
 }
 
 .en {
@@ -28,6 +31,7 @@
   border: none;
   background: none;
   outline: none;
+
   @include Ti6;
 }
 
@@ -37,6 +41,7 @@
   border: none;
   background: none;
   outline: none;
+
   @include Ti6;
 }
 

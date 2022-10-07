@@ -1,39 +1,47 @@
 import { useTranslation } from "react-i18next";
-import { LogoSVG } from "shared/assets/icons/svg/desktopSVG";
+import { LogoDes } from "shared/assets/icons/svg/desktopSVG";
+import { LogoMobile } from "shared/assets/icons/svg/mobileSVG";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useScrollHook } from "shared/lib/scrollHook/scrollHook";
-import { ButtonDiscktopPurple } from "shared/ui/Buttons";
+import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
+import { Button} from "shared/ui/Buttons";
+import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import cls from "./header.module.scss";
 
 
-export interface FooterProps {
+export interface HeaderProps {
   className?: string;
+  onScrollToFooter?: () => void; 
 }
 
 
-export const Header = ({ className }: FooterProps) => {
-  const { t } = useTranslation("common");
-  const scroll = useScrollHook();
+export const Header = ({ className, onScrollToFooter }: HeaderProps) => {
+  const { t } = useTranslation("common")
+  const { top } = useWindowSize("scroll")
+  const { width } = useWindowSize("resize")
 
   return (
     <div 
       className={classNames(
         cls.headerWrapper, 
-        { [cls.scrollEvent]: scroll > 10 }
+        { [cls.scrollEvent]: top > 10 }
         , [className])} 
       id="coords" 
     >
-      <div className={classNames(cls.contetn, {}, [className])}>
-        <div className={classNames(cls.logo, {}, [className])}>
-          <LogoSVG />
+      <div className={classNames(cls.contetn)}>
+        <div className={classNames(cls.logo)}>
+          {width > 765 ? <LogoDes /> : <LogoMobile/>}
         </div>
-        <div className={classNames(cls.info, {}, [className])}>
-          <div className={classNames(cls.btn, {}, [className])}>
-            <ButtonDiscktopPurple
-              text={t("Обсудить проект")}
-              style={{ backgroundColor: "#450072" }}
-            />
+        <div className={classNames(cls.info)}>
+          <div className={classNames(cls.btn)}>
+            <Button
+              sizes={ButtonSize.SMALL}
+              btnBg={ButtonBgColor.PURPLE}
+              onClick={onScrollToFooter}
+              className={cls.HeaderBtn}
+            >
+              {t("Обсудить проект")}
+            </Button>
           </div>
           <LangSwitcher/>
         </div>
