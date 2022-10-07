@@ -5,7 +5,7 @@ export enum ButtonTheme {
 
 export enum ButtonBgColor {
   PURPLE = "Purple",
-  WHITE = "White",
+  NONCOLOR = "NonColor",
   BLUE = "Blue",
 }
 

@@ -36,7 +36,7 @@ const FooterRight = () => {
           <div className={classNames("footerRight-btn")}>
             <Button
               sizes={ButtonSize.MEDIUM}
-              btnBg={ButtonBgColor.WHITE}
+              btnBg={ButtonBgColor.NONCOLOR}
             >
               {t("Написать в чат")}
             </Button>

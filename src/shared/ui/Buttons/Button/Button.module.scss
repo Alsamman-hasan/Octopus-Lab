@@ -18,9 +18,8 @@
   cursor: pointer;
   border-radius: 80px;
   min-width: auto;
-
+  outline:none;
   @include BTNT1;
-
   text-align: center;
   text-transform: none;
   color: var(--white-color);
@@ -61,20 +60,21 @@
   background-position: right;
 }
 
-.White {
+.NonColor {
   background: transparent;
   border: 1px solid #fff;
   transition: all 0.5s;
 }
 
-.White:disabled {
+.NonColor:disabled {
   color: var(--white-color);
   opacity: 0.6;
 }
 
-.White:hover {
+.NonColor:hover {
   color: var(--purple-color);
   background: var(--white-color);
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .Blue {
