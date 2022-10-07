@@ -5,32 +5,32 @@
     width: 300px;
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
     width: 568px;
   }
 }
 
-
-
-
-.Projects{
+.Projects {
   margin-top: 180px;
-  // width: 1200px;
 }
 
 .ProjectsTitle {
   @include Ti1;
+
   color: var(--balck-color);
+
   span {
     color: var(--blue-color);
   }
 }
+
 .open {
   display: flex;
 }
 
-.ProjectsGroups{
+.ProjectsGroups {
   margin-top: 40px;
   display: flex;
   height: 630px;
@@ -38,28 +38,28 @@
   overflow-x: auto;
 }
 
-.ProjectsGroup{
+.ProjectsGroup {
   cursor: pointer;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   height: 95%;
   display: flex;
 }
 
-.ProjectsGroupTitle{
+.ProjectsGroupTitle {
   @include Ti3;
+
   color: var(--balck-color);
-  writing-mode: vertical-rl; 
+  writing-mode: vertical-rl;
   padding: 33px;
   text-align: center;
-
 }
 
 .displayTitle {
-  display:none;
+  display: none;
 }
 
-.ProjectsGroup_items{
-  display:flex;
+.ProjectsGroup_items {
+  display: flex;
   flex-direction: column;
   width: 568px;
   padding: 24px;
@@ -67,37 +67,41 @@
   animation-duration: 0.7s;
 }
 
-.ProjectsGroup_block1{
-  display:flex;
+.ProjectsGroup_block1 {
+  display: flex;
   flex-direction: column;
 }
 
-.ProjectsGroup_img{
-  width:100%;
-
+.ProjectsGroup_img {
+  width: 100%;
 }
 
-.ProjectsGroup_title{
+.ProjectsGroup_title {
   margin-top: 24px;
-  @include Ti3;
-  color: var(--balck-color);
-} 
 
-.ProjectsGroup_subTitle{
-  margin-top: 8px;
-  @include Text3;
+  @include Ti3;
+
   color: var(--balck-color);
 }
 
-.ProjectsGroup_links{
+.ProjectsGroup_subTitle {
+  margin-top: 8px;
+
+  @include Text3;
+
+  color: var(--balck-color);
+}
+
+.ProjectsGroup_links {
   margin-top: 83px;
   display: flex;
   align-items: center;
   gap: 17px;
 }
 
-.ProjectsGroup_link{
+.ProjectsGroup_link {
   @include Text2;
+
   color: var(--blue-color);
 }
 
@@ -105,50 +109,49 @@
   .Projects {
     max-width: 1200px;
   }
-
 }
 
 @media screen and (max-width: 1200px) {
   .Projects {
     width: 100%;
-    // padding: 0 40px;
   }
-
 }
 
-
 @media screen and (max-width: 650px) {
-  .Projects{
+  .Projects {
     margin-top: 80px;
   }
+
   .ProjectsTitle {
     @include Ti2;
   }
-  .ProjectsGroups{
+
+  .ProjectsGroups {
     height: 442px;
     gap: 18px;
   }
-  .ProjectsGroup{
+
+  .ProjectsGroup {
     height: 100%;
   }
 
-  .ProjectsGroup_items{
+  .ProjectsGroup_items {
     width: 270px;
     padding: 10px;
   }
 
-  .ProjectsGroup_title{
+  .ProjectsGroup_title {
     margin-top: 12px;
-    @include Ti5;
-  } 
 
-  .ProjectsGroup_links{
+    @include Ti5;
+  }
+
+  .ProjectsGroup_links {
     margin-top: 53px;
     gap: 9px;
   }
 
-  .ProjectsGroup_link{
+  .ProjectsGroup_link {
     @include Text3;
   }
-
 }

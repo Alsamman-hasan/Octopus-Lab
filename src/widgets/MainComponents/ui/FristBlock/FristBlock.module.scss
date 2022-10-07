@@ -58,22 +58,21 @@
   .FristBlock {
     max-width: 1200px;
   }
-
 }
 
-@media screen and (max-width: 1200px) and (min-width: 650px){
+@media screen and (max-width: 1200px) and (min-width: 650px) {
   .FristBlock {
     width: 100%;
     padding: 0 40px;
   }
-
 }
 
-@media screen and (max-width: 900px) and (min-width: 750px){
+@media screen and (max-width: 900px) and (min-width: 750px) {
   .FristBlockContiner {
     display: flex;
     gap: 21%;
   }
+
   .FristBlockTitles {
     font-size: 80px;
     line-height: 89px;
@@ -83,7 +82,6 @@
     font-size: 44px;
     line-height: 55px;
   }
-
 }
 
 @media screen and (max-width: 768px) {

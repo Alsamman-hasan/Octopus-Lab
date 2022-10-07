@@ -45,16 +45,15 @@
     border: none;
   }
 
-  input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
   }
-
 }
 
-
-.error{
+.error {
   margin-bottom: 2px;
-  color:var(--error-color);
+  color: var(--error-color);
+
   .MuiInputBase-input {
     color: var(--error-color) !important;
   }
@@ -62,6 +61,7 @@
 
 .ML {
   @include Text3;
+
   margin-left: 12px;
   margin-top: 4px;
 }

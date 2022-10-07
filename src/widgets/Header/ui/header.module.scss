@@ -1,8 +1,10 @@
 @import "app/styles/variables/fotns";
+
 @keyframes tranformer {
   0% {
-    background-color: rgba(255, 255, 255,0 );
+    background-color: rgb(255 255 255 / 0%);
   }
+
   100% {
     background-color: var(--white-color);
   }
@@ -10,17 +12,17 @@
 
 @keyframes tranformerClose {
   0% {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(255 255 255 / 100%);
   }
+
   100% {
-    background-color: rgba(255, 255, 255,0 );
+    background-color: rgb(255 255 255 / 0%);
   }
 }
 
 .headerWrapper {
   position: fixed;
   display: flex;
-  // background-color: rgba(18,18,18,0);
   flex-direction: column;
   box-shadow: none;
   width: 100%;
@@ -28,6 +30,7 @@
   animation-name: tranformerClose;
   animation-duration: 0.5s;
 }
+
 .HeaderBtn {
   width: 261px;
 }
@@ -47,7 +50,7 @@
 }
 
 .scrollEvent {
-  box-shadow: 0 0px 7px rgb(17 0 29 / 8%);
+  box-shadow: 0 0 7px rgb(17 0 29 / 8%);
   background-color: var(--white-color);
   animation-name: tranformer;
   animation-duration: 0.7s;
@@ -57,17 +60,18 @@
   .headerWrapper {
     width: 100%;
   }
+
   .contetn {
     max-width: 1200px;
     margin: 23px auto;
-   
   }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
   .headerWrapper {
     width: 100%;
   }
+
   .contetn {
     width: 100%;
     margin: 23px auto;
@@ -89,6 +93,7 @@
     margin: 23px auto;
     padding: 0 40px;
   }
+
   .HeaderBtn {
     width: 200px;
   }
@@ -114,6 +119,7 @@
     width: 142px;
     height: 32px;
   }
+
   .HeaderBtn {
     width: 142px;
     height: 32px;
@@ -134,6 +140,7 @@
   .lan {
     display: none;
   }
+
   .HeaderBtn {
     width: 142px;
   }

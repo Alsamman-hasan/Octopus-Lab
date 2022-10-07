@@ -1,19 +1,16 @@
 @import "app/styles/variables/fotns";
-@keyframes tranformer {
-  0% {
-    background-color: rgba(255, 255, 255, 0.212);
-  }
-  100% {
-    background-color: var(--white-color);
-  }
-}
 
-@keyframes tranformerColor {
+@keyframes gradient {
   0% {
-    color: #f2e2fa;
+    background-position: 0%;
   }
+
+  50% {
+    background-position: 100%;
+  }
+
   100% {
-    color: #450072;
+    background-position: 0%;
   }
 }
 
@@ -21,7 +18,9 @@
   cursor: pointer;
   border-radius: 80px;
   min-width: auto;
+
   @include BTNT1;
+
   text-align: center;
   text-transform: none;
   color: var(--white-color);
@@ -56,15 +55,16 @@
 .Purple:hover {
   color: var(--white-color);
   box-shadow: 0 4px 8px rgb(69 0 114 / 12%);
-  background: linear-gradient(84.96deg, #450072 39.94%, #17cee0 97.9%);
-  background-size: 140%;
-  transition: 600ms background-position ease-in-out;
+  background: linear-gradient(84.96deg, #450072 60.94%, #17cee0 97.9%);
+  background-size: 190%;
+  transition: 500ms background-position ease-in-out;
   background-position: right;
 }
 
-.White{
-  background: none;
-  border: 1px solid #FFFFFF;
+.White {
+  background: transparent;
+  border: 1px solid #fff;
+  transition: all 0.5s;
 }
 
 .White:disabled {
@@ -73,16 +73,15 @@
 }
 
 .White:hover {
-  background: var(--white-color);
   color: var(--purple-color);
-  animation-name: tranformer;
-  animation-duration: 0.8s;
+  background: var(--white-color);
 }
 
-
-.Blue{
+.Blue {
   background: var(--blue-color);
   border: none;
+  color: var(--white-color);
+  transition: color 0.4s;
 }
 
 .Blue:disabled {
@@ -93,8 +92,6 @@
 
 .Blue:hover {
   color: var(--purple-color);
-  animation-name: tranformerColor;
-  animation-duration: 0.8s;
 }
 
 .Small {
@@ -103,45 +100,46 @@
   padding: 16px 40px;
 }
 
-.Medium{
+.Medium {
   width: 317px;
   height: 48px;
   padding: 12px 24px;
 }
 
-.Big{
+.Big {
   width: 580px;
   height: 56px;
   padding: 16px 24px;
 }
 
-
-
 @media screen and (max-width: 1200px) {
   .Small {
     padding: 12px 30px;
+
     @include BTNT2;
   }
-
 }
 
 @media screen and (max-width: 765px) {
   .Small {
     padding: 6px 11px;
+
     @include BTNT3;
   }
-  .Medium{
+
+  .Medium {
     width: 300px;
     height: 44px;
     padding: 12px 24px;
+
     @include BTNT2;
   }
-
 }
 
 @media screen and (max-width: 650px) {
   .Small {
     padding: 8px 17px 9px;
+
     @include BTNT3;
   }
 }
