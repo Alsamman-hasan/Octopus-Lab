@@ -51,7 +51,7 @@
 }
 
 .error {
-  margin-bottom: 2px;
+  margin-bottom: 0;
   color: var(--error-color);
 
   .MuiInputBase-input {
@@ -64,4 +64,5 @@
 
   margin-left: 12px;
   margin-top: 4px;
+  transition: all 2s;
 }

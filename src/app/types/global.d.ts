@@ -18,3 +18,7 @@ declare module "*.svg" {
 }
 
 declare const __IS_DEV__: boolean; 
+
+declare interface IResponse<R = unknown> {
+  data: R;
+}

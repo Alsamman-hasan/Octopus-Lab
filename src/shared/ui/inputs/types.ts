@@ -1,4 +1,5 @@
-import { CSSProperties } from "react";
+import{ CSSProperties } from "react";
+
 
 export interface IInputsProps {
   value: string;
@@ -8,4 +9,6 @@ export interface IInputsProps {
   label?: string;
   params?: string;
   typeInput?: string
+  validMessage?: string;
+  required?: boolean;
 }
