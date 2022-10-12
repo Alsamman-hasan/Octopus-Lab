@@ -23,7 +23,7 @@ export const useWindowSize = (events: "scroll" | "resize"): WindowSize => {
     handleSize();
     window.addEventListener(events, handleSize);
     return () => window.removeEventListener(events, handleSize);
-  }, []);
+  }, [events, handleSize]);
 
   return windowSize
 }
