@@ -39,8 +39,8 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
       const posX3 = Math.floor(Math.random() * winWidth);
       const posX4 = Math.floor(Math.random() * winWidth);
       const posX5 = Math.floor(Math.random() * winWidth);
-      const delay = Math.random() * 10;
-      const duration = Math.random() * 5;
+      const delay = Math.random() * -10;
+      const duration = Math.random() * 10;
 
       drop.style.width = `${7.9}px`;
       drop.style.height = `${74.78}px`; 
