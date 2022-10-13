@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import "./SenderEmailForm.scss";
 import { Button } from "shared/ui/Buttons";
 import { InputInUi } from "shared/ui/inputs";
@@ -7,14 +7,13 @@ import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { useDispatch, useSelector } from "react-redux";
 import { IState } from "./types";
-import { IInputItems, inputscollection } from "./constants";
+import {inputscollection } from "./constants";
 import {
-  getSenderEmailLoading ,
+  getSenderEmailLoading,
 } from "../model/selectors/getSenderEmailValue/getSenderEmailValue";
 import { sendEmailAction } from "../model/Actions/sendEmailActions";
 
-
-export const SenderEmailForm = () => {
+const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
   const dispatch = useDispatch();
   const loading = useSelector(getSenderEmailLoading);
@@ -27,9 +26,12 @@ export const SenderEmailForm = () => {
     project: ""
   });
 
-  const onHandelChange = (params: string, value: string) => {
+  const onHandelChange = useCallback((params: string, value: string) => {
     setState((prev) => ({ ...prev, [params]: value }));
-  };
+  }, []);
+
+  const inputItems = useMemo(() => inputscollection, [])
+
   const sendData = () => {
     dispatch(sendEmailAction(state));
     setState({
@@ -40,7 +42,6 @@ export const SenderEmailForm = () => {
       project: ""
     })
   }
-
 
   return (
     <div className={classNames("senderEmailForm")}>
@@ -53,13 +54,13 @@ export const SenderEmailForm = () => {
         </span>
       </div>
       <div className={classNames("senderEmailForm-forms")} >
-        {inputscollection(state).map((item: IInputItems) => (
+        {inputItems.map((item) => (
           <div key={item.params}>
             <InputInUi
-              value={item.value}
+              value={state[item.params as keyof IState]}
               handleChange={onHandelChange}
               fullWidth
-              label={item.label}
+              label={t(item.label)}
               params={item.params}
               typeInput={item.params === "phone" ? "number" : item.params}
               validMessage={item.errorMessage}
@@ -67,7 +68,6 @@ export const SenderEmailForm = () => {
             />
           </div>
         ))}
-
       </div>
       <div className={classNames("senderEmailForm-footers")}>
         <div className={classNames("senderEmailForm-btn")}>
@@ -91,3 +91,4 @@ export const SenderEmailForm = () => {
     </div>
   );
 };
+export const SenderEmailForm = memo(SenderEmailFormUi)

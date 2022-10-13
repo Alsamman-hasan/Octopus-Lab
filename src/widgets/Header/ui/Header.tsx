@@ -1,3 +1,4 @@
+import { memo, useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LogoDes } from "shared/assets/icons/svg/desktopSVG";
 import { LogoMobile } from "shared/assets/icons/svg/mobileSVG";
@@ -15,16 +16,23 @@ export interface HeaderProps {
 }
 
 
-export const Header = ({ className, onScrollToFooter }: HeaderProps) => {
-  const { t } = useTranslation("common")
-  const { top } = useWindowSize("scroll")
-  const { width } = useWindowSize("resize")
+const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
+  const { t } = useTranslation("common");
+  const { width } = useWindowSize("resize");
+  const [isScrolling, setIsScrolling] = useState(false)
+  
+  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 10)), []);
+  useEffect(() => {
+    window.addEventListener("scroll", handleSize);
+    return () => window.removeEventListener("scroll", handleSize);
+  }, [handleSize]);
+
 
   return (
     <div 
       className={classNames(
         cls.headerWrapper, 
-        { [cls.scrollEvent]: top > 10 }
+        { [cls.scrollEvent]: isScrolling }
         , [className])} 
       id="coords" 
     >
@@ -50,3 +58,4 @@ export const Header = ({ className, onScrollToFooter }: HeaderProps) => {
   );
 };
 
+export const Header = memo(HeaderUi)

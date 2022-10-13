@@ -1,11 +1,12 @@
-import { ChangeEvent, FC, useMemo, useState } from "react";
+import { ChangeEvent, FC, memo, useCallback, useEffect, useMemo, useState } from "react";
 import { TextField } from "@mui/material";
 import { IInputsProps } from "../types";
 import "./inputUi.scss";
 import { classNames } from "../../../lib/classNames/classNames";
 import { validatorEmail } from "../../../lib/validation/validationForm";
+import useDebounce from "../../../lib/Hooks/useDebounce/useDebounce";
 
-const InputInUi: FC<IInputsProps> = ({
+const InputUi: FC<IInputsProps> = ({
   value,
   handleChange,
   fullWidth,
@@ -18,19 +19,21 @@ const InputInUi: FC<IInputsProps> = ({
 }) => {
   const [focused, setFocused] = useState(false);
   const [valid, setValid] = useState(true);
+  const debounceValue = useDebounce(value);
 
-  useMemo(() => {
-    if (params === "email") {
-      const isValid = validatorEmail(value);
-      setValid(isValid);
-    } else {
-      setValid(true);
+  const isValidEmail = useMemo(()=> {
+    if (params === "email") { 
+      return validatorEmail(debounceValue);
     }
-  }, [value, params])
+    return true;
+  }, [params, debounceValue])
 
-  const onHandleCahnge = (event: ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => setValid(isValidEmail), [isValidEmail])
+
+  const onHandleCahnge = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     handleChange(params, event.target.value);
-  }
+  },[handleChange, params])
+
   const handleBlur = () => {
     setFocused(true);
   };
@@ -38,8 +41,9 @@ const InputInUi: FC<IInputsProps> = ({
   const handleFocus = () => {
     setFocused(false);
   };
+
   const validation = focused && required && !valid 
-  const helper = () => <div className={classNames("error", {}, ["ML"])}>{validMessage}</div>
+  const helper = () => <span className={classNames("error", {}, ["ML"])}>{validMessage}</span>
   return (
     <div className={classNames("inputContainer", { "error": validation })}>
       <TextField
@@ -48,6 +52,7 @@ const InputInUi: FC<IInputsProps> = ({
         type={typeInput}
         variant="standard"
         style={style}
+        required={required}
         sx={{ maxWidth: fullWidth ? "inherit" : "12rem" }}
         value={value}
         onChange={onHandleCahnge}
@@ -59,6 +64,6 @@ const InputInUi: FC<IInputsProps> = ({
     </div>
   )
 };
-
+const InputInUi = memo(InputUi)
 export default InputInUi;
 
