@@ -5,8 +5,23 @@
 }
 
 html {
-  font-size: 100%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1vw;
+  width: 100%;
+  line-height: 1.5vw;
+  text-rendering: optimizeLegibility;
 }
+
+@media (max-width: 1599px) {
+  html {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 
 input,
 button,
@@ -20,7 +35,9 @@ body {
   margin: 0;
   overflow-x: hidden;
   box-sizing: border-box;
+  width: 100%;
 }
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   body {
     overflow: overlay;

@@ -2,22 +2,20 @@
 
 
 .Illustrations{
-  margin-top: 197px;
+  margin-top: 12.5rem;
   width: 100%;
-  height: 1209px;
+  height: 75.6rem;
 }
 
 .IllusContainer{
   position: sticky;
-  top: 130px;
+  top: 8.125rem;
 }
 .IllusRow {
   position: relative;
   height: 100%;
 }
 .IllusTitle{
-  display:flex;
-  flex-direction:column;
   z-index: 1;
   @include Ti1;
   color: var(--balck-color);
@@ -29,11 +27,11 @@
 .IllusRightBlok {
   flex: 2;
   display: grid;
-  grid-template-rows: 452px 320px 320px;
+  grid-template-rows: 28.25rem 20rem 20rem;
   grid-template-columns: repeat(2, 50%);
   width: 70%;
   position: absolute;
-  top: 163px;
+  top: 10.2rem;
   height: 100%;
   right: 0;
 }
@@ -48,20 +46,17 @@
 }
 
 .MTop{
-  margin-top: 132px;
+  margin-top: 8.25rem;
 }
 
 .MTopmM {
-  margin-top: -132px !important;
+  margin-top: -8.25rem !important;
 }
 
 .step {
-  height: 320px;
+  height: 20rem;
   border: 1px solid #D9D9D9;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .stepContiner{
@@ -73,200 +68,110 @@
   overflow:hidden;
   position: relative;
   width: 30%;
-  margin-top: 40px;
+  margin-top: 2.5rem;
+  padding-right: 3rem;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
 }
 
 .stepNumber{
   @include Ti1;
   color: var(--purple-color);
-  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
 }
 
 .stepTitle{
   @include Ti4;
   color: var(--balck-color);
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .stepSubTitle{
   @include Text2;
   color: var(--balck-color);
 }
 
-// .img {
-//   position: absolute;
-//   // width: 100%;
-//   animation: animate 3s linear infinite;
-// }
 
-// .imgMob {
-//   position: absolute;
-//   width: 100%;
-//   animation: animate 5s linear infinite;
-// }
-
-@keyframes animate {
-  0% {
-    transform: translateY(-50px);
+@media screen and (max-width: 768px) {
+  .Illustrations{ 
+    height: 61rem;
+    margin-top: 5rem;
   }
 
-  100% {
-    transform: translateY(calc(-10px));
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .Illustrations {
-    max-width: 1200px;
-  }
-
-}
-
-@media screen and (max-width: 1200px) {
-  .Illustrations {
-    width: 100%;
-    padding: 0 40px;
-  }
-
-}
-
-
-@media screen and (max-width: 950px) {
-  .stepNumber{
-    @include Ti2;
-    margin-bottom: 18px;
-  }
-  .stepTitle{
-    @include Ti5;
-    margin-bottom: 8px;
-  }
-  .stepSubTitle{
-    @include Text3;
-  }
   .IllusLeftBlok{
     display:none;
   }
+
   .IllusRightBlok {
     width: 100%;
   }
-  .IllusContainer{
-    position: absolute;
-    top: 0;
-  }
-}
 
-@media screen and (max-width: 750px) {
+  .IllusContainer{
+    position: static;
+  }
+
+  .IllusTitle {
+    @include Ti2;
+    display: flex;
+    gap:1.25rem;
+    align-items: center;
+  }
+
   .IllusRightBlok {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    overflow-y: scroll;
+    position: static;
+    margin-top: 1.5rem;
+    
   }
 
   .IllusLeftBlok{
     display:none;
   }
+
+  .stepContiner {
+    height: 100%;
+  }
+
   .MTop {
     margin-top: 0;
   }
+
   .MTopmM {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
+
   .step {
-    height: 320px;
+    height: 100%;
     border: none;
-    border-bottom:1px solid #D9D9D9 ;
+    border-bottom:1px solid #D9D9D9;
+    display: flex;
+    gap: 2rem;
+    padding: 17px 0 12px 0;
+  }
+
+  .stepNumber {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.75rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--purple-color);
   }
 }
 
 
 @media screen and (max-width: 650px) {
-  .Illustrations{
-    margin-top: 80px;
-    padding: 0 10px;
-  }
-  .IllusContainer{
-    margin-top: 28px;
-    height: 100%;
-    margin-bottom: 20px;
-  }
-  .IllusTitle{
-    @include Ti2;
+  .stepTitle{
+    @include Ti5;
+    margin-bottom: 0.5rem;
   }
 
-  .IllusLeftBlok{
-    display:none;
+  .stepSubTitle{
+    @include Text3;
   }
-
-  .IllusRightBlok {
-    flex: 1;
-    display: block;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    min-height: 187px;
-  }
-  .step {
-    height: 187px;
-    border: none;
-   
-    display: flex;
-    padding: 0;
-    flex-direction: inherit;
-    gap: 32px;
-  }
-
-  .MTop {
-    margin-top: 0;
-  }
-  .MTopmM {
-    margin-top: 0;
-  }
-  @keyframes animate {
-    0% {
-      transform: translateY(-250px);
-    }
-
-    100% {
-      transform: translateY(calc(-150px));
-    }
-  }
-}
-
-
-
-
-// .anim {
-//   // position: relative;
-//   width: 320px;
-//   img{
-//     position: absolute;
-//     animation: animate 5s linear infinite ;
-//   }
-// }
-
-
-
-
-@keyframes animate {
-  0%{
-    transform: translateY(-100px);
-  }
-
-  100%{
-    transform: translateY(calc(400px));
-  }
-}
-
-
-@media screen and (max-width:650px) {
-  @keyframes animate {
-  0%{
-    transform: translateY(-100px);
-  }
-
-  100%{
-    transform: translateY(calc(300px));
-  }
-}
- 
 }

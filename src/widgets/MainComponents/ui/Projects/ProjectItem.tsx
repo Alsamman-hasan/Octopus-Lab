@@ -35,12 +35,12 @@ const ProjectItemUI = () => {
             className={classNames(
               cls.ProjectsGroupTitle,
               {
-                [cls.displayTitle]: Boolean(open === item.id || width < 650)
+                [cls.displayTitle]: Boolean(open === item.id || width < 769)
               })}
           >
             {item.title}
           </span>
-          {(open === item.id || width < 650) &&
+          {(open === item.id || width < 769) &&
             <div className={classNames(cls.ProjectsGroup_items)}>
               <div className={classNames(cls.ProjectsGroup_block1)}>
                 <img loading="lazy" className={classNames(cls.ProjectsGroup_img)} src={item.img} alt="project" />

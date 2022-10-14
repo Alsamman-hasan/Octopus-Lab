@@ -38,7 +38,7 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
     >
       <div className={classNames(cls.contetn)}>
         <div className={classNames(cls.logo)}>
-          {width > 765 ? <LogoDes /> : <LogoMobile/>}
+          {width > 768 ? <LogoDes /> : <LogoMobile/>}
         </div>
         <div className={classNames(cls.info)}>
           <div className={classNames(cls.btn)}>

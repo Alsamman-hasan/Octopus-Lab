@@ -3,13 +3,10 @@ import React, { FC } from "react";
 import { ISvgProps } from "../types";
 
 const ManySVG: FC<ISvgProps> = ({
-  width = "58",
-  height = "80",
-  fill = "#121212",
+  className,
 }) => (
   <svg
-    width={width}
-    height={height}
+    className={className}
     viewBox="0 0 58 80"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +22,7 @@ const ManySVG: FC<ISvgProps> = ({
     </g>
     <defs>
       <clipPath id="clip0_114_6629">
-        <rect width={width} height={height} fill="white" />
+        <rect width="100%" height="100%" fill="white" />
       </clipPath>
     </defs>
   </svg>

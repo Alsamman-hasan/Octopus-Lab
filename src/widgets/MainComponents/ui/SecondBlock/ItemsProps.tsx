@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 
 export interface IItems {
-  svgItem: ReactElement;
+  svgItem: ReactElement | ReactNode;
   title: string;
   subTitle: string;
 }

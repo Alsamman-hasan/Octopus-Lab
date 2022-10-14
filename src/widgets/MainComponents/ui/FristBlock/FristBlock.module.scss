@@ -1,14 +1,13 @@
 @import "app/styles/variables/fotns";
 
 .FristBlock {
-  height: 750px;
-  max-width: 1200px;
+  min-height: 46.875rem;
 }
 
 .FristBlockTitles {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
-  font-size: 120px;
+  font-size: 7.5rem;
   line-height: 120%;
   text-transform: uppercase;
   color: var(--purple-color);
@@ -29,7 +28,7 @@
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 80px;
+  font-size: 5rem;
   line-height: 120%;
   text-transform: uppercase;
   color: var(--purple-color);
@@ -47,66 +46,35 @@
 }
 
 .FristBlockDes {
-  width: 243px;
-
+  width: 15.2rem;
   @include Text2;
-
   color: var(--black-color);
 }
 
-@media screen and (max-width: 1400px) {
-  .FristBlock {
-    max-width: 1200px;
-  }
-}
-
-@media screen and (max-width: 1200px) and (min-width: 650px) {
-  .FristBlock {
-    width: 100%;
-    padding: 0 40px;
-  }
-}
-
-@media screen and (max-width: 900px) and (min-width: 750px) {
-  .FristBlockContiner {
-    display: flex;
-    gap: 21%;
-  }
-
-  .FristBlockTitles {
-    font-size: 80px;
-    line-height: 89px;
-  }
-
-  .FristBlockSubTitles {
-    font-size: 44px;
-    line-height: 55px;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .FristBlock {
-    height: 558px;
+    min-height: 46.5rem;
   }
 
   .FristBlockTitles {
-    font-size: 80px;
+    font-size: 5rem;
     line-height: 89px;
   }
 
   .FristBlockSubTitles {
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 55px;
   }
 }
 
 @media screen and (max-width: 650px) {
   .FristBlock {
-    height: 398px;
+    min-height: 25.5rem;
   }
 
   .FristBlockTitles {
-    font-size: 40px;
+    font-size: 2.75rem;
     line-height: 49px;
 
     :first-child {
@@ -120,7 +88,7 @@
   }
 
   .FristBlockSubTitles {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 29px;
     display: flex;
     width: 100%;
@@ -131,7 +99,7 @@
   }
 
   .FristBlockDes {
-    width: 221px;
+    width: 13.8rem;
 
     @include Text3;
   }
