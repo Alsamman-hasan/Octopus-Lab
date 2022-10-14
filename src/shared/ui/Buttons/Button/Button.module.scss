@@ -53,6 +53,11 @@
   opacity: 0.6;
 }
 
+.Purple[disabled]:hover {
+  color: var(--white-color);
+  opacity: 0.6;
+}
+
 .Purple:hover {
   color: var(--white-color);
   box-shadow: 0 4px 8px rgb(69 0 114 / 12%);
@@ -73,6 +78,11 @@
   opacity: 0.6;
 }
 
+.NonColor[disabled]:hover {
+  color: var(--white-color);
+  opacity: 0.6;
+}
+
 .NonColor:hover {
   color: var(--purple-color);
   background: var(--white-color);
@@ -89,10 +99,16 @@
 .Blue:disabled {
   background: var(--blue-color);
   color: var(--white-color);
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
-.Blue:hover {
+.Blue[disabled]:hover {
+  background: var(--blue-color);
+  color: var(--white-color);
+  opacity: 0.6;
+}
+
+.Blue:hover{
   color: var(--purple-color);
 }
 

@@ -6,8 +6,9 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { useDispatch, useSelector } from "react-redux";
+import { validatorEmail } from "shared/lib/validation/validationForm";
 import { IState } from "./types";
-import {inputscollection } from "./constants";
+import { inputscollection } from "./constants";
 import {
   getSenderEmailLoading,
 } from "../model/selectors/getSenderEmailValue/getSenderEmailValue";
@@ -17,7 +18,7 @@ const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
   const dispatch = useDispatch();
   const loading = useSelector(getSenderEmailLoading);
-
+  const [error, setError] = useState(false);
   const [state, setState] = useState<IState>({
     name: "",
     email: "",
@@ -26,33 +27,32 @@ const SenderEmailFormUi = () => {
     project: ""
   });
 
+  const isValidEmail = useMemo(() => validatorEmail(state.email), [state.email])
+
   const onHandelChange = useCallback((params: string, value: string) => {
     setState((prev) => ({ ...prev, [params]: value }));
   }, []);
 
+  const hasError = Boolean(!state.email || !state.name || !isValidEmail)
   const inputItems = useMemo(() => inputscollection, [])
 
   const sendData = () => {
-    dispatch(sendEmailAction(state));
-    setState({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      project: ""
-    })
+    if (hasError) {
+      setError(true);
+    } else {
+      setError(false);
+      // dispatch(sendEmailAction(state));
+      setState({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        project: ""
+      })
+    }
   }
-
   return (
-    <div className={classNames("senderEmailForm")}>
-      <div className={classNames("senderEmailForm-header")}>
-        <span className={classNames("senderEmailForm-header-title")}>
-          {t("Мы готовы обсудить новый проект")}
-        </span>
-        <span className={classNames("senderEmailForm-header-subTitle")}>
-          {t("Присылайте ваш проект на оценку. А также мы ответим на ваши вопросы.")}
-        </span>
-      </div>
+    <>
       <div className={classNames("senderEmailForm-forms")} >
         {inputItems.map((item) => (
           <div key={item.params}>
@@ -76,19 +76,14 @@ const SenderEmailFormUi = () => {
             btnBg={ButtonBgColor.BLUE}
             className="btn"
             onClick={sendData}
-            disabled={loading}
+            disabled={loading || Boolean(!state.email) || !isValidEmail}
           >
             {loading ? t("loading") : t("Оценить проект")}
           </Button>
         </div>
-        <div className={classNames("senderEmailForm-text")}>
-          <span>
-            {t("Нажимая кнопку «Оценить проект», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в")}
-          </span>{" "}
-          <a href="/">{t("Согласии на обработку персональных данных.")}</a>
-        </div>
+        {hasError && error && <span className={classNames("errorBtn")}>{t("please input email and name")}</span>}
       </div>
-    </div>
+    </>
   );
 };
 export const SenderEmailForm = memo(SenderEmailFormUi)

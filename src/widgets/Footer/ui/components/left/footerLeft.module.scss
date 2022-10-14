@@ -1,0 +1,57 @@
+@import "app/styles/variables/fotns";
+
+.footerLeft {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  border-right: 1px solid #ffffff2a;
+  padding-right: 60px;
+}
+.footerLeftHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footerLeftHeaderTitle {
+  @include Ti3;
+
+  color: var(--white-color);
+}
+
+.footerLeftHeaderSubTitle {
+  @include Text2;
+
+  color: var(--grey-color);
+}
+
+.footerLeftText {
+  @include Text3;
+
+  margin-top: 2rem;
+
+  span {
+    color: var(--grey-color);
+    opacity: 0.6;
+  }
+
+  a {
+    opacity: 1;
+    color: var(--grey-color);
+    text-decoration: none;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .footerLeft {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #ffffff2a;
+    border-right: none;
+    padding-right: 0;
+  }
+  .footerLeftText {
+    margin-bottom: 26px;
+  }
+}
