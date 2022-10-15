@@ -1,0 +1,19 @@
+@import "app/styles/variables/fotns";
+
+.senderEmailForm-forms {
+  margin-top: 56px;
+}
+
+.senderEmailForm-btn {
+  margin-top: 28px;
+}
+
+.btn {
+  width: 100%;
+}
+
+.errorBtn {
+  @include Text3;
+  margin-left: 20px;
+  color: var(--error-color)
+}

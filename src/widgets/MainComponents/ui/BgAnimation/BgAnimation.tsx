@@ -16,10 +16,10 @@ export interface BgAnimationProps {
 
 export const BgAnimation = ({ className }: BgAnimationProps) => {
   const { width } = useWindowSize("resize")
-
+  
   const rianAnimation = (winWidth: number) => {
     const amount = 50 ; 
-
+    // console.log(winWidth);
     const body = document.getElementById("ani")
     let i = 0 ;
     while(i < amount) {
@@ -39,41 +39,41 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
       const posX3 = Math.floor(Math.random() * winWidth);
       const posX4 = Math.floor(Math.random() * winWidth);
       const posX5 = Math.floor(Math.random() * winWidth);
-      const delay = Math.random() * 10;
-      const duration = Math.random() * 5;
+      const delay = Math.random() * -10;
+      const duration = Math.random() * 10;
 
-      drop.style.width = `${7.9}px`;
-      drop.style.height = `${74.78}px`; 
+      drop.style.width = `${0.5}rem`;
+      drop.style.height = `${4.67}rem`; 
       drop.style.left = `${posX}px`;
       drop.style.animationDelay = `${delay}s`;
       drop.style.animationDuration = `${ 2 + duration}s`;
 
 
-      drop2.style.width = `${7.9}px`;
-      drop2.style.height = `${61.41}px`; 
+      drop2.style.width = `${0.5}rem`;
+      drop2.style.height = `${3.84}rem`; 
       drop2.style.left = `${posX2}px`;
       drop2.style.animationDelay = `${delay}s`;
       drop2.style.animationDuration = `${4 + duration}s`;
 
 
-      drop3.style.width = `${7.9}px`;
-      drop3.style.height = `${34.66}px`; 
+      drop3.style.width = `${0.5}rem`;
+      drop3.style.height = `${2.166}rem`; 
 
       drop3.style.left = `${posX3}px`;
       drop3.style.animationDelay = `${delay}s`;
       drop3.style.animationDuration = `${4 + duration}s`;
 
 
-      drop4.style.width = `${7.9}px`;
-      drop4.style.height = `${21.28}px`; 
+      drop4.style.width = `${0.5}rem`;
+      drop4.style.height = `${1.33}rem`; 
 
       drop4.style.left = `${posX4}px`;
       drop4.style.animationDelay = `${delay}s`;
       drop4.style.animationDuration = `${4 + duration}s`;
 
 
-      drop5.style.width = `${7.9}px`;
-      drop5.style.height = `${7.9}px`; 
+      drop5.style.width = `${0.5}rem`;
+      drop5.style.height = `${0.5}rem`; 
       drop5.style.left = `${posX5}px`;
       drop5.style.animationDelay = `${delay}s`;
       drop5.style.animationDuration = `${4 + duration}s`;
@@ -96,19 +96,21 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   }
 
   useEffect(() => {
-    const num = width - 10
+    const num = width - 20
+    console.log(width);
     stopRain();
     rianAnimation(num);
   }, [width])
 
 
   useEffect(() => {
-    const num = width - 10
+    const num = width -20
+    // console.log(width);
     rianAnimation(num);
   }, [])
 
   return (
-    <div className={classNames("BgAnimation", {}, [className])} >
+    <div className={classNames("BgAnimation", {}, [className])} style={{ maxWidth:`${width / 16}rem` }} >
       <div id="ani" /> 
     </div>
   )

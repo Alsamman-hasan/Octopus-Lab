@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
   rules: {
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
@@ -43,6 +43,8 @@ module.exports = {
     "react/no-array-index-key": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/no-unused-prop-types": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "no-param-reassign": "off",
     "i18next/no-literal-string": [
       "error",
@@ -60,7 +62,6 @@ module.exports = {
           "variant",
           "autoComplete",
           "viewBox",
-          
         ],
       },
     ],

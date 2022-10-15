@@ -53,7 +53,7 @@ const FooterRight = () => {
         <div className={classNames("footerRight-contacts_item")}>
           <PhoneSVG />
           <span>{t("nashapochta@gmail.com")}</span>
-        </div>
+        </div> 
       </div>
       <div className={classNames("footerRight-social")}>
         <TelegramSVG />

@@ -5,8 +5,8 @@
 }
 
 .OurWorksTitle {
-  @include Ti1;
 
+  @include Ti1;
   color: var(--balck-color);
 
   span {
@@ -16,7 +16,7 @@
 
 .Table {
   border-top: 1px solid #d9d9d9;
-  margin-top: 40px;
+  margin-top: 2.5rem;
   width: 100%;
   margin-left: 0;
 }
@@ -35,8 +35,8 @@
 }
 
 .Item {
-  height: 260px;
-  padding: 20px;
+  height: 16.25rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,18 +54,6 @@
   color: var(--balck-color);
 }
 
-@media screen and (max-width: 1400px) {
-  .OurWorks {
-    max-width: 1200px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .OurWorks {
-    width: 100%;
-    padding: 0 40px;
-  }
-}
 
 @media screen and (max-width: 900px) {
   .OurWorksItem {

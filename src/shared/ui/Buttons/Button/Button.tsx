@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, CSSProperties, FC } from "react";
+import { ButtonHTMLAttributes, CSSProperties, FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 import { ButtonSize, ButtonTheme, ButtonBgColor } from "../types";
@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: (value?: any) => void;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+const ButtonUI: FC<ButtonProps> = (props) => {
   const {
     className,
     children,
@@ -31,7 +31,6 @@ export const Button: FC<ButtonProps> = (props) => {
     [cls[btnBg]]: true,
     [cls[sizes]]: true,
   }
-
   return (
     <button
       type="button"
@@ -44,3 +43,5 @@ export const Button: FC<ButtonProps> = (props) => {
     </button>
   )
 };
+
+export const Button = memo(ButtonUI);

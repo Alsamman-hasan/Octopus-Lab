@@ -25,7 +25,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
 
       <div className={classNames(cls.IllusRow)}>
         <div className={classNames(cls.IllusContainer, {}, [className])}>
-          <motion.h1
+          <motion.div
             variants={yAnimation}
             custom={2}
             className={classNames(cls.IllusTitle)}
@@ -36,12 +36,10 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
             <span>
               {t("работаем")}
             </span>
-          </motion.h1>
+          </motion.div>
           <div className={classNames(cls.IllusLeftBlok)}>
-            <div className={classNames(cls.continer)}>
-              <img loading="lazy" className={classNames(cls.img)} src={group} alt="animation" />
-              {/* <AnimationBloc/> */}
-            </div>
+            <img loading="lazy" className={classNames(cls.img)} src={group} alt="animation" />
+            {/* <AnimationBloc/> */}
           </div>
         </div>
         <motion.div

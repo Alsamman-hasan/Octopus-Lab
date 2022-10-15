@@ -117,6 +117,7 @@
 
 #ani {
   position: relative;
+  width: 100%;
   img{
     position: absolute;
     animation: animate 5s linear infinite ;
@@ -128,30 +129,25 @@
 
 @keyframes animate {
   0%{
-    transform: translateY(-100px);
+    transform: translateY(-6.25rem);
   }
 
   100%{
-    transform: translateY(calc(750px));
+    transform: translateY(calc(55.875rem));
   }
 }
 
 
 @media screen and (max-width:650px) {
   @keyframes animate {
-  0%{
-    transform: translateY(-100px);
-  }
+    0%{
+      transform: translateY(-5.25rem);
+    }
 
-  100%{
-    transform: translateY(calc(300px));
+    100%{
+      transform: translateY(calc(25.75rem));
+    }
   }
-}
  
 }
 
-@media screen and (max-width: 650px) {
-  .BgAnimation{
-    // display: none;;
-  }
-}

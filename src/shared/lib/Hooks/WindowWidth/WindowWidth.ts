@@ -23,32 +23,8 @@ export const useWindowSize = (events: "scroll" | "resize"): WindowSize => {
     handleSize();
     window.addEventListener(events, handleSize);
     return () => window.removeEventListener(events, handleSize);
-  }, []);
+  }, [events, handleSize]);
 
   return windowSize
 }
 
-
-
-
-// export const useWinWidth = () => {
-//   const [winWidth, setWinWidth] = useState<number>(0)
-//   const onWinWigth = useCallback(() => setWinWidth(Math.round(window.innerWidth)), []);
-//   useEffect(() => {
-//     onWinWigth();
-//     window.addEventListener("resize", onWinWigth);
-//     return () => window.removeEventListener("resize", onWinWigth);
-//   }, [onWinWigth]);
-//   return winWidth;
-// }
-
-// export const useScrollHook = () => {
-//   const [scroll, setScroll] = useState(0);
-//   const onScroll = useCallback(() => setScroll(Math.round(window.scrollY)), []);
-//   useEffect(() => {
-//     onScroll();
-//     window.addEventListener("scroll", onScroll);
-//     return () => window.removeEventListener("scroll", onScroll);
-//   }, [onScroll]);
-//   return scroll;
-// }

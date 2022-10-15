@@ -20,7 +20,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   }
 
   const { pathname } = useLocation();
-  const isEn = pathname === "/en";
+  const isEn = pathname !== "/ru";
 
   return (
     <div className={classNames(cls.LangSwitcher, { [cls.displaySwit]: isEn }, [className])}>

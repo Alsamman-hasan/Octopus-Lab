@@ -4,6 +4,7 @@ export interface ISvgProps {
   width?: string;
   height?: string;
   fill?: string;
+  className?: string;
   style?: CSSProperties;
   type?: "origin" | "alternative";
   stroke?: string;
