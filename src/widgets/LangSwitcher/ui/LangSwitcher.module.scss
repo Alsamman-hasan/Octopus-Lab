@@ -2,22 +2,22 @@
 
 .LangSwitcher {
   display: flex;
-  gap: 2px;
+  gap: .225rem;
   align-items: center;
 }
 
 .choose {
   font-weight: 600 !important;
-  width: 25px;
-  height: 20px;
+  width: 1.56rem;
+  height: 1.25rem;
   text-transform: uppercase;
   color: var(--balck-color);
 }
 
 .notChose {
   font-weight: 300 !important;
-  width: 25px;
-  height: 20px;
+  width: 1.56rem;
+  height: 1.25rem;
   text-transform: uppercase;
 }
 
