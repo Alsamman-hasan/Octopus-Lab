@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";
 import cls from "./LangSwitcher.module.scss";
@@ -21,6 +21,12 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   const { pathname } = useLocation();
   const isEn = pathname !== "/ru";
+
+  useEffect(() => {
+    const lang = pathname.slice(1)
+    setLang(lang);
+    i18n.changeLanguage(lang);
+  }, [i18n, pathname])
 
   return (
     <div className={classNames(cls.LangSwitcher, { [cls.displaySwit]: isEn }, [className])}>

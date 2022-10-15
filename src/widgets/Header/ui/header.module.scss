@@ -32,7 +32,10 @@
 }
 
 .HeaderBtn {
-  width: 16.32rem;
+  // width: 16.32rem;
+  width: 13.32rem;
+  height: 2.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .contetn {
@@ -62,6 +65,10 @@
     max-width: 1200px;
     padding: 0 10px;
     margin: 0.5rem auto;
+  }
+  .HeaderBtn {
+    width: 15.32rem;
+    // @include BTNT2;
   }
 }
 
