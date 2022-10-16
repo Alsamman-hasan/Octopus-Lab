@@ -2,23 +2,24 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion";
 import { yAnimation } from "shared/lib/Animations/Animations";
-import cls from "./FristBlock.module.scss";
+import cls from "./FirstBlock.module.scss";
 
-export interface FristBlockProps {
+export interface FirstBlockProps {
   className?: string;
 }
-export const FristBlock = ({ className }: FristBlockProps) => {
+export const FirstBlock = ({ className }: FirstBlockProps) => {
   const { t } = useTranslation("common")
   return (
     <motion.div 
+      data-testid="FirstBlock"
       initial="hidden"
       whileInView="visible"
       variants={yAnimation}
       viewport={{ amount: 0.1, once: true }}
       custom={1}
-      className={classNames(cls.FristBlock, {}, [className])}
+      className={classNames(cls.FirstBlock, {}, [className])}
     >
-      <div className={classNames(cls.FristBlockTitles)}>
+      <div className={classNames(cls.FirstBlockTitles)}>
         <span >
           {t("верстка")}
         </span>
@@ -26,11 +27,11 @@ export const FristBlock = ({ className }: FristBlockProps) => {
           {t("и фронтенд")}
         </span>
       </div>
-      <div className={classNames(cls.FristBlockContiner)}>
-        <div className={classNames(cls.FristBlockDes)}>
+      <div className={classNames(cls.FirstBlockContiner)}>
+        <div className={classNames(cls.FirstBlockDes)}>
           {t("для digital-агентств, продуктовых компаний и фриланс-команд")}
         </div>
-        <div className={classNames(cls.FristBlockSubTitles)}>
+        <div className={classNames(cls.FirstBlockSubTitles)}>
           <span>
             {t("любой")}
           </span>

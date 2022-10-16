@@ -12,7 +12,7 @@ export interface FooterProps {
 export const Footer = forwardRef(({ className }: FooterProps, ref: LegacyRef<HTMLDivElement>) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(cls.footerWrapper, {}, [className])} id="Footer" ref={ref}>
+    <div data-testid="footer" className={classNames(cls.footerWrapper, {}, [className])} id="Footer" ref={ref}>
       <div className={classNames(cls.content)} >
         <FooterLeft />
         <FooterRight />

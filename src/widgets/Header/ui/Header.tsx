@@ -30,6 +30,7 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
 
   return (
     <div 
+      data-testid="header"
       className={classNames(
         cls.headerWrapper, 
         { [cls.scrollEvent]: isScrolling }

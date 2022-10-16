@@ -18,8 +18,8 @@ const ButtonUI: FC<ButtonProps> = (props) => {
   const {
     className,
     children,
-    theme,
-    btnBg,
+    theme= ButtonTheme.OUTLINE,
+    btnBg = ButtonBgColor.NONCOLOR,
     style,
     disabled = false,
     sizes = ButtonSize.MEDIUM,
@@ -27,7 +27,7 @@ const ButtonUI: FC<ButtonProps> = (props) => {
   } = props;
 
   const mods: Record<string, boolean> = {
-    [cls[theme]]: true,
+    // [cls[theme]]: true,
     [cls[btnBg]]: true,
     [cls[sizes]]: true,
   }

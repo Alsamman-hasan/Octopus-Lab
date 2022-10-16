@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   BgAnimation,
-  FristBlock,
+  FirstBlock,
   Illustrations,
   OurWorks,
   Projects,
@@ -18,7 +18,7 @@ const MainPage = () => (
       <div
         className={classNames(cls["content-page"])}
       >
-        <FristBlock />
+        <FirstBlock />
         <SecondBlock />
         <OurWorks />
         <Illustrations />

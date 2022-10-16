@@ -1,10 +1,10 @@
 @import "app/styles/variables/fotns";
 
-.FristBlock {
+.FirstBlock {
   min-height: 50.875rem;
 }
 
-.FristBlockTitles {
+.FirstBlockTitles {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
   font-size: 7.5rem;
@@ -19,12 +19,12 @@
   }
 }
 
-.FristBlockContiner {
+.FirstBlockContiner {
   display: flex;
   justify-content: space-between;
 }
 
-.FristBlockSubTitles {
+.FirstBlockSubTitles {
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -45,7 +45,7 @@
   }
 }
 
-.FristBlockDes {
+.FirstBlockDes {
   width: 15.2rem;
   @include Text2;
   color: var(--black-color);
@@ -53,27 +53,27 @@
 
 
 @media screen and (max-width: 768px) {
-  .FristBlock {
+  .FirstBlock {
     min-height: 40.5rem;
   }
 
-  .FristBlockTitles {
+  .FirstBlockTitles {
     font-size: 5rem;
     line-height: 89px;
   }
 
-  .FristBlockSubTitles {
+  .FirstBlockSubTitles {
     font-size: 2.75rem;
     line-height: 55px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  // .FristBlock {
+  // .FirstBlock {
   //   // min-height: 2.5rem;
   // }
 
-  .FristBlockTitles {
+  .FirstBlockTitles {
     font-size: 2.75rem;
     line-height: 49px;
 
@@ -82,12 +82,12 @@
     }
   }
 
-  .FristBlockContiner {
+  .FirstBlockContiner {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .FristBlockSubTitles {
+  .FirstBlockSubTitles {
     font-size: 1.5rem;
     line-height: 29px;
     display: flex;
@@ -98,7 +98,7 @@
     }
   }
 
-  .FristBlockDes {
+  .FirstBlockDes {
     width: 13.8rem;
 
     @include Text3;
