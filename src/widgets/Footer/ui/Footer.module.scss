@@ -58,6 +58,29 @@
 }
 
 @media screen and (max-width: 768px) {
+  // .content {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+
+  // .footerWrapper {
+  //   margin-top: 6.25rem;
+  // }
+
+  // .footer {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   gap: 0.5rem;
+  //   align-items: center;
+  //   padding: 0;
+  //   justify-content: center;
+  //   margin-top: 2.1875rem;
+  //   padding-bottom: 1.25rem;
+  // }
+}
+
+
+@media screen and (max-width: 450px) {
   .content {
     display: flex;
     flex-direction: column;

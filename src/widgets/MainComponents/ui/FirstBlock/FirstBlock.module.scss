@@ -69,17 +69,10 @@
 }
 
 @media screen and (max-width: 650px) {
-  // .FirstBlock {
-  //   // min-height: 2.5rem;
-  // }
 
   .FirstBlockTitles {
     font-size: 2.75rem;
     line-height: 49px;
-
-    :first-child {
-      padding-left: 40%;
-    }
   }
 
   .FirstBlockContiner {

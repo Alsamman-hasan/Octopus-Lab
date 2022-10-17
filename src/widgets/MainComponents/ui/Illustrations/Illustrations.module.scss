@@ -120,13 +120,13 @@
   }
 
   .IllusRightBlok {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    display: grid;
+    grid-template-rows: 20rem 20rem 20rem;
+    grid-template-columns: repeat(2, 50%);
     position: static;
     margin-top: 1.5rem;
-    
   }
+
 
   .IllusLeftBlok{
     display:none;
@@ -146,11 +146,9 @@
 
   .step {
     height: 100%;
-    border: none;
-    border-bottom:1px solid #D9D9D9;
     display: flex;
     gap: 2rem;
-    padding: 17px 0 12px 0;
+    padding: 17px;
   }
 
   .stepNumber {
@@ -166,9 +164,22 @@
 
 
 @media screen and (max-width: 650px) {
+  .IllusRightBlok {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .stepTitle{
     @include Ti5;
     margin-bottom: 0.5rem;
+  }
+  .step {
+    height: 100%;
+    border: none;
+    border-bottom:1px solid #D9D9D9;
+    display: flex;
+    gap: 2rem;
+    padding: 17px 0 12px 0;
   }
 
   .stepSubTitle{

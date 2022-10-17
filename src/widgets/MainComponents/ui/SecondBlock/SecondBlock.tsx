@@ -53,7 +53,7 @@ export const SecondBlock = ({ className }: SecondBlockProps) => {
     >
       <Box sx={{ width: 1 }}>
         <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={5}>
-          <Box gridColumn="span 8">
+          <Box gridColumn="span 8" className={classNames("span8-media")}>
             <div
               className={classNames("span8")}
             >
@@ -61,7 +61,7 @@ export const SecondBlock = ({ className }: SecondBlockProps) => {
             </div>
           </Box>
           {ItemsProps.map((item, index: number) => (
-            <Box key={item.key + index} gridColumn="span 4">
+            <Box key={item.key + index} gridColumn="span 4" className={classNames("span4-media")}>
               <Item
                 svgItem={item.svgItem}
                 title={item.title}
