@@ -44,6 +44,7 @@ export const SecondBlock = ({ className }: SecondBlockProps) => {
 
   return (
     <motion.div
+      data-testid="SecondBlock"
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.2, once: true }}

@@ -15,6 +15,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
   const { t } = useTranslation("common")
   return (
     <motion.div
+      data-testid="Illustrations"
       initial="hidden"
       whileInView="visible"
       variants={yAnimation}

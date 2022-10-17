@@ -41,7 +41,7 @@ const SenderEmailFormUi = () => {
       setError(true);
     } else {
       setError(false);
-      // dispatch(sendEmailAction(state));
+      dispatch(sendEmailAction(state));
       setState({
         name: "",
         email: "",
@@ -53,7 +53,7 @@ const SenderEmailFormUi = () => {
   }
   return (
     <>
-      <div className={classNames("senderEmailForm-forms")} >
+      <div className={classNames("senderEmailForm-forms")} data-testid="SenderEmailForm">
         {inputItems.map((item) => (
           <div key={item.params}>
             <InputInUi
@@ -86,4 +86,5 @@ const SenderEmailFormUi = () => {
     </>
   );
 };
+
 export const SenderEmailForm = memo(SenderEmailFormUi)

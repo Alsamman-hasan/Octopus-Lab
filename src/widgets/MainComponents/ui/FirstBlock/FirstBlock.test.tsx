@@ -1,10 +1,10 @@
-/* eslint-disable i18next/no-literal-string */
-import { render, screen } from "@testing-library/react"
+import { screen } from "@testing-library/react"
+import { componentRender } from "shared/lib/tests/componentRender/componentRender";
 import { FirstBlock } from "./FirstBlock";
 
 describe("FirstBlock", () => {
   test("rendreing FirstBlock", () => {
-    render(<FirstBlock/>);
+    componentRender(<FirstBlock/>);
     expect(screen.getByTestId("FirstBlock")).toBeInTheDocument()
   })
 })

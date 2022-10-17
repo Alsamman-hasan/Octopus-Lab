@@ -14,6 +14,7 @@ const ProjectsUi = ({ className }: ProjectsProps) => {
   const { t } = useTranslation("common");
   return (
     <motion.div
+      data-testid="Projects"
       initial="hidden"
       whileInView="visible"
       variants={yAnimation}

@@ -6,7 +6,7 @@ import { setSendDats } from "../slice/SenderSlice";
 import { sendEmailAction, ISendEmailsAction } from "../Actions/sendEmailActions";
 import { sendEmailRequest } from "../server/sendEmailRquest";
 
-function* workerSenderEmail({ payload }: PayloadAction<ISendEmailsAction>) {
+export function* workerSenderEmail({ payload }: PayloadAction<ISendEmailsAction>) {
   try {
     yield put(setSendDats({hasError: false, loading:true, message:""}));
     const response: IResponse<string> = yield sendEmailRequest(payload);

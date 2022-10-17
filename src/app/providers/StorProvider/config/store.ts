@@ -1,9 +1,9 @@
 import { AnyAction } from "redux"
 import { configureStore } from "@reduxjs/toolkit";
-import { counterReduser } from "entities/Counter";
 import createSagaMiddleware, {  SagaMiddleware } from "redux-saga";
 import { senderReduser } from "entities/SenderEmails";
 import { uiReduser } from "entities/ToastUi";
+import { counterReduser } from "entities/Counter";
 import { StateSchema } from "./StateSchema";
 import saga from "./sagasSchema";
 

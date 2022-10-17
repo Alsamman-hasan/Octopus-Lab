@@ -23,4 +23,4 @@ export const senderSlice = createSlice({
 
 export const { setSendDats } = senderSlice.actions;
 
-export const { reducer: senderReduser } = senderSlice;
+export const senderReduser = senderSlice.reducer;

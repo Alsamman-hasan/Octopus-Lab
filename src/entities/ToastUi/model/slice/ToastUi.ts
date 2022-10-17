@@ -35,6 +35,6 @@ const uiSlice = createSlice({
 
 export const { setStatus } = uiSlice.actions
 
-export const { reducer: uiReduser } = uiSlice
+export const uiReduser = uiSlice.reducer
 
 

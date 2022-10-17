@@ -16,6 +16,7 @@ export const OurWorks = ({ className }: OurWorksProps) => {
   const { t } = useTranslation("common")
   return (
     <motion.div
+      data-testid="OurWorks"
       initial="hidden"
       whileInView="visible"
       variants={yAnimation}
