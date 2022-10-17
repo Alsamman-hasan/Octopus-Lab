@@ -27,7 +27,7 @@ const ButtonUI: FC<ButtonProps> = (props) => {
   } = props;
 
   const mods: Record<string, boolean> = {
-    // [cls[theme]]: true,
+    [cls[theme]]: true,
     [cls[btnBg]]: true,
     [cls[sizes]]: true,
   }

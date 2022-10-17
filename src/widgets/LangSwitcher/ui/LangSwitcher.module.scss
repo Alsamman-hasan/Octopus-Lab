@@ -2,50 +2,50 @@
 
 .LangSwitcher {
   display: flex;
-  gap: .225rem;
+  gap: 0.225rem;
   align-items: center;
 }
 
 .choose {
   font-weight: 600 !important;
-  width: 1.56rem;
-  height: 1.25rem;
-  text-transform: uppercase;
-  color: var(--balck-color);
 }
 
 .notChose {
   font-weight: 300 !important;
-  width: 1.56rem;
-  height: 1.25rem;
-  text-transform: uppercase;
 }
+
 
 .displaySwit {
   display: none;
 }
 
-.en {
-  cursor: pointer;
-  padding: 0;
-  border: none;
-  background: none;
-  outline: none;
-
-  @include Ti6;
-}
-
+.en,
 .ru {
   cursor: pointer;
   padding: 0;
   border: none;
   background: none;
   outline: none;
-
+  width: 1.56rem;
+  height: 1.25rem;
+  text-transform: uppercase;
+  color: var(--balck-color);
   @include Ti6;
+  &:hover {
+    background: none;
+    color: var(--balck-color);
+    border: none;
+  }
 }
 
+
 @media screen and (max-width: 650px) {
+  .LangSwitcher {
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
   .LangSwitcher {
     display: none;
   }

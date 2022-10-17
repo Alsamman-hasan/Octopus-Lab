@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next"
 import { useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";
+import { Button } from "shared/ui/Buttons";
+import { ButtonBgColor, ButtonTheme } from "shared/ui/Buttons/types";
 import cls from "./LangSwitcher.module.scss";
 
 export interface LangSwitcherProps {
@@ -10,7 +12,7 @@ export interface LangSwitcherProps {
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
-  const {i18n, t } = useTranslation()
+  const { i18n, t } = useTranslation()
   const [lang, setLang] = useState("en");
 
 
@@ -30,29 +32,31 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   return (
     <div className={classNames(cls.LangSwitcher, { [cls.displaySwit]: isEn }, [className])}>
-      <button
+      <Button
         type='button'
+        theme={ButtonTheme.CLEAR}
         onClick={() => changeLanguage("ru")}
-        className={classNames(cls.ru, 
-          { 
-            [cls.choose]: lang === "ru", 
-            [cls.notChose]: lang === "en" 
-          }, 
+        className={classNames(cls.ru,
+          {
+            [cls.choose]: lang === "ru",
+            [cls.notChose]: lang === "en"
+          },
           [className])}
       >
         {t("ru")}
-      </button>
+      </Button>
       <span>|</span>
-      <button
+      <Button
         type='button'
+        theme={ButtonTheme.CLEAR}
         onClick={() => changeLanguage("en")}
-        className={classNames(cls.en, 
-          { [cls.choose]: lang === "en", [cls.notChose]: lang === "ru" }, 
+        className={classNames(cls.en,
+          { [cls.choose]: lang === "en", [cls.notChose]: lang === "ru" },
           [className]
         )}
       >
         {t("en")}
-      </button>
+      </Button>
     </div>
   )
 };
