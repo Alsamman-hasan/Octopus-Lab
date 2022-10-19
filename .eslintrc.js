@@ -29,7 +29,8 @@ module.exports = {
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "warn",
@@ -73,7 +74,7 @@ module.exports = {
     "max-len": [
       "error",
       {
-        code: 100,
+        code: 120,
         ignoreComments: true,
         ignoreUrls: true,
         ignoreStrings: true,

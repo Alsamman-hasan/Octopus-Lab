@@ -13,6 +13,7 @@
 .footerRight-header {
   span {
     @include Text2;
+
     color: var(--grey-color);
   }
 }
@@ -34,11 +35,13 @@
 
   &_name {
     @include Text2;
+
     color: var(--white-color);
   }
 
   &_position {
     @include Text3;
+
     opacity: 0.6;
     color: var(--grey-color);
   }
@@ -70,6 +73,7 @@
 
   &_header {
     @include Ti3;
+
     color: var(--white-color);
   }
 
@@ -81,6 +85,7 @@
 
     span {
       @include Text2;
+
       color: var(--white-color);
     }
   }
@@ -133,6 +138,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 3.3125rem;
+
     &_header {
       @include Ti4;
     }

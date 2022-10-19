@@ -58,6 +58,7 @@
 }
 
 @media screen and (max-width: 768px) {
+  /* stylelint-disable value-list-comma-space-after */
   // .content {
   //   display: flex;
   //   flex-direction: column;
@@ -77,6 +78,7 @@
   //   margin-top: 2.1875rem;
   //   padding-bottom: 1.25rem;
   // }
+  /* stylelint-enable */
 }
 
 

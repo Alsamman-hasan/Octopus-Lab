@@ -30,6 +30,7 @@
 
 .SecondBlockSubTitle {
   @include Text2;
+
   color: var(--black-color);
 }
 
@@ -43,7 +44,8 @@
     .span8-media {
       grid-column: span 12;
     }
-    .span4-media{
+
+    .span4-media {
       grid-column: span 6;
     }
   }
@@ -64,7 +66,6 @@
     width: 2.69rem;
     height: 3.75rem;
   }
-
 }
 
 @media screen and (max-width: 650px) {
@@ -72,6 +73,7 @@
     display: flex !important;
     flex-direction: column;
   }
+
   .SecondBlock {
     width: 100%;
     padding: 0;

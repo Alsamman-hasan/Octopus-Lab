@@ -1,26 +1,30 @@
 import { AnyAction } from "redux"
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
 import createSagaMiddleware, { SagaMiddleware } from "redux-saga";
-import { senderReduser } from "features/SenderEmails";
-import { uiReduser } from "entities/ToastUi";
+// import { senderReduser } from "features/SenderEmails";
+// import { uiReduser } from "entities/ToastUi";
 import { counterReduser } from "entities/Counter";
 import { StateSchema } from "./StateSchema";
 import saga from "./sagasSchema";
+import { createReducerManager } from "./reducerManager";
 
 
 
 export function createReduxStore(initialState?: StateSchema) {
+  const rootReducer: ReducersMapObject<StateSchema> = {
+    counter: counterReduser,
+  }
   const sagaMiddleware = createSagaMiddleware();
-  const configStore = configureStore<StateSchema, AnyAction, [SagaMiddleware]>({
-    reducer: {
-      counter: counterReduser,
-      mailes: senderReduser,
-      toastUi: uiReduser,
-    },
+  const reducerManager = createReducerManager(rootReducer);
+
+  const store = configureStore<StateSchema, AnyAction, [SagaMiddleware]>({
+    reducer: reducerManager.reduce,
     middleware: [sagaMiddleware],
     devTools: __IS_DEV__,
     preloadedState: initialState,
   })
+  // @ts-ignore
+  store.reducerManager = reducerManager;
   sagaMiddleware.run(saga);
-  return configStore;
+  return store;
 }

@@ -14,7 +14,6 @@
   font-weight: 300 !important;
 }
 
-
 .displaySwit {
   display: none;
 }
@@ -30,14 +29,15 @@
   height: 1.25rem;
   text-transform: uppercase;
   color: var(--balck-color);
+
   @include Ti6;
+
   &:hover {
     background: none;
     color: var(--balck-color);
     border: none;
   }
 }
-
 
 @media screen and (max-width: 650px) {
   .LangSwitcher {

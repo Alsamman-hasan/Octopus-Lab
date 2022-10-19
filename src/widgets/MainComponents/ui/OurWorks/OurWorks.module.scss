@@ -5,8 +5,8 @@
 }
 
 .OurWorksTitle {
-
   @include Ti1;
+
   color: var(--balck-color);
 
   span {
@@ -53,7 +53,6 @@
 
   color: var(--balck-color);
 }
-
 
 @media screen and (max-width: 900px) {
   .OurWorksItem {

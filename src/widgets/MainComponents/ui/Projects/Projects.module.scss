@@ -18,6 +18,7 @@
 
 .ProjectsTitle {
   @include Ti1;
+
   color: var(--balck-color);
 
   span {
@@ -103,7 +104,6 @@
 
   color: var(--blue-color);
 }
-
 
 @media screen and (max-width: 768px) {
   .Projects {

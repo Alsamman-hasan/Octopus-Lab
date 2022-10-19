@@ -1,7 +1,8 @@
-/* eslint-disable no-undef */
+
 import { put, takeEvery } from "redux-saga/effects";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { setStatus } from "entities/ToastUi/model/slice/ToastUi";
+import { AxiosResponse } from "axios";
 import { setSendDats } from "../slice/SenderSlice";
 import { sendEmailAction, ISendEmailsAction } from "../Actions/sendEmailActions";
 import { sendEmailRequest } from "../server/sendEmailRquest";
@@ -9,7 +10,7 @@ import { sendEmailRequest } from "../server/sendEmailRquest";
 export function* workerSenderEmail({ payload }: PayloadAction<ISendEmailsAction>) {
   try {
     yield put(setSendDats({hasError: false, loading:true, message:""}));
-    const response: IResponse<string> = yield sendEmailRequest(payload);
+    const response: AxiosResponse<string> = yield sendEmailRequest(payload);
     yield put(setSendDats({ hasError: false, loading: false, message: response.data }));
     yield put(setStatus({ message: response.data, status:"success" }));
     

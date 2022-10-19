@@ -1,24 +1,28 @@
 @import "app/styles/variables/fotns";
 
-
-.Illustrations{
+.Illustrations {
   margin-top: 12.5rem;
   width: 100%;
   height: 75.6rem;
 }
 
-.IllusContainer{
+.IllusContainer {
   position: sticky;
   top: 8.125rem;
 }
+
 .IllusRow {
   position: relative;
   height: 100%;
 }
-.IllusTitle{
+
+.IllusTitle {
   z-index: 1;
+
   @include Ti1;
+
   color: var(--balck-color);
+
   span {
     color: var(--blue-color);
   }
@@ -45,7 +49,7 @@
   background: #f5f5f500 !important;
 }
 
-.MTop{
+.MTop {
   margin-top: 8.25rem;
 }
 
@@ -55,17 +59,17 @@
 
 .step {
   height: 20rem;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   padding: 1.25rem;
 }
 
-.stepContiner{
+.stepContiner {
   display: inline-block;
   width: 100%;
 }
 
-.IllusLeftBlok{
-  overflow:hidden;
+.IllusLeftBlok {
+  overflow: hidden;
   position: relative;
   width: 30%;
   margin-top: 2.5rem;
@@ -77,45 +81,49 @@
   height: 100%;
 }
 
-.stepNumber{
+.stepNumber {
   @include Ti1;
+
   color: var(--purple-color);
   margin-bottom: 1.75rem;
 }
 
-.stepTitle{
+.stepTitle {
   @include Ti4;
+
   color: var(--balck-color);
   margin-bottom: 0.5rem;
 }
-.stepSubTitle{
+
+.stepSubTitle {
   @include Text2;
+
   color: var(--balck-color);
 }
 
-
 @media screen and (max-width: 768px) {
-  .Illustrations{ 
+  .Illustrations {
     height: 61rem;
     margin-top: 5rem;
   }
 
-  .IllusLeftBlok{
-    display:none;
+  .IllusLeftBlok {
+    display: none;
   }
 
   .IllusRightBlok {
     width: 100%;
   }
 
-  .IllusContainer{
+  .IllusContainer {
     position: static;
   }
 
   .IllusTitle {
     @include Ti2;
+
     display: flex;
-    gap:1.25rem;
+    gap: 1.25rem;
     align-items: center;
   }
 
@@ -127,9 +135,8 @@
     margin-top: 1.5rem;
   }
 
-
-  .IllusLeftBlok{
-    display:none;
+  .IllusLeftBlok {
+    display: none;
   }
 
   .stepContiner {
@@ -162,27 +169,28 @@
   }
 }
 
-
 @media screen and (max-width: 650px) {
   .IllusRightBlok {
     display: flex;
     flex-direction: column;
   }
-  
-  .stepTitle{
+
+  .stepTitle {
     @include Ti5;
+
     margin-bottom: 0.5rem;
   }
+
   .step {
     height: 100%;
     border: none;
-    border-bottom:1px solid #D9D9D9;
+    border-bottom: 1px solid #d9d9d9;
     display: flex;
     gap: 2rem;
-    padding: 17px 0 12px 0;
+    padding: 17px 0 12px;
   }
 
-  .stepSubTitle{
+  .stepSubTitle {
     @include Text3;
   }
 }

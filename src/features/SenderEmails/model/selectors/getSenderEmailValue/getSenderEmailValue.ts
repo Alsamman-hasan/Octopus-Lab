@@ -9,9 +9,9 @@ export const getSenderEmailError = createSelector(
 
 export const getSenderEmailMessage = createSelector(
   getSenderEmail,
-  (email: SenderSchema) => email.message
+  (email: SenderSchema) => email?.message || ""
 )
 export const getSenderEmailLoading = createSelector(
   getSenderEmail,
-  (email: SenderSchema) => email.loading
+  (email: SenderSchema) => email?.loading || false
 )

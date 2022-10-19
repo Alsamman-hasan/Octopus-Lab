@@ -1,22 +1,26 @@
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import "./SenderEmailForm.scss";
 import { Button } from "shared/ui/Buttons";
 import { InputInUi } from "shared/ui/inputs";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, useStore } from "react-redux";
 import { validatorEmail } from "shared/lib/validation/validationForm";
+import { ReduxStoreWithManager } from "app/providers/StorProvider/config/StateSchema";
+import { uiReduser } from "entities/ToastUi";
 import { IState } from "./types";
 import { inputscollection } from "./constants";
 import {
   getSenderEmailLoading,
 } from "../model/selectors/getSenderEmailValue/getSenderEmailValue";
 import { sendEmailAction } from "../model/Actions/sendEmailActions";
+import { senderReduser } from "../model/slice/SenderSlice";
 
 const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
   const dispatch = useDispatch();
+  const store = useStore() as ReduxStoreWithManager;
   const loading = useSelector(getSenderEmailLoading);
   const [error, setError] = useState(false);
   const [state, setState] = useState<IState>({
@@ -26,6 +30,17 @@ const SenderEmailFormUi = () => {
     company: "",
     project: ""
   });
+
+  useEffect(() => {
+    dispatch({ type: `@INIT mailes reducer` });
+    store.reducerManager.add("mailes", senderReduser);
+    store.reducerManager.add("toastUi", uiReduser);
+    return () => {
+      store.reducerManager.remove("mailes");
+      store.reducerManager.remove("toastUi");
+    }
+  }, [])
+
 
   const isValidEmail = useMemo(() => validatorEmail(state.email), [state.email])
 
