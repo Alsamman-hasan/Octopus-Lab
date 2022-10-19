@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
-import { SenderEmailForm } from "entities/SenderEmails";
+import { SenderEmailForm } from "features/SenderEmails";
 import cls from "./footerLeft.module.scss";
 
 const FooterLeft = () => {

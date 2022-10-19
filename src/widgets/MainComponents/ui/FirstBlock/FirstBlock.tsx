@@ -15,7 +15,7 @@ export const FirstBlock = ({ className }: FirstBlockProps) => {
       initial="hidden"
       whileInView="visible"
       variants={yAnimation}
-      viewport={{ amount: 0.1, once: true }}
+      viewport={{ amount: 0.1 }}
       custom={1}
       className={classNames(cls.FirstBlock, {}, [className])}
     >

@@ -1,5 +1,5 @@
 import { all } from "redux-saga/effects";
-import { watcherSenderEmail } from "entities/SenderEmails/model/saga/senderEmailSaga";
+import { watcherSenderEmail } from "features/SenderEmails/model/saga/senderEmailSaga";
 
 function* saga() {
   yield all([

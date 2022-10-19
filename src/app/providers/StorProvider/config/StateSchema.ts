@@ -1,9 +1,10 @@
 
 import { CounterSchema } from "entities/Counter";
-import { SenderSchema } from "entities/SenderEmails";
+import { ToastUiSchema } from "entities/ToastUi";
+import { SenderSchema } from "features/SenderEmails";
 
 export interface StateSchema {
-  counter : CounterSchema;
+  counter: CounterSchema;
   mailes: SenderSchema
-  toastUi: any;
+  toastUi: ToastUiSchema;
 }

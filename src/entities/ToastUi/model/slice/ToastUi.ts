@@ -1,22 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { toast } from "react-toastify";
+import { ToastUiSchema } from "../types/ToastUiSchema";
 
-export interface UIInterface {
 
-}
-
-const uiInitialState: UIInterface = {
+const uiInitialState: ToastUiSchema = {
+  status: "default",
+  message: ""
 }
 
 const uiSlice = createSlice({
   name: "ui",
   initialState: uiInitialState,
   reducers: {
-    setStatus: (_, { payload }: PayloadAction<{
-      status: "error" | "success" | "warning" | "info" | "dark" | "default"
-      message: string
-    }>) => {
+    setStatus: (_, { payload }: PayloadAction<ToastUiSchema>) => {
       if (payload.status !== "default") {
         toast[payload.status](`${payload.message}`, {
           position: "top-right",
