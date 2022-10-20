@@ -1,23 +1,20 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion";
 import { yAnimation } from "shared/lib/Animations/Animations";
+import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
 import cls from "./FirstBlock.module.scss";
 
 export interface FirstBlockProps {
   className?: string;
 }
 export const FirstBlock = ({ className }: FirstBlockProps) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation("common");
+  const { isShow, lastBookElementRef } = useAnimations();
   return (
-    <motion.div 
+    <div 
       data-testid="FirstBlock"
-      initial="hidden"
-      whileInView="visible"
-      variants={yAnimation}
-      viewport={{ amount: 0.1 }}
-      custom={1}
-      className={classNames(cls.FirstBlock, {}, [className])}
+      ref={lastBookElementRef}
+      className={classNames(cls.FirstBlock, { [cls["element-show"]]: isShow }, [cls["element-animation"], className])}
     >
       <div className={classNames(cls.FirstBlockTitles)}>
         <span >
@@ -40,6 +37,6 @@ export const FirstBlock = ({ className }: FirstBlockProps) => {
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 };

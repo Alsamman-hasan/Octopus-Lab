@@ -96,3 +96,15 @@
     @include Text3;
   }
 }
+
+
+.element-animation {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.element-animation.element-show {
+  opacity: 1;
+  transition: all 0.7s;
+  transform: translateY(0%);
+}

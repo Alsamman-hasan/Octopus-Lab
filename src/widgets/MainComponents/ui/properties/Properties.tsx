@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { yAnimation } from "shared/lib/Animations/Animations";
 import { DiversitySVG, ManySVG, MedalSVG, StartupSVG } from "shared/assets/icons/svg/desktopSVG";
 import { useMemo } from "react";
+import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
 import cls from "./Properties.module.scss";
 import Item from "./ItemsProps";
 
@@ -14,6 +15,7 @@ export interface PropertiesProps {
 
 export const Properties = ({ className }: PropertiesProps) => {
   const { t } = useTranslation("secondBlock")
+  const { isShow, lastBookElementRef } = useAnimations();
   const ItemsProps = useMemo(() => [
     {
       svgItem: <StartupSVG className={classNames(cls.icons)} />,
@@ -42,14 +44,10 @@ export const Properties = ({ className }: PropertiesProps) => {
   ], [t])
 
   return (
-    <motion.div
+    <div
+      ref={lastBookElementRef}
       data-testid="Properties"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
-      variants={yAnimation}
-      custom={1}
-      className={classNames(cls.Properties, {}, [className])}
+      className={classNames(cls.Properties, { [cls["element-show"]]: isShow }, [cls["element-animation"], className])}
     >
       <div className={classNames(cls.span8)}>
         {t("почему")} <br /><span>{t("выбирают")}</span> {t("нас")}
@@ -63,6 +61,6 @@ export const Properties = ({ className }: PropertiesProps) => {
           />
         </div>
       ))}
-    </motion.div>
+    </div>
   )
 };
