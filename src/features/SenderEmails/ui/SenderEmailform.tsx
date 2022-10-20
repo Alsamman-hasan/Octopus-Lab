@@ -5,10 +5,11 @@ import { InputInUi } from "shared/ui/inputs";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useSelector, useStore } from "react-redux";
 import { validatorEmail } from "shared/lib/validation/validationForm";
 import { ReduxStoreWithManager } from "app/providers/StorProvider/config/StateSchema";
 import { uiReduser } from "entities/ToastUi";
+import { useAppDispatch } from "shared/lib/Hooks/useAppDispatch/useAppDispatch";
 import { IState } from "./types";
 import { inputscollection } from "./constants";
 import {
@@ -19,7 +20,7 @@ import { senderReduser } from "../model/slice/SenderSlice";
 
 const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const store = useStore() as ReduxStoreWithManager;
   const loading = useSelector(getSenderEmailLoading);
   const [error, setError] = useState(false);
