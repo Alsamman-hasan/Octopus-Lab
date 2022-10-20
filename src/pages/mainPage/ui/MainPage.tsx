@@ -5,8 +5,8 @@ import {
   Illustrations,
   OurWorks,
   Projects,
+  Properties,
   RainTime,
-  SecondBlock
 } from "widgets/MainComponents";
 import cls from "./mainPage.module.scss";
 
@@ -19,7 +19,7 @@ const MainPage = () => (
         className={classNames(cls["content-page"])}
       >
         <FirstBlock />
-        <SecondBlock />
+        <Properties/>
         <OurWorks />
         <Illustrations />
         <Projects />

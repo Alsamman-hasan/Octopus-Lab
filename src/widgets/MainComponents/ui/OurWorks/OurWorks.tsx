@@ -1,6 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import Grid from "@mui/material/Grid";
 import { motion } from "framer-motion";
 import { yAnimation } from "shared/lib/Animations/Animations";
 import cls from "./OurWorks.module.scss";
@@ -34,20 +33,10 @@ export const OurWorks = ({ className }: OurWorksProps) => {
           {t("делаем")}
         </span>
       </motion.h1>
-      <Grid
-        className={classNames(cls.Table)}
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 2, sm: 8, md: 12 }}
-      >
+      <div className={classNames(cls.Table)}>
         {
           ItemsProps.map((el) => (
-            <Grid
-              item
-              xs={2}
-              sm={4}
-              md={4}
-              padding={0}
+            <div
               key={el.title}
               className={classNames(cls.OurWorksItem)}
             >
@@ -57,10 +46,10 @@ export const OurWorks = ({ className }: OurWorksProps) => {
                 title={el.title}
                 subTitle={el.subTitle}
                 key={el.title} />
-            </Grid>
+            </div>
           ))
         }
-      </Grid>
+      </div>
     </motion.div>
   )
 };

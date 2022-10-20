@@ -1,5 +1,6 @@
 import { ReactElement, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./Properties.module.scss";
 
 export interface IItems {
   svgItem: ReactElement | ReactNode;
@@ -10,16 +11,14 @@ export interface IItems {
 const Item = (props: IItems) => {
   const { svgItem, title, subTitle } = props;
   return (
-    <div>
-      <div className={classNames("span4")}>
-        {svgItem}
-        <span className={classNames("SecondBlockTitle")} >
-          {title}
-        </span>
-        <span className={classNames("SecondBlockSubTitle")} >
-          {subTitle}
-        </span>
-      </div>
+    <div className={classNames(cls.itemContetn)}>
+      {svgItem}
+      <span className={classNames(cls.PropertiesTitle)} >
+        {title}
+      </span>
+      <span className={classNames(cls.PropertiesSubTitle)} >
+        {subTitle}
+      </span>
     </div>
   )
 }

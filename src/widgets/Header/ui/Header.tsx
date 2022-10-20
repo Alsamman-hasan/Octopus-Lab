@@ -15,6 +15,8 @@ export interface HeaderProps {
   onScrollToFooter?: () => void; 
 }
 
+const LogoD = memo(() => <LogoDes />)
+const LogoM = memo(() => <LogoMobile />)
 
 const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
   const { t } = useTranslation("common");
@@ -27,7 +29,6 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
     return () => window.removeEventListener("scroll", handleSize);
   }, [handleSize]);
 
-
   return (
     <div 
       data-testid="header"
@@ -39,7 +40,7 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
     >
       <div className={classNames(cls.contetn)}>
         <div className={classNames(cls.logo)}>
-          {width > 768 ? <LogoDes /> : <LogoMobile/>}
+          {width > 768 ? <LogoD /> : <LogoM />}
         </div>
         <div className={classNames(cls.info)}>
           <div className={classNames(cls.btn)}>

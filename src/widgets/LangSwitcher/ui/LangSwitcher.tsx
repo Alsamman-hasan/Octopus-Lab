@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";
 import { Button } from "shared/ui/Buttons";
@@ -11,7 +11,7 @@ export interface LangSwitcherProps {
   className?: string;
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
   const { i18n, t } = useTranslation()
   const [lang, setLang] = useState("en");
 
@@ -59,4 +59,4 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       </Button>
     </div>
   )
-};
+});

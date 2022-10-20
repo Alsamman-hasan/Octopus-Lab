@@ -1,7 +1,6 @@
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import "./SenderEmailForm.scss";
 import { Button } from "shared/ui/Buttons";
-import { InputInUi } from "shared/ui/inputs";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
@@ -10,6 +9,7 @@ import { validatorEmail } from "shared/lib/validation/validationForm";
 import { ReduxStoreWithManager } from "app/providers/StorProvider/config/StateSchema";
 import { uiReduser } from "entities/ToastUi";
 import { useAppDispatch } from "shared/lib/Hooks/useAppDispatch/useAppDispatch";
+import { Input } from "shared/ui/input/Input";
 import { IState } from "./types";
 import { inputscollection } from "./constants";
 import {
@@ -49,6 +49,7 @@ const SenderEmailFormUi = () => {
     setState((prev) => ({ ...prev, [params]: value }));
   }, []);
 
+
   const hasError = Boolean(!state.email || !state.name || !isValidEmail)
   const inputItems = useMemo(() => inputscollection, [])
 
@@ -71,11 +72,10 @@ const SenderEmailFormUi = () => {
     <>
       <div className={classNames("senderEmailForm-forms")} data-testid="SenderEmailForm">
         {inputItems.map((item) => (
-          <div key={item.params}>
-            <InputInUi
+          <div key={item.params} style={{marginBottom:"12px"}}>
+            <Input
               value={state[item.params as keyof IState]}
               handleChange={onHandelChange}
-              fullWidth
               label={t(item.label)}
               params={item.params}
               typeInput={item.params === "phone" ? "number" : item.params}

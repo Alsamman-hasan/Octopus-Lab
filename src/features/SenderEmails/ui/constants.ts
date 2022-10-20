@@ -16,7 +16,7 @@ export const inputscollection: IInputItems[] = [
   {
     label: "Телефон",
     errorMessage: "phone",
-    params: "phone"
+    params: "phone",
   },
   {
     label: "Какую компанию вы представляете?",

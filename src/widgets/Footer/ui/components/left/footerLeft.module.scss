@@ -43,6 +43,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .footerLeft {
+    padding-right: 10px;
+  }
+}
+
+
 @media screen and (max-width: 458px) {
   .footerLeft {
     display: flex;

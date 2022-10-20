@@ -15,14 +15,16 @@
 }
 
 .Table {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
   border-top: 1px solid #d9d9d9;
   margin-top: 2.5rem;
   width: 100%;
-  margin-left: 0;
 }
 
 .OurWorksItem {
-  padding: 0 !important;
+  width: calc(100% / 3);
   border-bottom: 1px solid #d9d9d9;
 
   &:nth-child(3n +1) {
@@ -56,6 +58,10 @@
 
 @media screen and (max-width: 900px) {
   .OurWorksItem {
+    flex-basis: 50%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    max-width: 50%;
     &:nth-child(3n +3) {
       border-right: 1px solid #d9d9d9;
     }
@@ -77,6 +83,13 @@
   }
 
   .OurWorksItem {
+    margin: 0px;
+    flex-direction: row;
+    flex-basis: 100%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    max-width: 100%;
+
     &:nth-child(3n +3) {
       border-right: none;
     }

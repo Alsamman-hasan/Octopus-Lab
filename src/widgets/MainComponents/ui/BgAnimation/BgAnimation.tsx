@@ -97,7 +97,7 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
   useEffect(() => {
     const num = width - 20
-    console.log(width);
+    // console.log(width);
     stopRain();
     rianAnimation(num);
   }, [width])
