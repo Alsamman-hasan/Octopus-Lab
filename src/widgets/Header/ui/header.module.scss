@@ -41,7 +41,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
-  padding:0 12.5rem ;
+  padding: 0 12.5rem;
   margin: 0.5rem auto;
 }
 
@@ -65,12 +65,11 @@
     padding: 0 10px;
     margin: 0.5rem auto;
   }
+
   .HeaderBtn {
     width: 15.32rem;
-    // @include BTNT2;
   }
 }
-
 
 @media screen and (max-width: 1200px) {
   .contetn {
@@ -84,14 +83,14 @@
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .logo,
   .btn,
-  .HeaderBtn{
+  .HeaderBtn {
     width: 8.875rem;
     height: 2rem;
   }
+
   .HeaderBtn {
     padding: 0.5rem 1.2rem;
   }
@@ -101,5 +100,4 @@
   .info {
     gap: 0.44rem;
   }
-
 }

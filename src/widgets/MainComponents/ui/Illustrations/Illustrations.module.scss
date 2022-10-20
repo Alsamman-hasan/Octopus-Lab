@@ -111,10 +111,6 @@
     display: none;
   }
 
-  .IllusRightBlok {
-    width: 100%;
-  }
-
   .IllusContainer {
     position: static;
   }
@@ -128,15 +124,12 @@
   }
 
   .IllusRightBlok {
+    width: 100%;
     display: grid;
     grid-template-rows: 20rem 20rem 20rem;
     grid-template-columns: repeat(2, 50%);
     position: static;
     margin-top: 1.5rem;
-  }
-
-  .IllusLeftBlok {
-    display: none;
   }
 
   .stepContiner {

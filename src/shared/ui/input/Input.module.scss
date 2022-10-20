@@ -1,7 +1,7 @@
-
 @import "app/styles/variables/fotns";
 
-*::before, *::after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -10,7 +10,9 @@
   width: 100%;
   margin-bottom: 2rem;
   display: inline-block;
+
   --field-padding: 8px;
+
   input[type="number"]::-webkit-inner-spin-button {
     appearance: none;
   }
@@ -21,7 +23,9 @@
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
+
   @include Text2;
+
   color: var(--grey-color);
   appearance: none;
   background: inherit;
@@ -29,10 +33,12 @@
   border-bottom: 1px solid #ffffff40;
   width: 100%;
   outline: none;
-  &:hover , &:focus, &:valid {
+
+  &:hover,
+  &:focus,
+  &:valid {
     border-bottom: 1px solid #ffffff71;
   }
-
 }
 
 .customField .placeholder {
@@ -45,36 +51,41 @@
   top: 12px;
   color: var(--grey-color);
   opacity: 0.6;
+
   @include Text2;
+
   transform: translateY(-50%);
-  transition: 
+  transition:
     top 0.3s ease,
     color 0.3s ease,
     font-size 0.3s ease;
 }
 
-.customField input:focus + .placeholder,
-.customField input:not(:placeholder-shown) + .placeholder {
-  top: -10px;
-  @include Text3;
-  opacity: 0.6;
-}
-
-.customField .errorMessage {
-  width: 100%;
-  position:absolute;
-  top: 40px;
-  left: 5px;
-  color: var(--error-color);
-  @include Text3;
-  
-}
 .errorInput {
   input {
     color: var(--error-color);
   }
 }
+
+.customField input:focus + .placeholder,
+.customField input:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+
+  @include Text3;
+
+  opacity: 0.6;
+}
+
+.customField .errorMessage {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  color: var(--error-color);
+
+  @include Text3;
+}
+
 .customField .errorMessage:empty {
   opacity: 0;
 }
-

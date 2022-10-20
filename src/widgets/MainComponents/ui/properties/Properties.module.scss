@@ -10,9 +10,11 @@
 .span8 {
   text-align: start;
   grid-column: span 8;
+
   @include Ti1;
 
   color: var(--black-color);
+
   span {
     color: var(--blue-color);
   }
@@ -46,11 +48,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .span8{
+  .span8 {
     grid-column: span 12;
+
+    @include Ti1;
   }
 
-  .span4{
+  .span4 {
     grid-column: span 6;
   }
 
@@ -60,10 +64,6 @@
 
   .PropertiesSubTitle {
     @include Text3;
-  }
-
-  .span8 {
-    @include Ti1;
   }
 
   .icons {
@@ -78,11 +78,13 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .span8{
+  .span8 {
     grid-column: span 1;
+
+    @include Ti2;
   }
 
-  .span4{
+  .span4 {
     grid-column: span 1;
   }
 
@@ -92,9 +94,5 @@
 
   .PropertiesSubTitle {
     @include Text3;
-  }
-
-  .span8 {
-    @include Ti2;
   }
 }
