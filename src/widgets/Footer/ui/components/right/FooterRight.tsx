@@ -6,9 +6,10 @@ import { Button } from "shared/ui/Buttons";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
+import { memo } from "react";
 
 
-const FooterRight = () => {
+const FooterRight = memo(() => {
   const { t } = useTranslation("Footer");
   return (
     <div className={classNames("footerRight")}>
@@ -63,6 +64,6 @@ const FooterRight = () => {
       </div>
     </div>
   );
-};
+});
 
 export default FooterRight;

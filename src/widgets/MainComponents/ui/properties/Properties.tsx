@@ -1,7 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { yAnimation } from "shared/lib/Animations/Animations";
 import { DiversitySVG, ManySVG, MedalSVG, StartupSVG } from "shared/assets/icons/svg/desktopSVG";
 import { useMemo } from "react";
 import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
@@ -43,11 +41,16 @@ export const Properties = ({ className }: PropertiesProps) => {
     }
   ], [t])
 
+  const mods:Record<string, boolean> = {
+    "element-show": isShow,
+    "element-animation": true
+  }
+
   return (
     <div
       ref={lastBookElementRef}
       data-testid="Properties"
-      className={classNames(cls.Properties, { [cls["element-show"]]: isShow }, [cls["element-animation"], className])}
+      className={classNames(cls.Properties, mods, [ className])}
     >
       <div className={classNames(cls.span8)}>
         {t("почему")} <br /><span>{t("выбирают")}</span> {t("нас")}

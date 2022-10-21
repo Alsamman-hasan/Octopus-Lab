@@ -6,7 +6,6 @@ import {
   OurWorks,
   Projects,
   Properties,
-  RainTime,
 } from "widgets/MainComponents";
 import cls from "./mainPage.module.scss";
 
@@ -14,7 +13,6 @@ const MainPage = () => (
   <div>
     <BgAnimation />
     <div className={classNames(cls.page)}>
-      {/* <RainTime/> */}
       <div
         className={classNames(cls["content-page"])}
       >

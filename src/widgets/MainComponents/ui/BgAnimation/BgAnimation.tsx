@@ -18,7 +18,7 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
   const { width } = useWindowSize("resize")
   
   const rianAnimation = (winWidth: number) => {
-    const amount = 50 ; 
+    const amount = Math.floor(winWidth / 30 ) ; 
     // console.log(winWidth);
     const body = document.getElementById("ani")
     let i = 0 ;
@@ -97,7 +97,6 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
   useEffect(() => {
     const num = width - 20
-    // console.log(width);
     stopRain();
     rianAnimation(num);
   }, [width])
@@ -105,7 +104,6 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
   useEffect(() => {
     const num = width -20
-    // console.log(width);
     rianAnimation(num);
   }, [])
 

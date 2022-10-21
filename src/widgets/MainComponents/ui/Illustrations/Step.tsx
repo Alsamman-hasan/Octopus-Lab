@@ -1,8 +1,7 @@
 
-import { forwardRef, LegacyRef } from "react";
+import {  memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion";
 import cls from "./Illustrations.module.scss";
 
 export interface StepProps {
@@ -12,17 +11,17 @@ export interface StepProps {
   title: string;
   subTitle: string;
 }
-const Step = forwardRef((
+const Step = (
   { 
     title, 
     subTitle, 
     MTopmM, 
     number, 
     MTop 
-  }: StepProps, ref: LegacyRef<HTMLDivElement>) => {
+  }: StepProps) => {
   const { t } = useTranslation("common")
   return (
-    <div className={classNames(cls.step, { [cls.MTopmM]: MTopmM, [cls.MTop]: MTop })} ref={ref}>
+    <div className={classNames(cls.step, { [cls.MTopmM]: MTopmM, [cls.MTop]: MTop })}>
       <span className={classNames(cls.stepNumber)}>
         {number}
       </span>
@@ -37,7 +36,7 @@ const Step = forwardRef((
 
     </div>
   )
-})
+};
 
-const MStep = motion(Step)
+const MStep = memo(Step)
 export { MStep }

@@ -1,9 +1,8 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion";
-import { yAnimation } from "shared/lib/Animations/Animations";
+import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
 import cls from "./OurWorks.module.scss";
-import { MItem } from "./Item";
+import { Item } from "./Item";
 import { ItemsProps } from "./helpers";
 
 
@@ -12,27 +11,27 @@ export interface OurWorksProps {
 }
 
 export const OurWorks = ({ className }: OurWorksProps) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation("common");
+  const { isShow, lastBookElementRef } = useAnimations();
+  const mods: Record<string, boolean> = {
+    "element-show": isShow,
+    "element-animation": true
+  }
+
   return (
-    <motion.div
+    <div
+      ref={lastBookElementRef}
       data-testid="OurWorks"
-      initial="hidden"
-      whileInView="visible"
-      variants={yAnimation}
-      viewport={{ amount: 0.2, once: true }}
-      custom={2}
-      className={classNames(cls.OurWorks, {}, [className])}
+      className={classNames(cls.OurWorks, mods, [className])}
     >
-      <motion.h1
-        variants={yAnimation}
-        custom={2}
+      <h1
         className={classNames(cls.OurWorksTitle)}
       >
         {t("Что мы")} {" "}
         <span>
           {t("делаем")}
         </span>
-      </motion.h1>
+      </h1>
       <div className={classNames(cls.Table)}>
         {
           ItemsProps.map((el) => (
@@ -40,16 +39,14 @@ export const OurWorks = ({ className }: OurWorksProps) => {
               key={el.title}
               className={classNames(cls.OurWorksItem)}
             >
-              <MItem
-                variants={yAnimation}
-                custom={3}
+              <Item
                 title={el.title}
                 subTitle={el.subTitle}
-                key={el.title} />
+              />
             </div>
           ))
         }
       </div>
-    </motion.div>
+    </div>
   )
 };

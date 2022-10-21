@@ -98,13 +98,17 @@
 }
 
 
-.element-animation {
-  opacity: 0;
-  transform: translateY(100px);
+
+@keyframes rotateIcons {
+  0% {
+    transform: rotate(0der);
+  }
+
+  100%{
+    transform: rotate(360der);
+  }
 }
 
-.element-animation.element-show {
-  opacity: 1;
-  transition: all 0.7s;
-  transform: translateY(0%);
+.animationIcon {
+  animation: rotateIcons 0.5s infinite ;
 }

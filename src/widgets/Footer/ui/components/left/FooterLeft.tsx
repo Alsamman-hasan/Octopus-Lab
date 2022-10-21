@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { SenderEmailForm } from "features/SenderEmails";
+import { memo } from "react";
 import cls from "./footerLeft.module.scss";
 
-const FooterLeft = () => {
+const FooterLeft = memo(() => {
   const { t } = useTranslation("Footer");
   return (
     <div className={classNames(cls.footerLeft)}>
@@ -24,6 +25,6 @@ const FooterLeft = () => {
       </div>
     </div>
   )
-};
+});
 
 export default FooterLeft;

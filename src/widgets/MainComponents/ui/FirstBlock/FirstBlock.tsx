@@ -1,6 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { yAnimation } from "shared/lib/Animations/Animations";
 import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
 import cls from "./FirstBlock.module.scss";
 
@@ -14,7 +13,7 @@ export const FirstBlock = ({ className }: FirstBlockProps) => {
     <div 
       data-testid="FirstBlock"
       ref={lastBookElementRef}
-      className={classNames(cls.FirstBlock, { [cls["element-show"]]: isShow }, [cls["element-animation"], className])}
+      className={classNames(cls.FirstBlock, {"element-show": isShow }, ["element-animation", className])}
     >
       <div className={classNames(cls.FirstBlockTitles)}>
         <span >

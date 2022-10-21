@@ -1,34 +1,31 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion";
 import group from "shared/assets/mobile.png"
-import { yAnimation } from "shared/lib/Animations/Animations";
+import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
 import cls from "./Illustrations.module.scss";
 import { stepsProps } from "./helper";
 import { MStep } from "./Step";
-import { AnimationBloc } from "./Animation";
 
 export interface IllustrationsProps {
   className?: string;
 }
 export const Illustrations = ({ className }: IllustrationsProps) => {
-  const { t } = useTranslation("common")
-  return (
-    <motion.div
-      data-testid="Illustrations"
-      initial="hidden"
-      whileInView="visible"
-      variants={yAnimation}
-      viewport={{ amount: 0.2, once: false }}
-      custom={2}
-      className={classNames(cls.Illustrations, {}, [className])}
-    >
+  const { t } = useTranslation("common");
+  const { isShow, lastBookElementRef } = useAnimations();
+  const mods: Record<string, boolean> = {
+    "element-show": isShow,
+    "element-animation": true
+  }
 
+  return (
+    <div
+      ref={lastBookElementRef}
+      data-testid="Illustrations"
+      className={classNames(cls.Illustrations, mods, [className])}
+    >
       <div className={classNames(cls.IllusRow)}>
-        <div className={classNames(cls.IllusContainer, {}, [className])}>
-          <motion.div
-            variants={yAnimation}
-            custom={2}
+        <div className={classNames(cls.IllusContainer)}>
+          <div
             className={classNames(cls.IllusTitle)}
           >
             <p>
@@ -37,15 +34,17 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
             <span>
               {t("работаем")}
             </span>
-          </motion.div>
+          </div>
           <div className={classNames(cls.IllusLeftBlok)}>
-            <img loading="lazy" className={classNames(cls.img)} src={group} alt="animation" />
-            {/* <AnimationBloc/> */}
+            <img
+              loading="lazy"
+              className={classNames(cls.img)}
+              src={group}
+              alt="animation"
+            />
           </div>
         </div>
-        <motion.div
-          variants={yAnimation}
-          custom={2}
+        <div
           className={classNames(cls.IllusRightBlok)}
         >
           {stepsProps.map((step, index: number) => (
@@ -58,9 +57,9 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
                 title={step.title} />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
-    </motion.div>
+    </div>
   )
 };
