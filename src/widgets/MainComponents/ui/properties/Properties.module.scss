@@ -45,6 +45,7 @@
 .icons {
   width: 3.625rem;
   height: 5rem;
+  fill:none;
 }
 
 @media screen and (max-width: 768px) {
@@ -101,14 +102,24 @@
 
 @keyframes rotateIcons {
   0% {
-    transform: rotate(0der);
+    stroke-dashoffset: 300;
   }
 
   100%{
-    transform: rotate(360der);
+    stroke-dashoffset: 0;
   }
 }
 
-.animationIcon {
-  animation: rotateIcons 0.5s infinite ;
+
+
+
+.iconsAnim .animation{
+  stroke: #450072;
+  animation: rotateIcons 5s forwards ;
+}
+.animation {
+  fill: none;
+  stroke: none;
+  stroke-dashoffset: 300;
+  stroke-dasharray: 300;
 }

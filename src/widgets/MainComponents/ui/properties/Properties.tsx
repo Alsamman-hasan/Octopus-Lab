@@ -16,32 +16,38 @@ export const Properties = ({ className }: PropertiesProps) => {
   const { isShow, lastBookElementRef } = useAnimations();
   const ItemsProps = useMemo(() => [
     {
-      svgItem: <StartupSVG className={classNames(cls.icons)} />,
+      svgItem: <StartupSVG className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+        animation={classNames(cls.animation)} />,
       key: 1,
       title: t("Быстро запускаем проекты в работу"),
       subTitle: t("У нас отлаженные процессы оценки проекта, согласования договора и NDA. Работаем с электронным документооборотом."),
     },
     {
-      svgItem: <MedalSVG className={classNames(cls.icons)} />,
+      svgItem: <MedalSVG className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+        animation={classNames(cls.animation)} />,
       key: 2,
       title: t("Усиливаем экспертизу вашей команды"),
       subTitle: t("Думаем за вас о UX, самостоятельно делаем микроанимации и адаптив, подчищаем косяки дизайна."),
     },
     {
-      svgItem: <DiversitySVG className={classNames(cls.icons)} />,
+      svgItem: <DiversitySVG className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+        animation={classNames(cls.animation)} />,
       key: 3,
       title: t("Беремся за проекты любой сложности"),
       subTitle: t("Делаем верстку и фронтенд любой сложности — от простых лендингов до больших сервисов"),
     },
     {
-      svgItem: <ManySVG className={classNames(cls.icons)} />,
+      svgItem: <ManySVG
+        className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+        animation={classNames(cls.animation)}
+      />,
       key: 4,
       title: t("Сокращаем расходы на производство"),
       subTitle: t("Стараемся быть гибкими, чтобы подстроиться под ваши требования и процессы."),
     }
-  ], [t])
+  ], [isShow, t])
 
-  const mods:Record<string, boolean> = {
+  const mods: Record<string, boolean> = {
     "element-show": isShow,
     "element-animation": true
   }
@@ -50,13 +56,13 @@ export const Properties = ({ className }: PropertiesProps) => {
     <div
       ref={lastBookElementRef}
       data-testid="Properties"
-      className={classNames(cls.Properties, mods, [ className])}
+      className={classNames(cls.Properties, {}, [className])}
     >
       <div className={classNames(cls.span8)}>
         {t("почему")} <br /><span>{t("выбирают")}</span> {t("нас")}
       </div>
       {ItemsProps.map((item, index: number) => (
-        <div key={item.key + index}  className={classNames(cls.span4)}>
+        <div key={item.key + index} className={classNames(cls.span4)}>
           <Item
             svgItem={item.svgItem}
             title={item.title}
