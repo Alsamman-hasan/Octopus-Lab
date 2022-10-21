@@ -1,7 +1,7 @@
 import axios, { AxiosPromise } from "axios";
 
-// const baseURL = "https://octopus-lab-server.herokuapp.com/";
-const baseURL = "http://localhost:5000/";
+const baseURL = "https://octopus-lab-server.herokuapp.com/";
+// const baseURL = "http://localhost:5000/";
 
 const app = axios.create({
   baseURL,
