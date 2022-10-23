@@ -23,13 +23,13 @@
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
-
+  height: 3.25rem;
   @include Text2;
 
   color: var(--grey-color);
   appearance: none;
   background: inherit;
-  padding: var(--field-padding);
+  padding-left: var(--field-padding);
   border-bottom: 1px solid #ffffff40;
   width: 100%;
   outline: none;
@@ -41,25 +41,30 @@
   }
 }
 
-.customField .placeholder {
-  position: absolute;
-  left: var(--field-padding);
-  width: calc(100% - (var(--field-padding) * 2));
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  top: 12px;
-  color: var(--grey-color);
-  opacity: 0.6;
+.customField {
+  input::placeholder {
+    position: absolute;
+    left: var(--field-padding);
+    width: calc(100% - (var(--field-padding) * 2));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 2rem;
+    color: var(--grey-color);
+    opacity: 0.6;
 
-  @include Text2;
+    @include Text2;
 
-  transform: translateY(-50%);
-  transition:
-    top 0.3s ease,
-    color 0.3s ease,
-    font-size 0.3s ease;
+    transform: translateY(-50%);
+    transition:
+      top 0.35s ease,
+      all 0.35s ease,
+  }
+  input[value] {
+    padding-top: 22px;
+  }
 }
+
 
 .errorInput {
   input {
@@ -67,9 +72,9 @@
   }
 }
 
-.customField input:focus + .placeholder,
-.customField input:not(:placeholder-shown) + .placeholder {
-  top: -10px;
+.customField input:focus::placeholder,
+.customField input:not(:placeholder-shown)::placeholder {
+  top: 0.75rem;
 
   @include Text3;
 
@@ -79,7 +84,7 @@
 .customField .errorMessage {
   width: 100%;
   position: absolute;
-  top: 40px;
+  top: 65px;
   left: 5px;
   color: var(--error-color);
 

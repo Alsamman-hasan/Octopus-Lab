@@ -72,7 +72,7 @@ const SenderEmailFormUi = () => {
     <>
       <div className={classNames("senderEmailForm-forms")} data-testid="SenderEmailForm">
         {inputItems.map((item) => (
-          <div key={item.params} style={{marginBottom:"12px"}}>
+          <div key={item.params}>
             <Input
               value={state[item.params as keyof IState]}
               handleChange={onHandelChange}

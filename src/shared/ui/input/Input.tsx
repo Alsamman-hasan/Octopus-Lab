@@ -56,13 +56,12 @@ export const Input = memo((props: InputsProps) => {
         style={style}
         onChange={onHandleCahnge}
         value={value}
-        required
+        required={required}
         onBlur={handleBlur}
         onFocus={handleFocus}
         type={typeInput}
-        placeholder="&nbsp;"
+        placeholder={required ? `${label}*`: label}
       />
-      <span className={classNames(cls.placeholder)}>{label}</span>
       {validation && (
         <span
           className={classNames(cls.errorMessage)}
