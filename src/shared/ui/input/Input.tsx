@@ -43,15 +43,16 @@ export const Input = memo((props: InputsProps) => {
 
   const validation = focused && required && !valid
   return (
-    <label
-      htmlFor={params}
+    <div
       className={classNames(
         cls.customField,
         {
-          [cls.errorInput]: validation
+          [cls.errorInput]: validation,
+          [cls.isValue] : value.length > 0
         },
         [className]
       )}>
+      
       <input
         style={style}
         onChange={onHandleCahnge}
@@ -60,8 +61,16 @@ export const Input = memo((props: InputsProps) => {
         onBlur={handleBlur}
         onFocus={handleFocus}
         type={typeInput}
-        placeholder={required ? `${label}*`: label}
+        placeholder="&nbsp;"
+        id={params}
       />
+      <label 
+        data-shrink={`${!focused}`} 
+        className={classNames(cls.label)} 
+        htmlFor={params}
+      >
+        {required ? `${label}*` : label}
+      </label>
       {validation && (
         <span
           className={classNames(cls.errorMessage)}
@@ -70,6 +79,6 @@ export const Input = memo((props: InputsProps) => {
           {validMessage}
         </span>
       )}
-    </label>
+    </div>
   )
 });

@@ -39,75 +39,32 @@
 }
 
 .customField {
-  // input ::-moz-placeholder,
-  input::-webkit-input-placeholder{
-  // input::placeholder {
-    position: absolute;
-    // left: var(--field-padding);
-    // width: calc(100% - (var(--field-padding) * 2));
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    top: 2rem !important;
-    color: var(--grey-color);
-    opacity: 0.6;
-
-    @include Text2;
-
-    transform: translateY(-50%);
-    transition:
-      top 0.35s ease,
-      all 0.35s ease,
-  }
-
   input[value] {
     padding-top: 22px;
   }
 }
 
-
-.customField {
-  // input ::-moz-placeholder,
-  input::placeholder{
-  // input::placeholder {
-    position: absolute;
-    // left: var(--field-padding);
-    // width: calc(100% - (var(--field-padding) * 2));
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    top: 2rem !important;
-    color: var(--grey-color);
-    opacity: 0.6;
-
-    @include Text2;
-
-    transform: translateY(-50%);
-    transition:
-      top 0.35s ease,
-      all 0.35s ease,
-  }
+.isValue .label {
+  display: none;
 }
 
-.customField {
-  input ::-moz-placeholder{
-    position: absolute;
-    // left: var(--field-padding);
-    // width: calc(100% - (var(--field-padding) * 2));
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    top: 2rem !important;
-    color: var(--grey-color);
-    opacity: 0.6;
-
-    @include Text2;
-
-    transform: translateY(-50%);
-    transition:
-      top 0.35s ease,
-      all 0.35s ease,
-  }
+.label {
+  position: absolute;
+  display: block;
+  left: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 2rem !important;
+  color: var(--grey-color);
+  opacity: 0.6;
+  transform-origin: top left;
+  @include Text2;
+  -webkit-transform: translate(0, -20px) scale(1);
+  transform: translateY(0, -20px) scale(1);
+  transition:
+    top 0.35s ease,
+    all 0.35s ease,
 }
 
 .errorInput {
@@ -116,12 +73,10 @@
   }
 }
 
-// .customField input:focus::placeholder,
-.customField input:focus::-webkit-input-placeholder,
-// .customField input:focus::placeholder,
-// .customField input:not(:placeholder-shown)::placeholder 
-.customField input:not(:placeholder-shown)::-webkit-input-placeholder {
-// .customField input:not(:placeholder-shown)::placeholder {
+
+.customField input:focus + .label,
+.customField input:not(:placeholder-shown) + .label {
+  position: absolute;
   top: 0.75rem !important;
 
   @include Text3;
@@ -129,31 +84,6 @@
   opacity: 0.6;
 }
 
-// .customField input:focus::placeholder,
-.customField input:focus::-moz-placeholderr,
-// .customField input:focus::placeholder,
-// .customField input:not(:placeholder-shown)::placeholder 
-.customField input:not(:placeholder-shown)::-moz-placeholder {
-// .customField input:not(:placeholder-shown)::placeholder {
-  top: 0.75rem !important;
-
-  @include Text3;
-
-  opacity: 0.6;
-}
-
-.customField input:focus::placeholder,
-// .customField input:focus::-moz-placeholderr,
-// .customField input:focus::placeholder,
-// .customField input:not(:placeholder-shown)::placeholder 
-// .customField input:not(:placeholder-shown)::-moz-placeholder {
-.customField input:not(:placeholder-shown)::placeholder {
-  top: 0.75rem !important;
-
-  @include Text3;
-
-  opacity: 0.6;
-}
 
 .customField .errorMessage {
   width: 100%;
