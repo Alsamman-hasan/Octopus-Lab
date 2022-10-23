@@ -42,6 +42,7 @@
 }
 
 .customField {
+
   input::placeholder {
     position: absolute;
     left: var(--field-padding);
@@ -60,6 +61,7 @@
       top 0.35s ease,
       all 0.35s ease,
   }
+
   input[value] {
     padding-top: 22px;
   }
