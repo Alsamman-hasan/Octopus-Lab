@@ -10,9 +10,6 @@
   width: 100%;
   margin-bottom: 2rem;
   display: inline-block;
-
-  --field-padding: 8px;
-
   input[type="number"]::-webkit-inner-spin-button {
     appearance: none;
   }
@@ -29,7 +26,7 @@
   color: var(--grey-color);
   appearance: none;
   background: inherit;
-  padding-left: var(--field-padding);
+  padding-left: 0.5rem;
   border-bottom: 1px solid #ffffff40;
   width: 100%;
   outline: none;
@@ -50,7 +47,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    top: 2rem;
+    top: 2rem !important;
     color: var(--grey-color);
     opacity: 0.6;
 
@@ -76,7 +73,7 @@
 
 .customField input:focus::placeholder,
 .customField input:not(:placeholder-shown)::placeholder {
-  top: 0.75rem;
+  top: 0.75rem !important;
 
   @include Text3;
 
