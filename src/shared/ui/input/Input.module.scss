@@ -20,20 +20,20 @@
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
-  height: 3.25rem;
+  // height: 3.25rem;
   @include Text2;
 
   color: var(--grey-color);
   appearance: none;
   background: inherit;
   padding-left: 0.5rem;
+  border-radius: 0;
   border-bottom: 1px solid #ffffff40;
   width: 100%;
   outline: none;
 
   &:hover,
-  &:focus,
-  &:valid {
+  &:focus{
     border-bottom: 1px solid #ffffff71;
   }
 }
@@ -41,6 +41,12 @@
 .customField {
   input[value] {
     padding-top: 22px;
+  }
+}
+
+ .isValue {
+  input {
+    border-bottom: 1px solid #ffffff71;
   }
 }
 
@@ -55,7 +61,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  top: 2rem !important;
+  top: 36px;
   color: var(--grey-color);
   opacity: 0.6;
   transform-origin: top left;
@@ -77,7 +83,7 @@
 .customField input:focus + .label,
 .customField input:not(:placeholder-shown) + .label {
   position: absolute;
-  top: 0.75rem !important;
+  top: 0.75rem;
 
   @include Text3;
 
