@@ -69,8 +69,8 @@
   -webkit-transform: translate(0, -20px) scale(1);
   transform: translateY(0, -20px) scale(1);
   transition:
-    top 0.35s ease,
-    all 0.35s ease,
+    top 0.25s ease,
+    all 0.25s ease,
 }
 
 .errorInput {
@@ -97,7 +97,7 @@
   top: 65px;
   left: 5px;
   color: var(--error-color);
-
+  
   @include Text3;
 }
 
