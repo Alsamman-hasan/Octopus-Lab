@@ -1,9 +1,9 @@
-import { useState, useRef, useCallback } from "react"
+import { useState, useRef, useCallback, useEffect } from "react"
 
 export const useAnimations = () => {
   const [isShow, setIsShow] = useState<boolean>(false)
   const observer = useRef<IntersectionObserver>(null)
-  const lastBookElementRef = useCallback((node: HTMLDivElement) => {
+  const blockRef = useCallback((node: HTMLDivElement) => {
     if (observer) {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
@@ -14,6 +14,6 @@ export const useAnimations = () => {
   }, [])
   return {
     isShow,
-    lastBookElementRef
+    blockRef
   }
 }

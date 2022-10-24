@@ -12,7 +12,7 @@ export interface FooterProps {
 
 export const Footer = forwardRef(({ className }: FooterProps, ref: LegacyRef<HTMLDivElement>) => {
   const { t } = useTranslation();
-  const { isShow, lastBookElementRef } = useAnimations();
+  const { isShow, blockRef } = useAnimations();
   const mods: Record<string, boolean> = {
     "element-show": isShow,
     "element-animation": true
@@ -23,7 +23,7 @@ export const Footer = forwardRef(({ className }: FooterProps, ref: LegacyRef<HTM
       className={classNames(cls.footerWrapper, {}, [className])}
       id="Footer"
       ref={ref}>
-      <div ref={lastBookElementRef} className={classNames(cls.content, mods)} >
+      <div ref={blockRef} className={classNames(cls.content, mods)} >
         <FooterLeft />
         <FooterRight />
       </div>

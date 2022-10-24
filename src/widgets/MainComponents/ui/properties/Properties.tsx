@@ -13,24 +13,27 @@ export interface PropertiesProps {
 
 export const Properties = ({ className }: PropertiesProps) => {
   const { t } = useTranslation("secondBlock")
-  const { isShow, lastBookElementRef } = useAnimations();
+  const { isShow, blockRef } = useAnimations();
   const ItemsProps = useMemo(() => [
     {
-      svgItem: <StartupSVG className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+      svgItem: <StartupSVG 
+        className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
         animation={classNames(cls.animation)} />,
       key: 1,
       title: t("Быстро запускаем проекты в работу"),
       subTitle: t("У нас отлаженные процессы оценки проекта, согласования договора и NDA. Работаем с электронным документооборотом."),
     },
     {
-      svgItem: <MedalSVG className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+      svgItem: <MedalSVG 
+        className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
         animation={classNames(cls.animation)} />,
       key: 2,
       title: t("Усиливаем экспертизу вашей команды"),
       subTitle: t("Думаем за вас о UX, самостоятельно делаем микроанимации и адаптив, подчищаем косяки дизайна."),
     },
     {
-      svgItem: <DiversitySVG className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+      svgItem: <DiversitySVG 
+        className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
         animation={classNames(cls.animation)} />,
       key: 3,
       title: t("Беремся за проекты любой сложности"),
@@ -54,9 +57,9 @@ export const Properties = ({ className }: PropertiesProps) => {
 
   return (
     <div
-      ref={lastBookElementRef}
+      ref={blockRef}
       data-testid="Properties"
-      className={classNames(cls.Properties, {}, [className])}
+      className={classNames(cls.Properties, mods, [className])}
     >
       <div className={classNames(cls.span8)}>
         {t("почему")} <br /><span>{t("выбирают")}</span> {t("нас")}

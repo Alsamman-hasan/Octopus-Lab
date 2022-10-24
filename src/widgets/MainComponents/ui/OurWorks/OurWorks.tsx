@@ -12,7 +12,7 @@ export interface OurWorksProps {
 
 export const OurWorks = ({ className }: OurWorksProps) => {
   const { t } = useTranslation("common");
-  const { isShow, lastBookElementRef } = useAnimations();
+  const { isShow, blockRef } = useAnimations();
   const mods: Record<string, boolean> = {
     "element-show": isShow,
     "element-animation": true
@@ -20,7 +20,7 @@ export const OurWorks = ({ className }: OurWorksProps) => {
 
   return (
     <div
-      ref={lastBookElementRef}
+      ref={blockRef}
       data-testid="OurWorks"
       className={classNames(cls.OurWorks, mods, [className])}
     >

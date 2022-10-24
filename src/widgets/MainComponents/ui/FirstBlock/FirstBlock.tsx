@@ -8,11 +8,11 @@ export interface FirstBlockProps {
 }
 export const FirstBlock = ({ className }: FirstBlockProps) => {
   const { t } = useTranslation("common");
-  const { isShow, lastBookElementRef } = useAnimations();
+  const { isShow, blockRef } = useAnimations();
   return (
     <div 
       data-testid="FirstBlock"
-      ref={lastBookElementRef}
+      ref={blockRef}
       className={classNames(cls.FirstBlock, {"element-show": isShow }, ["element-animation", className])}
     >
       <div className={classNames(cls.FirstBlockTitles)}>

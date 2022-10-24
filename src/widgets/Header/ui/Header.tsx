@@ -22,7 +22,6 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
   const { t } = useTranslation("common");
   const { width } = useWindowSize("resize");
   const [isScrolling, setIsScrolling] = useState(false)
-  
   const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 10)), []);
   useEffect(() => {
     window.addEventListener("scroll", handleSize);

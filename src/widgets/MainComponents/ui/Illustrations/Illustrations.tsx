@@ -11,7 +11,7 @@ export interface IllustrationsProps {
 }
 export const Illustrations = ({ className }: IllustrationsProps) => {
   const { t } = useTranslation("common");
-  const { isShow, lastBookElementRef } = useAnimations();
+  const { isShow, blockRef } = useAnimations();
   const mods: Record<string, boolean> = {
     "element-show": isShow,
     "element-animation": true
@@ -19,7 +19,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
 
   return (
     <div
-      ref={lastBookElementRef}
+      ref={blockRef}
       data-testid="Illustrations"
       className={classNames(cls.Illustrations, mods, [className])}
     >
