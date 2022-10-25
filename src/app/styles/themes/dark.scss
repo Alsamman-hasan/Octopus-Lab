@@ -1,3 +1,13 @@
-.dark {
-  background-color: var(--balck-color);
+.app_dark_theme {
+  --black-color: #F8F4FB;
+  --dark-grey-color: #525257;
+  --grey-color: #C4C4C4;
+  --dark-white-color: #050505;
+  --white-color: #050505;
+  --purple-color: #010047;
+  --blue-color: #13B966;
+  --oline-color: #24C200;
+  --error-color: #FF2D1A;
+  --modal-z-index: 10;
+  --overlay-color: rgba(0 0 0 /60%);
 }

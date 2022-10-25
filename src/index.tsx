@@ -1,5 +1,6 @@
 import { ErrorBoundary } from "app/providers/ErrorBoundary";
 import { StoreProvider } from "app/providers/StorProvider";
+import { ThemeProvider } from "app/providers/ThemeProvider";
 import React from "react"
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -13,7 +14,9 @@ root.render(
     <StoreProvider>
       <BrowserRouter>
         <ErrorBoundary>
-          <App />
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
         </ErrorBoundary>
       </BrowserRouter>
     </StoreProvider>

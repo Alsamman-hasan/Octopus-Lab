@@ -28,13 +28,13 @@
   width: 1.56rem;
   height: 1.25rem;
   text-transform: uppercase;
-  color: var(--balck-color);
+  color: var(--black-color);
 
   @include Ti6;
 
   &:hover {
     background: none;
-    color: var(--balck-color);
+    color: var(--black-color);
     border: none;
   }
 }

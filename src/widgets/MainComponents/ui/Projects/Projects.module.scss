@@ -20,7 +20,7 @@
 .ProjectsTitle {
   @include Ti1;
 
-  color: var(--balck-color);
+  color: var(--black-color);
 
   span {
     color: var(--blue-color);
@@ -49,7 +49,7 @@
 .ProjectsGroupTitle {
   @include Ti3;
 
-  color: var(--balck-color);
+  color: var(--black-color);
   writing-mode: vertical-rl;
   padding: 2rem;
   text-align: center;
@@ -92,7 +92,7 @@
 
   @include Ti3;
 
-  color: var(--balck-color);
+  color: var(--black-color);
 }
 
 .ProjectsGroup_subTitle {
@@ -100,7 +100,7 @@
 
   @include Text3;
 
-  color: var(--balck-color);
+  color: var(--black-color);
 }
 
 .ProjectsGroup_links {

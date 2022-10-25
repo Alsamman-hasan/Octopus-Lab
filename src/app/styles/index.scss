@@ -1,11 +1,11 @@
-@import "variables/colors";
+@import "themes/light.scss";
+@import "themes/dark.scss";
 @import "variables/fotns";
 @import "reset";
-@import "themes/dark";
-@import "themes/light";
 
 .app {
   background: var(--dark-white-color);
+  // background: #11001d;
   width: 100%;
 }
 
@@ -15,7 +15,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--purple-color);
+  background: #450072;
   border-radius: 5px;
 }
 

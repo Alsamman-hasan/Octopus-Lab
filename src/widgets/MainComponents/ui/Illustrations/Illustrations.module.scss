@@ -21,7 +21,7 @@
 
   @include Ti1;
 
-  color: var(--balck-color);
+  color: var(--black-color);
 
   span {
     color: var(--blue-color);
@@ -91,14 +91,14 @@
 .stepTitle {
   @include Ti4;
 
-  color: var(--balck-color);
+  color: var(--black-color);
   margin-bottom: 0.5rem;
 }
 
 .stepSubTitle {
   @include Text2;
 
-  color: var(--balck-color);
+  color: var(--black-color);
 }
 
 @media screen and (max-width: 768px) {

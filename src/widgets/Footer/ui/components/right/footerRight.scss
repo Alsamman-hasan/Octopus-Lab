@@ -36,7 +36,7 @@
   &_name {
     @include Text2;
 
-    color: var(--white-color);
+    color: var(--grey-color);
   }
 
   &_position {
@@ -74,7 +74,7 @@
   &_header {
     @include Ti3;
 
-    color: var(--white-color);
+    color: var(--grey-color);
   }
 
   &_item {
@@ -86,7 +86,7 @@
     span {
       @include Text2;
 
-      color: var(--white-color);
+      color: var(--grey-color);
     }
   }
 }
