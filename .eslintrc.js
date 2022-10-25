@@ -64,6 +64,7 @@ module.exports = {
           "variant",
           "autoComplete",
           "viewBox",
+          "fill",
         ],
       },
     ],

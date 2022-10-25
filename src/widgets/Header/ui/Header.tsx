@@ -6,6 +6,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
 import { Button} from "shared/ui/Buttons";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import cls from "./header.module.scss";
 
@@ -53,6 +54,7 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
             </Button>
           </div>
           <LangSwitcher/>
+          <ThemeSwitcher/>
         </div>
       </div>
     </div>
