@@ -29,7 +29,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   }
   return (
     <div className={cls.label} onClick={onChangeTheme} >
-      <input type="checkbox" checked={theme === Theme.DARK} />
+      <input className={cls.inputSwitcher} type="checkbox" checked={theme === Theme.DARK} />
       <span className={cls.background}>
         <span className={cls.knob}>
           {

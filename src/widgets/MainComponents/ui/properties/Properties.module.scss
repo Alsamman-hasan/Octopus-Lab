@@ -32,7 +32,8 @@
 
 .hovered {
   transition: all 0.9s ease;
-  .iconsAnim .animation{
+
+  .iconsAnim .animation {
     stroke: none;
     fill: var(--purple-color) !important;
   }
@@ -53,7 +54,7 @@
 .icons {
   width: 3.625rem;
   height: 5rem;
-  fill:none;
+  fill: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -106,29 +107,24 @@
   }
 }
 
-
-
 @keyframes rotateIcons {
   0% {
     stroke-dashoffset: 300;
   }
 
-  100%{
+  100% {
     stroke-dashoffset: 0;
   }
 }
 
-
-
-
-.iconsAnim .animation{
+.iconsAnim .animation {
   stroke: #450072;
-  animation: rotateIcons 5s forwards ;
+  animation: rotateIcons 5s forwards;
 }
+
 .animation {
   fill: none;
   stroke: none;
   stroke-dashoffset: 300;
   stroke-dasharray: 300;
 }
-

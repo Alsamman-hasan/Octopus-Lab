@@ -1,7 +1,19 @@
 .label {
-  position:relative;
+  position: relative;
   width: 5.625rem;
   height: 2.23rem;
+
+  input {
+    transform: scale(0);
+  }
+
+  input:checked + .background {
+    background: var(--dark-grey-color);
+  }
+
+  input:checked + .background .knob {
+    transform: translateX(3.375rem);
+  }
 }
 
 .btn {
@@ -10,11 +22,7 @@
   border: none;
 }
 
-input {
-  transform: scale(0);
-}
-
-.background{
+.background {
   position: absolute;
   left: 0;
   height: 100%;
@@ -24,25 +32,15 @@ input {
   transition: background 0.4s;
 }
 
-.knob{
+.knob {
   position: absolute;
   top: 0.125rem;
   left: 0.125rem;
   width: 2rem;
   height: 2rem;
-  border-radius:50%;
+  border-radius: 50%;
   background: var(--white-color);
   transition: transform 0.4s;
-
-}
-
-input:checked + .background{
-  background: var(--dark-grey-color);;
-
-}
-
-input:checked + .background .knob {
-  transform: translateX(3.375rem);
 }
 
 .icons {
@@ -51,21 +49,19 @@ input:checked + .background .knob {
   padding: 0.2rem;
 }
 
-
 @media screen and (max-width: 768px) {
-  .label  {
+  .label {
     width: 4rem;
     height: 1.77rem;
+
+    input:checked + .background .knob {
+      transform: translateX(2.375rem);
+    }
   }
 
-  .knob, .btn{
+  .knob,
+  .btn {
     width: 1.5rem;
     height: 1.5rem;
   }
-
-  input:checked + .background .knob {
-    transform: translateX(2.375rem);
-  }
-
 }
-

@@ -24,7 +24,7 @@
 
   text-align: center;
   text-transform: none;
-  color: var(--white-color);
+  color: var(--grey-color);
   margin: 0;
   letter-spacing: 0.02em;
 }
@@ -58,9 +58,9 @@
 }
 
 .Purple:hover {
-  color: var(--white-color);
+  color: var(--grey-color);
   box-shadow: 0 4px 8px rgb(69 0 114 / 12%);
-  background: linear-gradient(84.96deg, #450072 60.94%, #17cee0 97.9%);
+  background: linear-gradient(84.96deg, var(--purple-color) 60.94%,var(--blue-color) 97.9%);
   background-size: 190%;
   transition: 500ms background-position ease-in-out;
   background-position: right;
@@ -84,7 +84,7 @@
 
 .NonColor:hover {
   color: var(--purple-color);
-  background: var(--white-color);
+  background: var(--grey-color);
   border: 1px solid rgb(255 255 255 / 0%);
 }
 

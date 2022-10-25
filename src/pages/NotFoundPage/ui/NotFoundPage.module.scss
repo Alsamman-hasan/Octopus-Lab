@@ -7,7 +7,7 @@
 
   @include Ti2;
 
-  // height: 100vh;
+
   flex-direction: column;
   gap: 25px;
 }
@@ -17,8 +17,6 @@
 .element-animation {
   margin: 2rem 0;
   font-size: 3rem;
-  
-  /* Скроем элемент в начальном состоянии */
   opacity: 0;
   transform: translateY(20px);
 }
