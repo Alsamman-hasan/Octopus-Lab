@@ -1,5 +1,5 @@
 
-import {useEffect } from "react";
+import { useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import SoLong from "shared/assets/animation/Vector.png"
 import SoLong2 from "shared/assets/animation/Vector2.png"
@@ -16,13 +16,13 @@ export interface BgAnimationProps {
 
 export const BgAnimation = ({ className }: BgAnimationProps) => {
   const { width } = useWindowSize("resize")
-  
+
   const rianAnimation = (winWidth: number) => {
-    const amount = Math.floor(winWidth / 30 ) ; 
+    const amount = Math.floor(winWidth / 30);
     // console.log(winWidth);
     const body = document.getElementById("ani")
-    let i = 0 ;
-    while(i < amount) {
+    let i = 0;
+    while (i < amount) {
       const drop = document.createElement("img");
       const drop2 = document.createElement("img");
       const drop3 = document.createElement("img");
@@ -43,21 +43,21 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
       const duration = Math.random() * 10;
 
       drop.style.width = `${0.5}rem`;
-      drop.style.height = `${4.67}rem`; 
+      drop.style.height = `${4.67}rem`;
       drop.style.left = `${posX}px`;
       drop.style.animationDelay = `${delay}s`;
-      drop.style.animationDuration = `${ 2 + duration}s`;
+      drop.style.animationDuration = `${2 + duration}s`;
 
 
       drop2.style.width = `${0.5}rem`;
-      drop2.style.height = `${3.84}rem`; 
+      drop2.style.height = `${3.84}rem`;
       drop2.style.left = `${posX2}px`;
       drop2.style.animationDelay = `${delay}s`;
       drop2.style.animationDuration = `${4 + duration}s`;
 
 
       drop3.style.width = `${0.5}rem`;
-      drop3.style.height = `${2.166}rem`; 
+      drop3.style.height = `${2.166}rem`;
 
       drop3.style.left = `${posX3}px`;
       drop3.style.animationDelay = `${delay}s`;
@@ -65,7 +65,7 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
 
       drop4.style.width = `${0.5}rem`;
-      drop4.style.height = `${1.33}rem`; 
+      drop4.style.height = `${1.33}rem`;
 
       drop4.style.left = `${posX4}px`;
       drop4.style.animationDelay = `${delay}s`;
@@ -73,16 +73,16 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
 
       drop5.style.width = `${0.5}rem`;
-      drop5.style.height = `${0.5}rem`; 
+      drop5.style.height = `${0.5}rem`;
       drop5.style.left = `${posX5}px`;
       drop5.style.animationDelay = `${delay}s`;
       drop5.style.animationDuration = `${4 + duration}s`;
 
-      body.appendChild(drop);
-      body.appendChild(drop2);
-      body.appendChild(drop3);
-      body.appendChild(drop4);
-      body.appendChild(drop5);
+      body?.appendChild(drop);
+      body?.appendChild(drop2);
+      body?.appendChild(drop3);
+      body?.appendChild(drop4);
+      body?.appendChild(drop5);
 
       i++
     }
@@ -90,8 +90,10 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
   const stopRain = () => {
     const rainSection = document.getElementById("ani");
-    while (rainSection.hasChildNodes()) {
-      rainSection.removeChild(rainSection.lastChild);
+    if (rainSection) {
+      while (rainSection.hasChildNodes()) {
+        rainSection.removeChild(rainSection?.lastChild as Node);
+      }
     }
   }
 
@@ -103,13 +105,13 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
 
 
   useEffect(() => {
-    const num = width -20
+    const num = width - 20
     rianAnimation(num);
   }, [])
 
   return (
-    <div className={classNames("BgAnimation", {}, [className])} style={{ maxWidth:`${width / 16}rem` }} >
-      <div id="ani" /> 
+    <div className={classNames("BgAnimation", {}, [className])} style={{ maxWidth: `${width / 16}rem` }} >
+      <div id="ani" />
     </div>
   )
 };

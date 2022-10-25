@@ -1,29 +1,34 @@
-import { ReactElement, ReactNode, useRef } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { MutableRefObject, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import useHover from "shared/lib/Hooks/UseHover/useHover";
+import { PropertiesItemType } from "../../model/PropertiesItem";
 import cls from "./Properties.module.scss";
 
 export interface IItems {
-  svgItem: ReactElement | ReactNode;
-  title: string;
-  subTitle: string;
+  item: PropertiesItemType;
+  isShow: boolean;
 }
 
 const Item = (props: IItems) => {
-  const { svgItem, title, subTitle } = props;
-  const refr = useRef();
+  const { item, isShow } = props;
+  const { t } = useTranslation("secondBlock")
+  const refr = useRef(null) as MutableRefObject<HTMLDivElement | null >;
   const hovered = useHover(refr)
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.hovered]: hovered
   }
   return (
     <div ref={refr} className={classNames(cls.itemContetn, mods)}>
-      {svgItem}
+      <item.SvgItem
+        className={classNames(cls.icons, { [cls.iconsAnim]: isShow })}
+        animation={classNames(cls.animation)}
+      />
       <span className={classNames(cls.PropertiesTitle)} >
-        {title}
+        {t(item.title)}
       </span>
       <span className={classNames(cls.PropertiesSubTitle)} >
-        {subTitle}
+        {t(item.subTitle)}
       </span>
     </div>
   )

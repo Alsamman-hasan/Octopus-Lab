@@ -1,12 +1,12 @@
-import { RefObject, useEffect, useRef } from "react";
+import { MutableRefObject, RefObject, useEffect, useRef } from "react";
 
 
 export default function useScroll(
-  parentRef: RefObject<HTMLElement>,
-  childRef: RefObject<HTMLElement>,
+  parentRef: MutableRefObject<HTMLElement>,
+  childRef: MutableRefObject<HTMLElement>,
   callback: () => void
 ) {
-  const observer = useRef<IntersectionObserver>();
+  const observer = useRef<IntersectionObserver | null >(null);
 
   useEffect(() => {
     const options = {
@@ -21,10 +21,10 @@ export default function useScroll(
       }
     }, options)
 
-    observer.current.observe(childRef.current)
+    observer.current.observe(childRef?.current)
     const childCurr = childRef.current
     return  () => {
-      observer.current.unobserve(childCurr)
+      observer?.current?.unobserve(childCurr)
     };
   }, [callback, childRef, parentRef])
 };

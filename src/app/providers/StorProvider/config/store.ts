@@ -1,5 +1,5 @@
 import { AnyAction } from "redux"
-import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
+import { configureStore, ReducersMapObject, Reducer, CombinedState } from "@reduxjs/toolkit";
 import createSagaMiddleware, { SagaMiddleware } from "redux-saga";
 import { counterReduser } from "entities/Counter";
 import { StateSchema } from "./StateSchema";
@@ -15,7 +15,7 @@ export function createReduxStore(initialState?: StateSchema) {
   const reducerManager = createReducerManager(rootReducer);
 
   const store = configureStore<StateSchema, AnyAction, [SagaMiddleware]>({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     middleware: [sagaMiddleware],
     devTools: __IS_DEV__,
     preloadedState: initialState,

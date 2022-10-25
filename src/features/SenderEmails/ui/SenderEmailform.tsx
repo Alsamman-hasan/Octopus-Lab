@@ -12,17 +12,15 @@ import { useAppDispatch } from "shared/lib/Hooks/useAppDispatch/useAppDispatch";
 import { Input } from "shared/ui/input/Input";
 import { IState } from "./types";
 import { inputscollection } from "./constants";
-import {
-  getSenderEmailLoading,
-} from "../model/selectors/getSenderEmailValue/getSenderEmailValue";
 import { sendEmailAction } from "../model/Actions/sendEmailActions";
 import { senderReduser } from "../model/slice/SenderSlice";
+import { getSenderEmail } from "../model/selectors/getSenderEmail/getSenderEmail";
 
 const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
   const dispatch = useAppDispatch();
   const store = useStore() as ReduxStoreWithManager;
-  const loading = useSelector(getSenderEmailLoading);
+  const loading = useSelector(getSenderEmail);
   const [error, setError] = useState(false);
   const [state, setState] = useState<IState>({
     name: "",
@@ -74,7 +72,7 @@ const SenderEmailFormUi = () => {
         {inputItems.map((item) => (
           <div key={item.params}>
             <Input
-              value={state[item.params as keyof IState]}
+              value={state[item.params as keyof IState] || ""}
               handleChange={onHandelChange}
               label={t(item.label)}
               params={item.params}

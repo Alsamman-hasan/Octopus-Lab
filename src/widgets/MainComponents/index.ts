@@ -1,6 +1,5 @@
 export { BgAnimation } from "./ui/BgAnimation/BgAnimation";
 
-export { RainTime } from "./ui/BgAnimation/TestRain";
 
 export { FirstBlock } from "./ui/FirstBlock/FirstBlock";
 

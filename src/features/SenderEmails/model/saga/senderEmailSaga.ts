@@ -16,7 +16,7 @@ export function* workerSenderEmail({ payload }: PayloadAction<ISendEmailsAction>
     
   } catch (error) {
     yield put(setSendDats({ hasError: true, loading: false, message: "" }));
-    yield put(setStatus({ message: error, status: "error" }));
+    yield put(setStatus({ message: error as string || "error", status: "error" }));
   }
 }
 
