@@ -1,6 +1,6 @@
 import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "app/App";
-import { memo } from "react";
+import { memo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import cls from "./ThemeSwitcher.module.scss";
 import LightIcon from "../../../assets/icons/themesIcons/Light.svg"
@@ -13,14 +13,17 @@ export interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
+  const [checked, setChecked] = useState(!!(theme === Theme.DARK));
+
   const { pathname } = useLocation();
   const isEn = pathname !== "/ru";
   const onChangeTheme = () => {
+    setChecked(!checked)
     toggleTheme();
   }
   if (!isEn) {
     return (
-      <div onClick={onChangeTheme} className={cls.btn}>
+      <div onClick={toggleTheme} className={cls.btn}>
         {theme === Theme.DARK
           ? <DarkIcon className={cls.icons} fill="#f5f5f5" />
           : <LightIcon className={cls.icons} fill="#11001d" />}
@@ -28,9 +31,15 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     )
   }
   return (
-    <div className={cls.label} onClick={onChangeTheme} >
-      <input className={cls.inputSwitcher} type="checkbox" checked={theme === Theme.DARK} />
-      <span className={cls.background}>
+    <div className={cls.label}>
+      <input
+        className={cls.inputSwitcher}
+        type="checkbox"
+        id="switcher"
+        checked={checked}
+        onChange={onChangeTheme}
+      />
+      <label htmlFor="switcher" className={cls.background}>
         <span className={cls.knob}>
           {
             theme === Theme.DARK
@@ -38,7 +47,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
               : <LightIcon className={cls.icons} fill="#11001d" />
           }
         </span>
-      </span>
+      </label>
     </div>
   )
 });
