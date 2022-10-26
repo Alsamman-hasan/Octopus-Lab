@@ -34,7 +34,7 @@
 .HeaderBtn {
   width: 13.32rem;
   height: 2.5rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .contetn {
@@ -57,6 +57,9 @@
   background-color: var(--white-color);
   animation-name: tranformer;
   animation-duration: 0.7s;
+}
+.logo {
+  fill: var(--purple-color);
 }
 
 @media (max-width: 1599px) {
@@ -84,6 +87,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  
+  .logo {
+    fill: var(--purple-color);
+  }
+
   .logo,
   .btn,
   .HeaderBtn {
@@ -92,7 +100,7 @@
   }
 
   .HeaderBtn {
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 0.2rem;
   }
 }
 
