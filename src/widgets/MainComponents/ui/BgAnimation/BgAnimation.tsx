@@ -33,6 +33,12 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
       drop3.src = `${SoLong3}`
       drop4.src = `${SoLong4}`
       drop5.src = `${SoLong5}`
+      
+      drop.alt = `${SoLong}`
+      drop2.alt = `${SoLong2}`
+      drop3.alt = `${SoLong3}`
+      drop4.alt = `${SoLong4}`
+      drop5.alt = `${SoLong5}`
 
       const posX = Math.floor(Math.random() * winWidth);
       const posX2 = Math.floor(Math.random() * winWidth);
