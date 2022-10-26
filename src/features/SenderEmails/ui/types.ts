@@ -12,4 +12,5 @@ export interface IInputItems {
   params: string;
   errorMessage?: string;
   required?: boolean;
+  onChange?: (value: string) => void
 }

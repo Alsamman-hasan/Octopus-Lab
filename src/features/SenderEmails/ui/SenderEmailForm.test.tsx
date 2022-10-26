@@ -6,8 +6,9 @@ describe("SenderEmailForm", () => {
   test("rendreing SenderEmailForm", () => {
     componentRender(<SenderEmailForm />, { 
       initialState: {
-        mailes: {
-          loading: false
+        counter: {value: 0},
+        senderEmailes: {
+          email: "test"
         }
       }
     });

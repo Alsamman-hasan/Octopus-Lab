@@ -12,7 +12,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths":{
-      "*" : ["./src/*"]
+      "*" : ["./src/*"],
     },
     "resolveJsonModule": true
   },
@@ -22,8 +22,8 @@
     }
   },
    "include": [
-    "./config/jest/jest-setup.ts",
+    "config/jest/jestSetUpTest.ts",
     "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./src/**/*.tsx",
   ]
 }

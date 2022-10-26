@@ -1,28 +1,38 @@
-import { AnyAction } from "redux"
 import { configureStore, ReducersMapObject, Reducer, CombinedState } from "@reduxjs/toolkit";
-import createSagaMiddleware, { SagaMiddleware } from "redux-saga";
 import { counterReduser } from "entities/Counter";
-import { StateSchema } from "./StateSchema";
-import saga from "./sagasSchema";
+import { $api } from "shared/api/api";
+import { NavigateOptions } from "react-router-dom";
+import { Path } from "history";
+import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
+  navigate?: (to: string | Partial<Path>, options?: NavigateOptions) => void) {
   const rootReducer: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReduser,
   }
-  const sagaMiddleware = createSagaMiddleware();
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<StateSchema, AnyAction, [SagaMiddleware]>({
+  const extraArg: ThunkExtraArg = {
+    api: $api,
+    navigate,
+  };
+
+  const store = configureStore({
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
-    middleware: [sagaMiddleware],
     devTools: __IS_DEV__,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: extraArg,
+      },
+    }), 
   })
   // @ts-ignore
   store.reducerManager = reducerManager;
-  sagaMiddleware.run(saga);
   return store;
 }
 

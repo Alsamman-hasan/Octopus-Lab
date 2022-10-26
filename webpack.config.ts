@@ -19,6 +19,8 @@ export default (env: BuildEnv) => {
 
   const mode =  env.mode || "development";
   const isDev = mode === "development";
+  // const apiUrl = env.apiUrl || "https://octopus-lab-server.herokuapp.com/";
+  const apiUrl = env.apiUrl || "http://localhost:5000/";
   const PORT = env.port ||  3000;
 
   const config: webpack.Configuration = buildWebpackConfig({
@@ -26,6 +28,7 @@ export default (env: BuildEnv) => {
     paths,
     isDev,
     port: PORT,
+    apiUrl,
   })
 
   return config;

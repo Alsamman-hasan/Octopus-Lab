@@ -45,6 +45,7 @@
 .Purple {
   background: var(--purple-color);
   border: none;
+  color: var(--white-color);
 }
 
 .Purple:disabled {
@@ -58,9 +59,10 @@
 }
 
 .Purple:hover {
-  color: var(--grey-color);
+  // color: var(--grey-color);
+  color: var(--white-color);
   box-shadow: 0 4px 8px rgb(69 0 114 / 12%);
-  background: linear-gradient(84.96deg, var(--purple-color) 60.94%,var(--blue-color) 97.9%);
+  background: linear-gradient(84.96deg, var(--purple-color) 60.94%,var(--blue-bg-color) 97.9%);
   background-size: 190%;
   transition: 500ms background-position ease-in-out;
   background-position: right;
@@ -83,7 +85,7 @@
 }
 
 .NonColor:hover {
-  color: var(--purple-color);
+  color: var(--purple-bg-color);
   background: var(--grey-color);
   border: 1px solid rgb(255 255 255 / 0%);
 }

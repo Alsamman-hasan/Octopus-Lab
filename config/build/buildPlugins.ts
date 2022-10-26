@@ -8,7 +8,7 @@ import { IBuildOptioins } from "./types/config";
 
 
 export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
-  const { paths, isDev } = options;
+  const { paths, isDev, apiUrl } = options;
   const plugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
@@ -21,7 +21,8 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
     new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev)
+      __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl)
     }),
     new CopyPlugin({
       patterns: [

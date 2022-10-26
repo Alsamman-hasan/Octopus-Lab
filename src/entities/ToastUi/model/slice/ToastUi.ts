@@ -30,7 +30,7 @@ const uiSlice = createSlice({
   }
 })
 
-export const { setStatus } = uiSlice.actions
+export const { actions: UiActions } = uiSlice;
 
 export const uiReduser = uiSlice.reducer
 

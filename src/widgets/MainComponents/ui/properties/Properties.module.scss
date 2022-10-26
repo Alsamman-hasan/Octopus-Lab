@@ -118,7 +118,7 @@
 }
 
 .iconsAnim .animation {
-  stroke: #450072;
+  stroke: var(--purple-color);
   animation: rotateIcons 5s forwards;
 }
 

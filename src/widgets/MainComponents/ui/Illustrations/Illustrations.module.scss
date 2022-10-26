@@ -59,7 +59,7 @@
 
 .step {
   height: 20rem;
-  border: 1px solid #d9d9d9;
+  border: 1px solid var(--grey-color);
   padding: 1.25rem;
 }
 
@@ -177,7 +177,7 @@
   .step {
     height: 100%;
     border: none;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: 1px solid var(--grey-color);
     display: flex;
     gap: 2rem;
     padding: 17px 0 12px;

@@ -9,8 +9,8 @@ import { NavigateOptions } from "react-router";
 
 export interface StateSchema {
   counter: CounterSchema;
-  mailes?: SenderSchema
   toastUi?: ToastUiSchema;
+  senderEmailes?: SenderSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

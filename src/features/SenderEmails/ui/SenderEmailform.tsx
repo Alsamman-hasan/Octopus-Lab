@@ -1,78 +1,85 @@
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import "./SenderEmailForm.scss";
 import { Button } from "shared/ui/Buttons";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
-import { useSelector, useStore } from "react-redux";
-import { validatorEmail } from "shared/lib/validation/validationForm";
-import { ReduxStoreWithManager } from "app/providers/StorProvider/config/StateSchema";
+import { useSelector } from "react-redux";
 import { uiReduser } from "entities/ToastUi";
 import { useAppDispatch } from "shared/lib/Hooks/useAppDispatch/useAppDispatch";
 import { Input } from "shared/ui/input/Input";
+import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { IState } from "./types";
 import { inputscollection } from "./constants";
-import { sendEmailAction } from "../model/Actions/sendEmailActions";
-import { senderReduser } from "../model/slice/SenderSlice";
-import { getSenderEmail } from "../model/selectors/getSenderEmail/getSenderEmail";
+import { senderEmailActions, senderEmailReducer } from "../model/slice/senderEmailSlice";
+import { getSenderEmailName } from "../model/selectors/getSenderEmailName/getSenderEmailName";
+import { sendEmail } from "../model/service/senderEmail/senderEmail";
+import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoading/getSenderEmailLoading";
+
+const initialReducers: ReducersList = {
+  senderEmailes: senderEmailReducer,
+  toastUi: uiReduser,
+}
 
 const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
   const dispatch = useAppDispatch();
-  const store = useStore() as ReduxStoreWithManager;
-  const loading = useSelector(getSenderEmail);
+  const loading = useSelector(getSenderEmailIsLaoding);
+  const sendersData = useSelector(getSenderEmailName);
   const [error, setError] = useState(false);
-  const [state, setState] = useState<IState>({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    project: ""
-  });
-
-  useEffect(() => {
-    dispatch({ type: `@INIT mailes reducer` });
-    store.reducerManager.add("mailes", senderReduser);
-    store.reducerManager.add("toastUi", uiReduser);
-    return () => {
-      store.reducerManager.remove("mailes");
-      store.reducerManager.remove("toastUi");
-    }
-  }, [])
-
-
-  const isValidEmail = useMemo(() => validatorEmail(state.email), [state.email])
 
   const onHandelChange = useCallback((params: string, value: string) => {
-    setState((prev) => ({ ...prev, [params]: value }));
-  }, []);
+    switch (params) {
+    case "name":
+      dispatch(senderEmailActions.setName(value));
+      break;
+    case "email":
+      dispatch(senderEmailActions.setEmail(value));
+      break;
+    case "phone":
+      dispatch(senderEmailActions.setPhone(value));
+      break;
+    case "company":
+      dispatch(senderEmailActions.setCompony(value));
+      break;
+    case "project":
+      dispatch(senderEmailActions.setProject(value));
+      break;
+    default:
+    }
+  }, [dispatch]);
 
-
-  const hasError = Boolean(!state.email || !state.name || !isValidEmail)
+  const hasError = Boolean(!sendersData?.email || !sendersData?.name || !sendersData?.isValidate)
   const inputItems = useMemo(() => inputscollection, [])
 
-  const sendData = () => {
+  const onLoginClick = useCallback(async () => {
     if (hasError) {
       setError(true);
     } else {
-      setError(false);
-      dispatch(sendEmailAction(state));
-      setState({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        project: ""
-      })
+      dispatch(sendEmail({
+        email: sendersData?.email,
+        name: sendersData?.name,
+        company: sendersData?.company,
+        phone: sendersData?.phone,
+        project: sendersData?.project
+      }));
     }
-  }
+  }, [
+    dispatch,
+    hasError,
+    sendersData?.company,
+    sendersData?.email,
+    sendersData?.name,
+    sendersData?.phone,
+    sendersData?.project
+  ]);
   return (
-    <>
+    <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <div className={classNames("senderEmailForm-forms")} data-testid="SenderEmailForm">
         {inputItems.map((item) => (
           <div key={item.params}>
             <Input
-              value={state[item.params as keyof IState] || ""}
+              value={sendersData?.[item.params as keyof IState] || ""}
               handleChange={onHandelChange}
               label={t(item.label)}
               params={item.params}
@@ -89,15 +96,15 @@ const SenderEmailFormUi = () => {
             sizes={ButtonSize.BIG}
             btnBg={ButtonBgColor.BLUE}
             className="btn"
-            onClick={sendData}
-            disabled={loading || Boolean(!state.email) || !isValidEmail}
+            onClick={onLoginClick}
+            disabled={loading || Boolean(!sendersData?.email) || !sendersData?.isValidate}
           >
             {loading ? t("loading") : t("Оценить проект")}
           </Button>
         </div>
         {hasError && error && <span className={classNames("errorBtn")}>{t("please input email and name")}</span>}
       </div>
-    </>
+    </DynamicModuleLoader>
   );
 };
 
