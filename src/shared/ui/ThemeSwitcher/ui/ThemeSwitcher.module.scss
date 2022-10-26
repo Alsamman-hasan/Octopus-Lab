@@ -1,18 +1,18 @@
 .label {
   position: relative;
-  width: 5.625rem;
-  height: 2.23rem;
-
+  width: 4.5rem;
+  height: 2rem;
   input {
     transform: scale(0);
   }
 
   input:checked + .background {
-    background: var(--dark-grey-color);
+    background: var(--purple-color);
+    cursor: pointer;
   }
 
   input:checked + .background .knob {
-    transform: translateX(3.375rem);
+    transform: translateX(2.33rem);
   }
 }
 
@@ -24,18 +24,19 @@
 }
 
 .background {
+  cursor: pointer;
   position: absolute;
   left: 0;
   height: 100%;
   width: 100%;
   border-radius: 1.25rem;
-  background: var(--dark-grey-color);
+  background: var(--purple-color);
   transition: background 0.4s;
 }
 
 .knob {
   position: absolute;
-  top: 0.125rem;
+  top: 0;
   left: 0.125rem;
   width: 2rem;
   height: 2rem;
@@ -52,11 +53,11 @@
 
 @media screen and (max-width: 768px) {
   .label {
-    width: 4rem;
-    height: 1.77rem;
+    width: 3.5rem;
+    height: 1.5rem;
 
     input:checked + .background .knob {
-      transform: translateX(2.375rem);
+      transform: translateX(1.88rem);
     }
   }
 
