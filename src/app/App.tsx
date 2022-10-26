@@ -27,7 +27,7 @@ const App = () => {
       if (appRef.current) appRef.current.scrollIntoView({ behavior: "smooth" })
     } 
   }, [])
-  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 100)), []);
+  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 350)), []);
   useEffect(() => {
     window.addEventListener("scroll", handleSize);
     return () => window.removeEventListener("scroll", handleSize);
