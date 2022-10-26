@@ -41,7 +41,7 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
             [cls.choose]: lang === "ru",
             [cls.notChose]: lang === "en"
           },
-          [className])}
+          [])}
       >
         {t("ru")}
       </Button>

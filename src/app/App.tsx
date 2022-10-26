@@ -1,11 +1,12 @@
+
 import "./styles/index.scss";
-import { Suspense, useCallback, useRef } from "react";
+import { Suspense, useCallback, useEffect, useState, useRef } from "react";
 import { Header } from "widgets/Header";
 import { Footer } from "widgets/Footer";
 import { LoaderPage } from "widgets/LoaderPage";
-import { ToastContainer } from "react-toastify";
-import { injectStyle } from "react-toastify/dist/inject-style";
 import { classNames } from "shared/lib/classNames/classNames";
+import { ToastContainers } from "entities/ToastUi";
+import UpIcon from "shared/assets/icons/svg/UpIcon.svg"
 import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/ThemeProvider";
 
@@ -14,21 +15,35 @@ export enum Theme {
   DARK = "app_dark_theme"
 }
 
-injectStyle()
 const App = () => {
   const { theme } = useTheme();
+  const [isScrolling, setIsScrolling] = useState(false)
   const footerRef = useRef<HTMLDivElement>(null)
-  const onScrollToFooter = useCallback(() => {
-    if (footerRef.current) footerRef.current.scrollIntoView({ behavior: "smooth" })
-  },[])
+  const appRef = useRef<HTMLDivElement>(null)
+  const onScrollToFooter = useCallback((param: string) => {
+    if (param === "footer") {
+      if (footerRef.current) footerRef.current.scrollIntoView({ behavior: "smooth" })
+    } else if (param === "App") {
+      if (appRef.current) appRef.current.scrollIntoView({ behavior: "smooth" })
+    } 
+  }, [])
+  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 100)), []);
+  useEffect(() => {
+    window.addEventListener("scroll", handleSize);
+    return () => window.removeEventListener("scroll", handleSize);
+  }, [handleSize]);
+
   return (
-    <div className={classNames("app", {}, [theme])}>
-      <ToastContainer />
+    <div ref={appRef}className={classNames("app", {}, [theme])}>
+      <ToastContainers />
       <Suspense fallback={<LoaderPage />}>
-        <Header onScrollToFooter={onScrollToFooter}/>
+        <Header onScrollToFooter={onScrollToFooter} />
         <AppRouter />
         <Footer ref={footerRef} />
       </Suspense>
+      <div className={classNames("iconUp", { "visibale": !isScrolling }, [])}>
+        <UpIcon onClick={() => onScrollToFooter("App")} className="icon"/>
+      </div>
     </div>
   )
 };

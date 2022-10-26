@@ -13,7 +13,7 @@ import cls from "./header.module.scss";
 
 export interface HeaderProps {
   className?: string;
-  onScrollToFooter?: () => void; 
+  onScrollToFooter?: (param:string) => void; 
 }
 
 const LogoD = memo(() => <LogoDes />)
@@ -47,7 +47,7 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
             <Button
               sizes={ButtonSize.SMALL}
               btnBg={ButtonBgColor.PURPLE}
-              onClick={onScrollToFooter}
+              onClick={() => onScrollToFooter?.("footer")}
               className={cls.HeaderBtn}
             >
               {t("Обсудить проект")}
