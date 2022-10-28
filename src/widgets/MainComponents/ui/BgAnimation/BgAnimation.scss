@@ -10,6 +10,15 @@
     position: absolute;
     animation: animate 5s linear infinite;
   }
+
+  svg {
+    position: absolute;
+    animation: animate 5s linear infinite;
+    stroke: var(--grey-color);
+    stroke-width: 0.0625rem;
+    width:0.5rem;
+    fill: var(--dark-white-color);
+  }
 }
 
 @keyframes animate {

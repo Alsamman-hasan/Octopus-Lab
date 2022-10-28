@@ -1,7 +1,8 @@
 import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "app/App";
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useThemeDetector } from "../../../lib/Hooks/useThemeDetector/useThemeDetector";
 import cls from "./ThemeSwitcher.module.scss";
 import LightIcon from "../../../assets/icons/themesIcons/Light.svg"
 import DarkIcon from "../../../assets/icons/themesIcons/Dark.svg"
@@ -13,13 +14,14 @@ export interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
-  const [checked, setChecked] = useState(!!(theme === Theme.DARK));
-
   const { pathname } = useLocation();
+  const [checked, setChecked] = useState(!!(theme === Theme.DARK));
+  
   const isEn = pathname !== "/ru";
   const onChangeTheme = () => {
     setChecked(!checked)
     toggleTheme();
+    
   }
   if (!isEn) {
     return (
