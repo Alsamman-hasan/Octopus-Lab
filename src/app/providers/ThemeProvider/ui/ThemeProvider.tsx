@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import { useThemeDetector } from "shared/lib/Hooks/useThemeDetector/useThemeDetector";
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../lib/ThemeContext";
 
@@ -19,7 +19,11 @@ const ThemeProvider:FC<ThemeProviderProps> = (props) => {
   const defaultProps = useMemo(() => ({
     theme,
     setTheme
-  }), [theme])
+  }), [theme,])
+
+  useEffect(() => {
+    setTheme(isDarkTheme ? Theme.DARK : localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme)
+  },[isDarkTheme])
 
   return (
     <ThemeContext.Provider value={defaultProps}>
