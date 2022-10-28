@@ -33,13 +33,15 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     )
   }
   return (
-    <div className={cls.label}>
+    <div className={cls.label} id="switcherWrapper">
       <input
         className={cls.inputSwitcher}
         type="checkbox"
         id="switcher"
         checked={checked}
         onChange={onChangeTheme}
+        aria-label={theme}
+        name={theme}
       />
       <label htmlFor="switcher" className={cls.background}>
         <span className={cls.knob}>
