@@ -10,7 +10,7 @@ import {
 import cls from "./mainPage.module.scss";
 
 const MainPage = () => (
-  <div>
+  <>
     <BgAnimation />
     <div className={classNames(cls.page)}>
       <div
@@ -23,8 +23,7 @@ const MainPage = () => (
         <Projects />
       </div>
     </div>
-  </div>
-
+  </>
 )
 
 export default MainPage

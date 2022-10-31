@@ -1,6 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next"
 import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
+import { useEffect } from "react";
 import cls from "./FirstBlock.module.scss";
 
 export interface FirstBlockProps {
@@ -9,6 +10,14 @@ export interface FirstBlockProps {
 export const FirstBlock = ({ className }: FirstBlockProps) => {
   const { t } = useTranslation("common");
   const { isShow, blockRef } = useAnimations();
+  // useEffect(() => {
+  //   if(!isShow) {
+  //     const rainSection = document.getElementById("ani");
+  //     while (rainSection?.hasChildNodes()) {
+  //       rainSection?.removeChild(rainSection?.lastChild as Node);
+  //     }
+  //   }
+  // },[isShow])
   return (
     <div 
       data-testid="FirstBlock"
