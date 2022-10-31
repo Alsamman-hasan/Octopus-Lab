@@ -5,6 +5,7 @@ import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationS
 import cls from "./Illustrations.module.scss";
 import { stepsProps } from "./helper";
 import { MStep } from "./Step";
+import { AnimationBloc } from "./Animation";
 
 export interface IllustrationsProps {
   className?: string;
@@ -42,6 +43,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
               src={group}
               alt="animation"
             />
+            {/* <AnimationBloc /> */}
           </div>
         </div>
         <div

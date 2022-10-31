@@ -6,15 +6,18 @@
   height: 75.6rem;
 }
 
-.IllusContainer {
-  position: sticky;
-  top: 8.125rem;
-}
+
 
 .IllusRow {
   position: relative;
   height: 100%;
+  .IllusContainer {
+    position: sticky;
+    top: 8.125rem;
+  }
 }
+
+
 
 .IllusTitle {
   z-index: 1;
@@ -69,16 +72,17 @@
 }
 
 .IllusLeftBlok {
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   width: 30%;
   margin-top: 2.5rem;
   padding-right: 3rem;
+  height: 100%;
 }
 
 .img {
   width: 100%;
-  height: 100%;
+  height: 28rem;
 }
 
 .stepNumber {
@@ -187,3 +191,33 @@
     @include Text3;
   }
 }
+
+
+.Animation {
+  width: 100%;
+}
+
+#ani {
+  position: relative;
+  // width: 100%;
+  // position: absolute;
+  svg {
+    position: absolute;
+    animation: animate 5s linear infinite;
+    stroke: var(--grey-color);
+    stroke-width: 0.0625rem;
+    width:0.5rem;
+    fill: var(--dark-white-color);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    transform: translateY(calc(28.875rem));
+  }
+}
+

@@ -1,87 +1,113 @@
-// import { useEffect } from "react";
-// import SoLong from "shared/assets/animation/Vector.png"
-// import SoLong2 from "shared/assets/animation/Vector2.png"
-// import SoLong3 from "shared/assets/animation/Vector3.png"
-// import SoLong4 from "shared/assets/animation/Vector4.png"
-// import SoLong5 from "shared/assets/animation/Vector5.png"
-// import cls from "./Illustrations.module.scss";
 
-// export const AnimationBloc = () => {
-//   const rianAnimation = (winWidth: number) => {
-//     const amount = 5;
+import { useEffect } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./Illustrations.module.scss";
+import { circlePath, shortPath, mediumPAth, longPath, largePath } from "./helper";
 
-//     const body = document.getElementById("anim")
-//     let i = 0;
-//     while (i < amount) {
-//       const drop = document.createElement("img");
-//       const drop2 = document.createElement("img");
-//       const drop3 = document.createElement("img");
-//       const drop4 = document.createElement("img");
-//       const drop5 = document.createElement("img");
-//       drop.src = `${SoLong}`
-//       drop2.src = `${SoLong2}`
-//       drop3.src = `${SoLong3}`
-//       drop4.src = `${SoLong4}`
-//       drop5.src = `${SoLong5}`
+export interface BgAnimationProps {
+  className?: string;
+}
 
-//       const posX = Math.floor(Math.random() * winWidth);
-//       const posX2 = Math.floor(Math.random() * winWidth);
-//       const posX3 = Math.floor(Math.random() * winWidth);
-//       const posX4 = Math.floor(Math.random() * winWidth);
-//       const posX5 = Math.floor(Math.random() * winWidth);
-//       const delay = Math.random() * -15;
-//       const duration = Math.random() * 5;
+export const AnimationBloc = ({ className }: BgAnimationProps) => {
 
-//       drop.style.width = `${7.9}px`;
-//       drop.style.height = `${74.78}px`;
-//       drop.style.left = `${posX}px`;
-//       drop.style.animationDelay = `${delay}s`;
-//       drop.style.animationDuration = `${4 + duration}s`;
+  const rianAnimation = (winWidth: number) => {
+    const amount = 6;
 
+    const body = document.getElementById(cls.ani)
+    let i = 0;
+    while (i < amount) {
 
-//       drop2.style.width = `${7.9}px`;
-//       drop2.style.height = `${61.41}px`;
-//       drop2.style.left = `${posX2}px`;
-//       drop2.style.animationDelay = `${delay}s`;
-//       drop2.style.animationDuration = `${4 + duration}s`;
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const short = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const medium = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const long = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const large = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
+      const circleElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      circleElement.setAttribute("d", circlePath);
+      circle.appendChild(circleElement);
 
-//       drop3.style.width = `${7.9}px`;
-//       drop3.style.height = `${34.66}px`;
+      const shortElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      shortElement.setAttribute("d", shortPath);
+      short.appendChild(shortElement);
 
-//       drop3.style.left = `${posX3}px`;
-//       drop3.style.animationDelay = `${delay}s`;
-//       drop3.style.animationDuration = `${4 + duration}s`;
+      const mediumElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      mediumElement.setAttribute("d", mediumPAth);
+      medium.appendChild(mediumElement);
 
+      const longElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      longElement.setAttribute("d", longPath);
+      long.appendChild(longElement);
 
-//       drop4.style.width = `${7.9}px`;
-//       drop4.style.height = `${21.28}px`;
+      const largeElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      largeElement.setAttribute("d", largePath);
+      large.appendChild(largeElement);
 
-//       drop4.style.left = `${posX4}px`;
-//       drop4.style.animationDelay = `${delay}s`;
-//       drop4.style.animationDuration = `${4 + duration}s`;
+      const posX = Math.floor(Math.random() * winWidth);
+      const posX2 = Math.floor(Math.random() * winWidth);
+      const posX3 = Math.floor(Math.random() * winWidth);
+      const posX4 = Math.floor(Math.random() * winWidth);
+      const posX5 = Math.floor(Math.random() * winWidth);
+      const delay = Math.random() * -15;
+      const duration = Math.random() * 10;
 
+      large.style.height = `${4.67}rem`;
+      large.style.left = `${posX}px`;
+      large.style.animationDelay = `${delay}s`;
+      large.style.animationDuration = `${2 + duration}s`;
 
-//       drop5.style.width = `${7.9}px`;
-//       drop5.style.height = `${7.9}px`;
-//       drop5.style.left = `${posX5}px`;
-//       drop5.style.animationDelay = `${delay}s`;
-//       drop5.style.animationDuration = `${4 + duration}s`;
+      circle.style.height = `${0.5}rem`;
+      circle.style.left = `${posX5}px`;
+      circle.style.animationDelay = `${delay}s`;
+      circle.style.animationDuration = `${2 + duration}s`;
+
+      long.style.height = `${3.875}rem`;
+      long.style.left = `${posX2}px`;
+      long.style.animationDelay = `${delay}s`;
+      long.style.animationDuration = `${4 + duration}s`;
 
 
-//       body?.appendChild(drop);
-//       body?.appendChild(drop2);
-//       body?.appendChild(drop3);
-//       body?.appendChild(drop4);
-//       body?.appendChild(drop5);
+      medium.style.height = `${2.166}rem`;
+      medium.style.left = `${posX3}px`;
+      medium.style.animationDelay = `${delay}s`;
+      medium.style.animationDuration = `${4 + duration}s`;
 
-//       i++
-//     }
-//   }
-//   useEffect(() => {
-//     // rianAnimation(320)
-//   }, [])
-//   return (
-//     <div id="anim" className={cls.anim} />
-//   )
-// };
+      short.style.height = `${1.33}rem`;
+      short.style.left = `${posX4}px`;
+      short.style.animationDelay = `${delay}s`;
+      short.style.animationDuration = `${4 + duration}s`;
+
+
+      body?.appendChild(circle);
+      body?.appendChild(short);
+      body?.appendChild(medium);
+      body?.appendChild(long);
+      body?.appendChild(large);
+
+      i++
+    }
+  }
+
+  const stopRain = () => {
+    const rainSection = document.getElementById("ani");
+    while (rainSection?.hasChildNodes()) {
+      rainSection?.removeChild(rainSection?.lastChild as Node);
+    }
+  }
+
+  useEffect(() => {
+    const num = 300 - 20
+    stopRain();
+    rianAnimation(num);
+    return () => {
+      stopRain()
+    }
+  }, [])
+
+
+  return (
+    <div className={classNames(cls.img, {}, [className])} style={{ maxWidth: `${340 / 16}rem`, display:"block"}} >
+      <div id={cls.ani} /> 
+    </div>
+  )
+};
