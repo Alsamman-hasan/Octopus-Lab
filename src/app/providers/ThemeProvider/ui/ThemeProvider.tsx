@@ -12,7 +12,7 @@ interface ThemeProviderProps {
 const ThemeProvider:FC<ThemeProviderProps> = (props) => {
   const { children, initialTheme } = props;
   const isDarkTheme = useThemeDetector();
-  const defayltTheme = isDarkTheme ? Theme.DARK : localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme 
+  const defayltTheme = isDarkTheme ? Theme.DARK : localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT
 
   const [theme, setTheme] = useState<Theme>(initialTheme || defayltTheme);
 
@@ -22,7 +22,7 @@ const ThemeProvider:FC<ThemeProviderProps> = (props) => {
   }), [theme,])
 
   useEffect(() => {
-    setTheme(isDarkTheme ? Theme.DARK : localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme)
+    setTheme(isDarkTheme ? Theme.DARK : localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT)
   },[isDarkTheme])
 
   return (
