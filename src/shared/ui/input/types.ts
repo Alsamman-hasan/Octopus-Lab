@@ -9,7 +9,7 @@ export interface InputsProps extends HTMLInputProps {
   handleChange: (params: string, value: string) => void;
   style?: CSSProperties;
   label?: string;
-  params?: string;
+  params: string;
   typeInput?: string
   validMessage?: string;
   required?: boolean;

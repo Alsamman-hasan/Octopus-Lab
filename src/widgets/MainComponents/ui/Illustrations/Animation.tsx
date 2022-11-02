@@ -106,8 +106,8 @@ export const AnimationBloc = ({ className }: BgAnimationProps) => {
 
 
   return (
-    <div className={classNames(cls.img, {}, [className])} style={{ maxWidth: `${340 / 16}rem`, display:"block"}} >
-      <div id={cls.ani} /> 
+    <div className={classNames(cls.img, {}, [className])} style={{ maxWidth: `${340 / 16}rem`, display: "block" }} >
+      <div id={cls.ani} />
     </div>
   )
 };

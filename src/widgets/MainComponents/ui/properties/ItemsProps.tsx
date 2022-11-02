@@ -13,7 +13,7 @@ export interface IItems {
 const Item = (props: IItems) => {
   const { item, isShow } = props;
   const { t } = useTranslation("secondBlock")
-  const refr = useRef(null) as MutableRefObject<HTMLDivElement | null >;
+  const refr = useRef(null) as MutableRefObject<HTMLDivElement | null>;
   const hovered = useHover(refr)
   const mods: Mods = {
     [cls.hovered]: hovered
