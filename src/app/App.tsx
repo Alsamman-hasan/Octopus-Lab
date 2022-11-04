@@ -18,8 +18,8 @@ export enum Theme {
 const App = () => {
   const { theme } = useTheme();
   const [isScrolling, setIsScrolling] = useState(false)
-  const footerRef = useRef<HTMLDivElement>(null)
-  const appRef = useRef<HTMLDivElement>(null)
+  const footerRef = useRef<HTMLDivElement>(null);
+  const appRef = useRef<HTMLDivElement>(null);
   const onScrollToFooter = useCallback((param: string) => {
     if (param === "footer") {
       if (footerRef.current) footerRef.current.scrollIntoView({ behavior: "smooth" })

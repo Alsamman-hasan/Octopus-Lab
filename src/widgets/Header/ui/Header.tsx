@@ -19,11 +19,14 @@ export interface HeaderProps {
 const LogoD = memo(() => <LogoDes />)
 const LogoM = memo(() => <LogoMobile />)
 
-const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
+export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
   const { t } = useTranslation("common");
   const { width } = useWindowSize("resize");
   const [isScrolling, setIsScrolling] = useState(false)
   const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 10)), []);
+  const onScrolle = useCallback(() => {
+    onScrollToFooter?.("footer")
+  }, [])
   useEffect(() => {
     window.addEventListener("scroll", handleSize);
     return () => window.removeEventListener("scroll", handleSize);
@@ -47,7 +50,7 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
             <Button
               sizes={ButtonSize.SMALL}
               btnBg={ButtonBgColor.PURPLE}
-              onClick={() => onScrollToFooter?.("footer")}
+              onClick={onScrolle}
               className={cls.HeaderBtn}
             >
               {t("Обсудить проект")}
@@ -59,6 +62,4 @@ const HeaderUi = ({ className, onScrollToFooter }: HeaderProps) => {
       </div>
     </div>
   );
-};
-
-export const Header = memo(HeaderUi)
+});
