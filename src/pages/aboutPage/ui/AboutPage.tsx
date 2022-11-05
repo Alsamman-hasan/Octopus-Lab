@@ -1,11 +1,18 @@
-import { Counter } from "entities/Counter"
-import { LoaderPage } from "widgets/LoaderPage"
+import { Counter } from "entities/Counter";
+import { LoaderPage } from "widgets/LoaderPage";
 
 const AboutPage = () => (
-  <div style={{height:"800px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+  <div
+    style={{
+      height: "800px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
     {/* <LoaderPage /> */}
-    <Counter/>
+    <Counter />
   </div>
-)
+);
 
-export default AboutPage
+export default AboutPage;

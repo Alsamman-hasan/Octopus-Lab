@@ -21,7 +21,16 @@ const PhoneSVG: FC<ISvgProps> = ({
       strokeDasharray="418"
       strokeDashoffset="0"
     >
-      <animate attributeName="stroke-dashoffset" begin="svg1.click" values="418; 0" dur="10s" repeatCount="1" fill="freeze" calcMode="linear" id="p1" />
+      <animate
+        attributeName="stroke-dashoffset"
+        begin="svg1.click"
+        values="418; 0"
+        dur="10s"
+        repeatCount="1"
+        fill="freeze"
+        calcMode="linear"
+        id="p1"
+      />
     </path>
   </svg>
 );

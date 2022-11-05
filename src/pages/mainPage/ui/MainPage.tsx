@@ -13,17 +13,15 @@ const MainPage = () => (
   <>
     <BgAnimation />
     <div className={classNames(cls.page)}>
-      <div
-        className={classNames(cls["content-page"])}
-      >
+      <div className={classNames(cls["content-page"])}>
         <FirstBlock />
-        <Properties/>
+        <Properties />
         <OurWorks />
         <Illustrations />
         <Projects />
       </div>
     </div>
   </>
-)
+);
 
-export default MainPage
+export default MainPage;

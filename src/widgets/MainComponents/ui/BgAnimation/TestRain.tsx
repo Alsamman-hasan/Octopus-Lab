@@ -35,7 +35,7 @@
 //       drop3.src = `${SoLong3}`
 //       drop4.src = `${SoLong4}`
 //       drop5.src = `${SoLong5}`
-      
+
 //       const delay = Math.random() * -10;
 //       const duration = Math.random() * 5;
 //       drop.setAttribute("class", "drop");

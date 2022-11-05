@@ -21,7 +21,7 @@ root.render(
         </ErrorBoundary>
       </BrowserRouter>
     </StoreProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 reportWebVitals();

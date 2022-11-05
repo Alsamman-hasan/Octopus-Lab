@@ -4,42 +4,45 @@ import { LogoDes } from "shared/assets/icons/svg/desktopSVG";
 import { LogoMobile } from "shared/assets/icons/svg/mobileSVG";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
-import { Button} from "shared/ui/Buttons";
+import { Button } from "shared/ui/Buttons";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import cls from "./header.module.scss";
 
-
 export interface HeaderProps {
   className?: string;
-  onScrollToFooter?: (param:string) => void; 
+  onScrollToFooter?: (param: string) => void;
 }
 
-const LogoD = memo(() => <LogoDes />)
-const LogoM = memo(() => <LogoMobile />)
+const LogoD = memo(() => <LogoDes />);
+const LogoM = memo(() => <LogoMobile />);
 
 export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
   const { t } = useTranslation("common");
   const { width } = useWindowSize("resize");
-  const [isScrolling, setIsScrolling] = useState(false)
-  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 10)), []);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const handleSize = useCallback(
+    () => setIsScrolling(Boolean(window.pageYOffset > 10)),
+    [],
+  );
   const onScrolle = useCallback(() => {
-    onScrollToFooter?.("footer")
-  }, [])
+    onScrollToFooter?.("footer");
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", handleSize);
     return () => window.removeEventListener("scroll", handleSize);
   }, [handleSize]);
 
   return (
-    <div 
+    <div
       data-testid="header"
       className={classNames(
-        cls.headerWrapper, 
-        { [cls.scrollEvent]: isScrolling }
-        , [className])} 
-      id="coords" 
+        cls.headerWrapper,
+        { [cls.scrollEvent]: isScrolling },
+        [className],
+      )}
+      id="coords"
     >
       <div className={classNames(cls.contetn)}>
         <div className={classNames(cls.logo)}>
@@ -56,8 +59,8 @@ export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
               {t("Обсудить проект")}
             </Button>
           </div>
-          <LangSwitcher/>
-          <ThemeSwitcher/>
+          <LangSwitcher />
+          <ThemeSwitcher />
         </div>
       </div>
     </div>

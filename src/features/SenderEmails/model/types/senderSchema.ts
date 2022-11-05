@@ -1,4 +1,3 @@
-
 export interface SenderSchema {
   name: string;
   email: string;

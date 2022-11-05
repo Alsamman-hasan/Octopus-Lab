@@ -1,8 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { validatorEmail } from "shared/lib/validation/validationForm"
-import { sendEmail } from "../service/senderEmail/senderEmail"
-import { SenderSchema } from "../types/senderSchema"
-
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { validatorEmail } from "shared/lib/validation/validationForm";
+import { sendEmail } from "../service/senderEmail/senderEmail";
+import { SenderSchema } from "../types/senderSchema";
 
 const initialState: SenderSchema = {
   name: "",
@@ -12,29 +11,29 @@ const initialState: SenderSchema = {
   project: "",
   hasError: false,
   loading: false,
-  isValidate: false
-}
+  isValidate: false,
+};
 
 const senderEmailSlice = createSlice({
   name: "EmailsSender",
   initialState,
   reducers: {
     setName: (state, { payload }: PayloadAction<string>) => {
-      state.name = payload
+      state.name = payload;
     },
     setEmail: (state, { payload }: PayloadAction<string>) => {
       state.isValidate = validatorEmail(payload);
-      state.email = payload
+      state.email = payload;
     },
     setPhone: (state, { payload }: PayloadAction<string>) => {
-      state.phone = payload
+      state.phone = payload;
     },
     setCompony: (state, { payload }: PayloadAction<string>) => {
-      state.company = payload
+      state.company = payload;
     },
     setProject: (state, { payload }: PayloadAction<string>) => {
-      state.project = payload
-    }
+      state.project = payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -55,9 +54,9 @@ const senderEmailSlice = createSlice({
       .addCase(sendEmail.rejected, (state, action) => {
         state.loading = false;
         state.hasError = !!action.payload;
-      })
+      });
   },
-})
+});
 
-export const { actions: senderEmailActions } = senderEmailSlice
-export const { reducer: senderEmailReducer } = senderEmailSlice
+export const { actions: senderEmailActions } = senderEmailSlice;
+export const { reducer: senderEmailReducer } = senderEmailSlice;

@@ -1,7 +1,7 @@
-import { Suspense } from "react"
-import { Route, Routes } from "react-router-dom"
-import { routeConfig } from "shared/config/routeConfig/routeConfig"
-import { LoaderPage } from "widgets/LoaderPage"
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { routeConfig } from "shared/config/routeConfig/routeConfig";
+import { LoaderPage } from "widgets/LoaderPage";
 
 export const AppRouter = () => (
   <Routes>
@@ -9,11 +9,8 @@ export const AppRouter = () => (
       <Route
         key={path}
         path={path}
-        element={(
-          <Suspense fallback={<LoaderPage />}>
-            {element}
-          </Suspense>
-        )} />
+        element={<Suspense fallback={<LoaderPage />}>{element}</Suspense>}
+      />
     ))}
   </Routes>
-)
+);

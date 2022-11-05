@@ -1,17 +1,17 @@
-import { screen } from "@testing-library/react"
+import { screen } from "@testing-library/react";
 import { componentRender } from "shared/lib/tests/componentRender/componentRender";
 import { SenderEmailForm } from "./SenderEmailform";
 
 describe("SenderEmailForm", () => {
   test("rendreing SenderEmailForm", () => {
-    componentRender(<SenderEmailForm />, { 
+    componentRender(<SenderEmailForm />, {
       initialState: {
-        counter: {value: 0},
+        counter: { value: 0 },
         senderEmailes: {
-          email: "test"
-        }
-      }
+          email: "test",
+        },
+      },
     });
-    expect(screen.getByTestId("SenderEmailForm")).toBeInTheDocument()
-  })
-})
+    expect(screen.getByTestId("SenderEmailForm")).toBeInTheDocument();
+  });
+});

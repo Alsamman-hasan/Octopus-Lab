@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next"
-import group from "shared/assets/mobile.png"
+import { useTranslation } from "react-i18next";
+import group from "shared/assets/mobile.png";
 import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
 import cls from "./Illustrations.module.scss";
 import { stepsProps } from "./helper";
@@ -15,8 +15,8 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
   const { isShow, blockRef } = useAnimations();
   const mods: Record<string, boolean> = {
     "element-show": isShow,
-    "element-animation": true
-  }
+    "element-animation": true,
+  };
 
   return (
     <div
@@ -26,15 +26,9 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
     >
       <div className={classNames(cls.IllusRow)}>
         <div className={classNames(cls.IllusContainer)}>
-          <div
-            className={classNames(cls.IllusTitle)}
-          >
-            <p>
-              {t("как мы")} {" "}
-            </p>
-            <span>
-              {t("работаем")}
-            </span>
+          <div className={classNames(cls.IllusTitle)}>
+            <p>{t("как мы")} </p>
+            <span>{t("работаем")}</span>
           </div>
           <div className={classNames(cls.IllusLeftBlok)}>
             <img
@@ -46,9 +40,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
             {/* <AnimationBloc /> */}
           </div>
         </div>
-        <div
-          className={classNames(cls.IllusRightBlok)}
-        >
+        <div className={classNames(cls.IllusRightBlok)}>
           {stepsProps.map((step, index: number) => (
             <div className={classNames(cls.stepContiner)} key={index + 1}>
               <MStep
@@ -56,12 +48,12 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
                 MTopmM={step.MTopmM}
                 number={step.number}
                 subTitle={step.subTitle}
-                title={step.title} />
+                title={step.title}
+              />
             </div>
           ))}
         </div>
       </div>
-
     </div>
-  )
+  );
 };

@@ -1,3 +1,3 @@
-import LogoMobile from "./logoMobile.svg"
+import LogoMobile from "./logoMobile.svg";
 
-export { LogoMobile }
+export { LogoMobile };

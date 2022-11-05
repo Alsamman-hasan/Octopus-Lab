@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { injectStyle } from "react-toastify/dist/inject-style";
 import { Portal } from "../../../shared/ui/Portal/Portal";
 
-injectStyle()
+injectStyle();
 export const ToastContainers = () => (
   <Portal>
     <ToastContainer />

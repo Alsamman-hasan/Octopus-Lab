@@ -1,4 +1,3 @@
 import { StateSchema } from "app/providers/StorProvider";
 
-
-export const getSenderEmailName = (state: StateSchema) => state?.senderEmailes
+export const getSenderEmailName = (state: StateSchema) => state?.senderEmailes;

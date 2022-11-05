@@ -11,13 +11,17 @@ export const useWindowSize = (events: "scroll" | "resize"): WindowSize => {
     width: 0,
     height: 0,
     top: 0,
-  })
+  });
 
-  const handleSize = useCallback(() => setWindowSize({
-    width: window.innerWidth,
-    height: window.innerHeight,
-    top: window.pageYOffset
-  }), []);
+  const handleSize = useCallback(
+    () =>
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        top: window.pageYOffset,
+      }),
+    [],
+  );
 
   useEffect(() => {
     handleSize();
@@ -25,6 +29,5 @@ export const useWindowSize = (events: "scroll" | "resize"): WindowSize => {
     return () => window.removeEventListener(events, handleSize);
   }, [events, handleSize]);
 
-  return windowSize
-}
-
+  return windowSize;
+};

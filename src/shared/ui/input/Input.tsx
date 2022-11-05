@@ -1,4 +1,11 @@
-import { ChangeEvent, memo, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  ChangeEvent,
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import useDebounce from "shared/lib/Hooks/useDebounce/useDebounce";
 import { validatorEmail } from "shared/lib/validation/validationForm";
@@ -15,7 +22,7 @@ export const Input = memo((props: InputsProps) => {
     params = "",
     typeInput = "text",
     validMessage,
-    required = false
+    required = false,
   } = props;
   const [focused, setFocused] = useState(false);
   const [valid, setValid] = useState(true);
@@ -26,12 +33,15 @@ export const Input = memo((props: InputsProps) => {
       return validatorEmail(debounceValue);
     }
     return true;
-  }, [params, debounceValue])
+  }, [params, debounceValue]);
 
-  useEffect(() => setValid(isValidEmail), [isValidEmail])
-  const onHandleCahnge = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    handleChange?.(params, event.target.value);
-  }, [handleChange, params])
+  useEffect(() => setValid(isValidEmail), [isValidEmail]);
+  const onHandleCahnge = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      handleChange?.(params, event.target.value);
+    },
+    [handleChange, params],
+  );
 
   const handleBlur = () => {
     setFocused(true);
@@ -41,18 +51,18 @@ export const Input = memo((props: InputsProps) => {
     setFocused(false);
   };
 
-  const validation = focused && required && !valid
+  const validation = focused && required && !valid;
   return (
     <div
       className={classNames(
         cls.customField,
         {
           [cls.errorInput]: validation,
-          [cls.isValue] : value.length > 0
+          [cls.isValue]: value.length > 0,
         },
-        [className]
-      )}>
-      
+        [className],
+      )}
+    >
       <input
         style={style}
         onChange={onHandleCahnge}
@@ -64,21 +74,18 @@ export const Input = memo((props: InputsProps) => {
         placeholder="&nbsp;"
         id={params}
       />
-      <label 
-        data-shrink={`${!focused}`} 
-        className={classNames(cls.label)} 
+      <label
+        data-shrink={`${!focused}`}
+        className={classNames(cls.label)}
         htmlFor={params}
       >
         {required ? `${label}*` : label}
       </label>
       {validation && (
-        <span
-          className={classNames(cls.errorMessage)}
-          aria-live="polite"
-        >
+        <span className={classNames(cls.errorMessage)} aria-live="polite">
           {validMessage}
         </span>
       )}
     </div>
-  )
+  );
 });

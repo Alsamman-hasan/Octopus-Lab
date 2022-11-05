@@ -1,9 +1,9 @@
-export  { StoreProvider } from "./ui/StoreProvider";
-export type { 
-  StateSchema, 
-  ReducerManager, 
-  ReduxStoreWithManager, 
+export { StoreProvider } from "./ui/StoreProvider";
+export type {
+  StateSchema,
+  ReducerManager,
+  ReduxStoreWithManager,
   StateSchemaKey,
   ThunkConfig,
-  ThunkExtraArg 
+  ThunkExtraArg,
 } from "./config/StateSchema";

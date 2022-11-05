@@ -1,16 +1,12 @@
 import React, { FC } from "react";
 import { ISvgProps } from "../types";
 
-const MedalSVG: FC<ISvgProps> = ({
-  className,
-  animation
-}) => (
+const MedalSVG: FC<ISvgProps> = ({ className, animation }) => (
   <svg
     className={className}
     viewBox="0 0 58 80"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    
   >
     <path
       className={animation}

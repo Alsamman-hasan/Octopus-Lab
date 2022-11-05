@@ -10,16 +10,15 @@ export interface PropertiesProps {
   className?: string;
 }
 
-
 export const Properties = ({ className }: PropertiesProps) => {
-  const { t } = useTranslation("secondBlock")
+  const { t } = useTranslation("secondBlock");
   const { isShow, blockRef } = useAnimations();
-  const ItemsProps = useMemo (() => PropertiesItems,[])
+  const ItemsProps = useMemo(() => PropertiesItems, []);
 
   const mods: Record<string, boolean> = {
     "element-show": isShow,
-    "element-animation": true
-  }
+    "element-animation": true,
+  };
 
   return (
     <div
@@ -28,13 +27,14 @@ export const Properties = ({ className }: PropertiesProps) => {
       className={classNames(cls.Properties, mods, [className])}
     >
       <div className={classNames(cls.span8)}>
-        {t("почему")} <br /><span>{t("выбирают")}</span> {t("нас")}
+        {t("почему")} <br />
+        <span>{t("выбирают")}</span> {t("нас")}
       </div>
       {ItemsProps.map((item, index: number) => (
         <div key={item.key + index} className={classNames(cls.span4)}>
-          <Item item={item} isShow={isShow}/>
+          <Item item={item} isShow={isShow} />
         </div>
       ))}
     </div>
-  )
+  );
 };

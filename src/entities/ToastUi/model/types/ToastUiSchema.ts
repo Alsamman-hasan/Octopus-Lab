@@ -1,4 +1,4 @@
 export interface ToastUiSchema {
-  status: "error" | "success" | "warning" | "info" | "dark" | "default"
-  message: string
+  status: "error" | "success" | "warning" | "info" | "dark" | "default";
+  message: string;
 }

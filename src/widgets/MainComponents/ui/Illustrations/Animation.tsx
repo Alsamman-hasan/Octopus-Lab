@@ -1,45 +1,78 @@
-
 import { useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Illustrations.module.scss";
-import { circlePath, shortPath, mediumPAth, longPath, largePath } from "./helper";
+import {
+  circlePath,
+  shortPath,
+  mediumPAth,
+  longPath,
+  largePath,
+} from "./helper";
 
 export interface BgAnimationProps {
   className?: string;
 }
 
 export const AnimationBloc = ({ className }: BgAnimationProps) => {
-
   const rianAnimation = (winWidth: number) => {
     const amount = 6;
 
-    const body = document.getElementById(cls.ani)
+    const body = document.getElementById(cls.ani);
     let i = 0;
     while (i < amount) {
+      const circle = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg",
+      );
+      const short = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg",
+      );
+      const medium = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg",
+      );
+      const long = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg",
+      );
+      const large = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg",
+      );
 
-      const circle = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const short = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const medium = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const long = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const large = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-
-      const circleElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      const circleElement = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
       circleElement.setAttribute("d", circlePath);
       circle.appendChild(circleElement);
 
-      const shortElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      const shortElement = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
       shortElement.setAttribute("d", shortPath);
       short.appendChild(shortElement);
 
-      const mediumElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      const mediumElement = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
       mediumElement.setAttribute("d", mediumPAth);
       medium.appendChild(mediumElement);
 
-      const longElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      const longElement = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
       longElement.setAttribute("d", longPath);
       long.appendChild(longElement);
 
-      const largeElement = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      const largeElement = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
       largeElement.setAttribute("d", largePath);
       large.appendChild(largeElement);
 
@@ -66,7 +99,6 @@ export const AnimationBloc = ({ className }: BgAnimationProps) => {
       long.style.animationDelay = `${delay}s`;
       long.style.animationDuration = `${4 + duration}s`;
 
-
       medium.style.height = `${2.166}rem`;
       medium.style.left = `${posX3}px`;
       medium.style.animationDelay = `${delay}s`;
@@ -77,37 +109,38 @@ export const AnimationBloc = ({ className }: BgAnimationProps) => {
       short.style.animationDelay = `${delay}s`;
       short.style.animationDuration = `${4 + duration}s`;
 
-
       body?.appendChild(circle);
       body?.appendChild(short);
       body?.appendChild(medium);
       body?.appendChild(long);
       body?.appendChild(large);
 
-      i++
+      i++;
     }
-  }
+  };
 
   const stopRain = () => {
     const rainSection = document.getElementById("ani");
     while (rainSection?.hasChildNodes()) {
       rainSection?.removeChild(rainSection?.lastChild as Node);
     }
-  }
+  };
 
   useEffect(() => {
-    const num = 300 - 20
+    const num = 300 - 20;
     stopRain();
     rianAnimation(num);
     return () => {
-      stopRain()
-    }
-  }, [])
-
+      stopRain();
+    };
+  }, []);
 
   return (
-    <div className={classNames(cls.img, {}, [className])} style={{ maxWidth: `${340 / 16}rem`, display: "block" }} >
+    <div
+      className={classNames(cls.img, {}, [className])}
+      style={{ maxWidth: `${340 / 16}rem`, display: "block" }}
+    >
       <div id={cls.ani} />
     </div>
-  )
+  );
 };

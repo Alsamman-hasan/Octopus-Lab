@@ -1,6 +1,4 @@
 /* eslint-disable i18next/no-literal-string */
-
-import { StateSchema } from "app/providers/StorProvider";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "shared/ui/Buttons";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
@@ -8,14 +6,14 @@ import { getCounterValue } from "../model/selectors/getCounterValue/getCounterVa
 import { decrement, increment } from "../model/slice/CounterSlice";
 
 export const Counter = () => {
-  const dispatch = useDispatch()
-  const counterValue = useSelector(getCounterValue)
+  const dispatch = useDispatch();
+  const counterValue = useSelector(getCounterValue);
   const increments = () => {
-    dispatch(increment())
-  }
+    dispatch(increment());
+  };
   const decrements = () => {
-    dispatch(decrement())
-  }
+    dispatch(decrement());
+  };
 
   return (
     <div>
@@ -35,5 +33,5 @@ export const Counter = () => {
         decrement
       </Button>
     </div>
-  )
+  );
 };

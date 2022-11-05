@@ -8,10 +8,16 @@ import { useSelector } from "react-redux";
 import { uiReduser } from "entities/ToastUi";
 import { useAppDispatch } from "shared/lib/Hooks/useAppDispatch/useAppDispatch";
 import { Input } from "shared/ui/input/Input";
-import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { IState } from "./types";
 import { inputscollection } from "./constants";
-import { senderEmailActions, senderEmailReducer } from "../model/slice/senderEmailSlice";
+import {
+  senderEmailActions,
+  senderEmailReducer,
+} from "../model/slice/senderEmailSlice";
 import { getSenderEmailName } from "../model/selectors/getSenderEmailName/getSenderEmailName";
 import { sendEmail } from "../model/service/senderEmail/senderEmail";
 import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoading/getSenderEmailLoading";
@@ -19,7 +25,7 @@ import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoadin
 const initialReducers: ReducersList = {
   senderEmailes: senderEmailReducer,
   toastUi: uiReduser,
-}
+};
 
 const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
@@ -28,41 +34,48 @@ const SenderEmailFormUi = () => {
   const sendersData = useSelector(getSenderEmailName);
   const [error, setError] = useState(false);
 
-  const onHandelChange = useCallback((params: string, value: string) => {
-    switch (params) {
-    case "name":
-      dispatch(senderEmailActions.setName(value));
-      break;
-    case "email":
-      dispatch(senderEmailActions.setEmail(value));
-      break;
-    case "phone":
-      dispatch(senderEmailActions.setPhone(value));
-      break;
-    case "company":
-      dispatch(senderEmailActions.setCompony(value));
-      break;
-    case "project":
-      dispatch(senderEmailActions.setProject(value));
-      break;
-    default:
-    }
-  }, [dispatch]);
+  const onHandelChange = useCallback(
+    (params: string, value: string) => {
+      switch (params) {
+        case "name":
+          dispatch(senderEmailActions.setName(value));
+          break;
+        case "email":
+          dispatch(senderEmailActions.setEmail(value));
+          break;
+        case "phone":
+          dispatch(senderEmailActions.setPhone(value));
+          break;
+        case "company":
+          dispatch(senderEmailActions.setCompony(value));
+          break;
+        case "project":
+          dispatch(senderEmailActions.setProject(value));
+          break;
+        default:
+      }
+    },
+    [dispatch],
+  );
 
-  const hasError = Boolean(!sendersData?.email || !sendersData?.name || !sendersData?.isValidate)
-  const inputItems = useMemo(() => inputscollection, [])
+  const hasError = Boolean(
+    !sendersData?.email || !sendersData?.name || !sendersData?.isValidate,
+  );
+  const inputItems = useMemo(() => inputscollection, []);
 
   const onLoginClick = useCallback(async () => {
     if (hasError) {
       setError(true);
     } else {
-      dispatch(sendEmail({
-        email: sendersData?.email,
-        name: sendersData?.name,
-        company: sendersData?.company,
-        phone: sendersData?.phone,
-        project: sendersData?.project
-      }));
+      dispatch(
+        sendEmail({
+          email: sendersData?.email,
+          name: sendersData?.name,
+          company: sendersData?.company,
+          phone: sendersData?.phone,
+          project: sendersData?.project,
+        }),
+      );
     }
   }, [
     dispatch,
@@ -71,11 +84,14 @@ const SenderEmailFormUi = () => {
     sendersData?.email,
     sendersData?.name,
     sendersData?.phone,
-    sendersData?.project
+    sendersData?.project,
   ]);
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-      <div className={classNames("senderEmailForm-forms")} data-testid="SenderEmailForm">
+      <div
+        className={classNames("senderEmailForm-forms")}
+        data-testid="SenderEmailForm"
+      >
         {inputItems.map((item) => (
           <div key={item.params}>
             <Input
@@ -97,15 +113,23 @@ const SenderEmailFormUi = () => {
             btnBg={ButtonBgColor.BLUE}
             className="btn"
             onClick={onLoginClick}
-            disabled={loading || Boolean(!sendersData?.email) || !sendersData?.isValidate}
+            disabled={
+              loading ||
+              Boolean(!sendersData?.email) ||
+              !sendersData?.isValidate
+            }
           >
             {loading ? t("loading") : t("Оценить проект")}
           </Button>
         </div>
-        {hasError && error && <span className={classNames("errorBtn")}>{t("please input email and name")}</span>}
+        {hasError && error && (
+          <span className={classNames("errorBtn")}>
+            {t("please input email and name")}
+          </span>
+        )}
       </div>
     </DynamicModuleLoader>
   );
 };
 
-export const SenderEmailForm = memo(SenderEmailFormUi)
+export const SenderEmailForm = memo(SenderEmailFormUi);

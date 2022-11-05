@@ -1,13 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit"
-import type { PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import { ToastUiSchema } from "../types/ToastUiSchema";
 
-
 const uiInitialState: ToastUiSchema = {
   status: "default",
-  message: ""
-}
+  message: "",
+};
 
 const uiSlice = createSlice({
   name: "ui",
@@ -26,12 +25,10 @@ const uiSlice = createSlice({
           progress: undefined,
         });
       }
-    }
-  }
-})
+    },
+  },
+});
 
 export const { actions: UiActions } = uiSlice;
 
-export const uiReduser = uiSlice.reducer
-
-
+export const uiReduser = uiSlice.reducer;

@@ -3,7 +3,7 @@ import { CSSProperties, MouseEvent } from "react";
 export interface ISvgProps {
   width?: string;
   height?: string;
-  animation?: string; 
+  animation?: string;
   fill?: string;
   className?: string;
   style?: CSSProperties;

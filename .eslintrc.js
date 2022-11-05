@@ -28,9 +28,11 @@ module.exports = {
     "@typescript-eslint/eslint-plugin",
   ],
   rules: {
-    "react/jsx-indent": [2, 2],
-    "react/jsx-indent-props": [2, 2],
-    indent: [2, 2],
+    // "react/jsx-indent": [2, 2],
+    // "react/jsx-indent-props": [2, 2],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    // indent: [2, 2],
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".tsx"] },
@@ -55,6 +57,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-param-reassign": "off",
+    "@typescript-eslint/ban-ts-comment" : "warn",
     "no-undef": "off",
     "i18next/no-literal-string": [
       "error",

@@ -11,7 +11,7 @@ export const inputscollection: IInputItems[] = [
     label: "E-mail",
     params: "email",
     errorMessage: "It should be a valid email address",
-    required: true
+    required: true,
   },
   {
     label: "Телефон",

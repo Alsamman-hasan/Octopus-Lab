@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next"
-import { Button} from "shared/ui/Buttons";
+import { useTranslation } from "react-i18next";
+import { Button } from "shared/ui/Buttons";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import cls from "./PageError.module.scss";
 
@@ -8,11 +8,11 @@ export interface PageErrorProps {
   className?: string;
 }
 export const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation("common");
   const realodPage = () => {
     // eslint-disable-next-line no-restricted-globals
     location.reload();
-  }
+  };
 
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
@@ -28,5 +28,5 @@ export const PageError = ({ className }: PageErrorProps) => {
         {t("Обновить страницу")}
       </Button>
     </div>
-  )
+  );
 };

@@ -1,13 +1,17 @@
 import "./footerRight.scss";
 import Avatar from "shared/assets/avatar.svg";
-import { FacebookSVG, InstagramSVG, TelegramSVG, VkSVG } from "shared/assets/icons/svg/social";
+import {
+  FacebookSVG,
+  InstagramSVG,
+  TelegramSVG,
+  VkSVG,
+} from "shared/assets/icons/svg/social";
 import { EmailSVG, PhoneSVG } from "shared/assets/icons/svg/desktopSVG";
 import { Button } from "shared/ui/Buttons";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { ButtonBgColor, ButtonSize } from "shared/ui/Buttons/types";
 import { memo } from "react";
-
 
 const FooterRight = memo(() => {
   const { t } = useTranslation("Footer");
@@ -17,10 +21,12 @@ const FooterRight = memo(() => {
         <div className={classNames("footerRight-container")}>
           <div className={classNames("footerRight-header")}>
             <span>
-              {t("Вы также можете написать нам в чат. Наш менеджер ответит на все интересующие вас вопросы.")}
+              {t(
+                "Вы также можете написать нам в чат. Наш менеджер ответит на все интересующие вас вопросы.",
+              )}
             </span>
           </div>
-          <div className={classNames("footerRight-manager")} >
+          <div className={classNames("footerRight-manager")}>
             <div className={classNames("footerRight-manager_img")}>
               <Avatar />
               <span className={classNames("footerRight-manager_onlin")} />
@@ -45,8 +51,10 @@ const FooterRight = memo(() => {
           </div>
         </div>
       </div>
-      <div className={classNames("footerRight-contacts")} >
-        <span className={classNames("footerRight-contacts_header")}>{t("Наши контакты")}</span>
+      <div className={classNames("footerRight-contacts")}>
+        <span className={classNames("footerRight-contacts_header")}>
+          {t("Наши контакты")}
+        </span>
         <div className={classNames("footerRight-contacts_item")}>
           <EmailSVG />
           <span>{t("nashapochta@gmail.com")}</span>
@@ -54,7 +62,7 @@ const FooterRight = memo(() => {
         <div className={classNames("footerRight-contacts_item")}>
           <PhoneSVG />
           <span>{t("nashapochta@gmail.com")}</span>
-        </div> 
+        </div>
       </div>
       <div className={classNames("footerRight-social")}>
         <TelegramSVG />

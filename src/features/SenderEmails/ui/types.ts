@@ -1,4 +1,3 @@
-
 export interface IState {
   name: string;
   email: string;
@@ -12,5 +11,5 @@ export interface IInputItems {
   params: string;
   errorMessage?: string;
   required?: boolean;
-  onChange?: (value: string) => void
+  onChange?: (value: string) => void;
 }

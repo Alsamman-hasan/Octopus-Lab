@@ -8,13 +8,13 @@ export interface BuildPaths {
   icon: string;
   locales: string;
   redirect: string;
-  robots : string;
+  robots: string;
 }
 
 export interface IBuildOptioins {
   mode: BuildMode;
   paths: BuildPaths;
-  isDev : boolean;
+  isDev: boolean;
   port: number;
   apiUrl: string;
 }

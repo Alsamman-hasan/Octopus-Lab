@@ -1,7 +1,6 @@
 // import { StateSchema } from "app/providers/StorProvider";
 // import { getSenderEmailError, getSenderEmailLoading, getSenderEmailMessage } from "./getSenderEmailValue";
 
-
 // describe("getSenderEmailLoading", () => {
 //   test("rgetSenderEmailLoading", () => {
 //     const state : DeepPartial<StateSchema> = {
@@ -29,6 +28,5 @@
 //     }
 //     expect(getSenderEmailMessage(state as StateSchema)).toEqual("test");
 //   })
-
 
 // })

@@ -5,8 +5,8 @@ import { buildPlugins } from "./buildPlugins";
 import { buildResolves } from "./buildResolve";
 import { IBuildOptioins } from "./types/config";
 
-export function buildWebpackConfig(options: IBuildOptioins) : Configuration {
-  const { mode, paths, isDev} = options;
+export function buildWebpackConfig(options: IBuildOptioins): Configuration {
+  const { mode, paths, isDev } = options;
   return {
     mode,
     entry: paths.entry,
@@ -19,9 +19,9 @@ export function buildWebpackConfig(options: IBuildOptioins) : Configuration {
     module: {
       rules: buildLoaders(options),
     },
-    devtool: isDev ? "inline-source-map": undefined,
+    devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
     resolve: buildResolves(options),
     plugins: buildPlugins(options),
-  }
+  };
 }
