@@ -21,7 +21,7 @@ import {
 import { getSenderEmailName } from "../model/selectors/getSenderEmailName/getSenderEmailName";
 import { sendEmail } from "../model/service/senderEmail/senderEmail";
 import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoading/getSenderEmailLoading";
-import { getSenderEmailError } from '../model/selectors/getSenderEmailError/getSenderEmailError';
+import { getSenderEmailError } from "../model/selectors/getSenderEmailError/getSenderEmailError";
 
 const initialReducers: ReducersList = {
   senderEmailes: senderEmailReducer,
@@ -92,10 +92,7 @@ const SenderEmailFormUi = () => {
             btnBg={ButtonBgColor.BLUE}
             className="btn"
             onClick={onLoginClick}
-            disabled={
-              loading ||
-              !sendersData?.isValidate || error
-            }
+            disabled={loading || !sendersData?.isValidate || error}
           >
             {loading ? t("loading") : t("Оценить проект")}
           </Button>
