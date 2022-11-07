@@ -21,6 +21,7 @@ import {
 import { getSenderEmailName } from "../model/selectors/getSenderEmailName/getSenderEmailName";
 import { sendEmail } from "../model/service/senderEmail/senderEmail";
 import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoading/getSenderEmailLoading";
+import { getSenderEmailError } from '../model/selectors/getSenderEmailError/getSenderEmailError';
 
 const initialReducers: ReducersList = {
   senderEmailes: senderEmailReducer,
@@ -31,8 +32,8 @@ const SenderEmailFormUi = () => {
   const { t } = useTranslation("Footer");
   const dispatch = useAppDispatch();
   const loading = useSelector(getSenderEmailIsLaoding);
+  const error = useSelector(getSenderEmailError);
   const sendersData = useSelector(getSenderEmailName);
-  const [error, setError] = useState(false);
 
   const onHandelChange = useCallback(
     (params: string, value: string) => {
@@ -58,34 +59,12 @@ const SenderEmailFormUi = () => {
     [dispatch],
   );
 
-  const hasError = Boolean(
-    !sendersData?.email || !sendersData?.name || !sendersData?.isValidate,
-  );
   const inputItems = useMemo(() => inputscollection, []);
 
   const onLoginClick = useCallback(async () => {
-    if (hasError) {
-      setError(true);
-    } else {
-      dispatch(
-        sendEmail({
-          email: sendersData?.email,
-          name: sendersData?.name,
-          company: sendersData?.company,
-          phone: sendersData?.phone,
-          project: sendersData?.project,
-        }),
-      );
-    }
-  }, [
-    dispatch,
-    hasError,
-    sendersData?.company,
-    sendersData?.email,
-    sendersData?.name,
-    sendersData?.phone,
-    sendersData?.project,
-  ]);
+    dispatch(sendEmail());
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <div
@@ -115,14 +94,13 @@ const SenderEmailFormUi = () => {
             onClick={onLoginClick}
             disabled={
               loading ||
-              Boolean(!sendersData?.email) ||
-              !sendersData?.isValidate
+              !sendersData?.isValidate || error
             }
           >
             {loading ? t("loading") : t("Оценить проект")}
           </Button>
         </div>
-        {hasError && error && (
+        {error && (
           <span className={classNames("errorBtn")}>
             {t("please input email and name")}
           </span>

@@ -7,7 +7,7 @@ describe("sendEmail.test", () => {
     const senddingData = "test";
     const thunk = new TesetAsyncThunk(sendEmail);
     thunk.api.post.mockReturnValue(Promise.resolve({ data: senddingData }));
-    const result = await thunk.callThunk({ name: "123", email: "123" });
+    const result = await thunk.callThunk();
     expect(thunk.dispatch).toHaveBeenCalledWith(
       UiActions.setStatus({ message: senddingData, status: "success" }),
     );
@@ -20,7 +20,7 @@ describe("sendEmail.test", () => {
   test("error login", async () => {
     const thunk = new TesetAsyncThunk(sendEmail);
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk({ name: "123", email: "123" });
+    const result = await thunk.callThunk();
     expect(thunk.api.post).toHaveBeenCalled();
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
     expect(result.meta.requestStatus).toBe("rejected");

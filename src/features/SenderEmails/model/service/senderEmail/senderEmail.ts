@@ -1,29 +1,26 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ThunkConfig } from "app/providers/StorProvider/config/StateSchema";
 import { UiActions } from "entities/ToastUi";
+import { getSenderEmailName } from '../../selectors/getSenderEmailName/getSenderEmailName';
 
-export interface SendEmailProps {
-  name?: string;
-  email?: string;
-  phone?: string;
-  company?: string;
-  project?: string;
-}
 
 export const sendEmail = createAsyncThunk<
   string,
-  SendEmailProps,
+  void,
   ThunkConfig<string>
->("emails/sendEmail", async (data, { dispatch, extra, rejectWithValue }) => {
+>("emails/sendEmail", async (_, { dispatch, extra, rejectWithValue, getState }) => {
+  const sendersData = getSenderEmailName(getState());
+  if (!sendersData?.email || !sendersData.name) {
+    return rejectWithValue("email and name are required")
+  }
   try {
-    const response = await extra.api.post<string>("/sender-email", data);
+    const response = await extra.api.post<string>("/sender-email", sendersData);
     if (!response.data) {
       throw new Error();
     }
     dispatch(
       UiActions.setStatus({ message: response.data, status: "success" }),
     );
-
     return response.data;
   } catch (e: Error | any) {
     dispatch(

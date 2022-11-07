@@ -20,10 +20,12 @@ const senderEmailSlice = createSlice({
   reducers: {
     setName: (state, { payload }: PayloadAction<string>) => {
       state.name = payload;
+      state.hasError = false;
     },
     setEmail: (state, { payload }: PayloadAction<string>) => {
       state.isValidate = validatorEmail(payload);
       state.email = payload;
+      state.hasError = false;
     },
     setPhone: (state, { payload }: PayloadAction<string>) => {
       state.phone = payload;
