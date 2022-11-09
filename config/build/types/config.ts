@@ -9,6 +9,7 @@ export interface BuildPaths {
   locales: string;
   redirect: string;
   robots: string;
+  manifest: string;
 }
 
 export interface IBuildOptioins {

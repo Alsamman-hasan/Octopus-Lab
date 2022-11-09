@@ -27,6 +27,7 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
         { from: paths.locales, to: "locales" },
         { from: paths.redirect },
         { from: paths.robots },
+        { from: paths.manifest },
       ],
     }),
   ];

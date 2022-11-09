@@ -1,4 +1,5 @@
 import { Configuration } from "webpack";
+import TerserPlugin from "terser-webpack-plugin";
 import { buildDevServer } from "./buildDevserver";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
@@ -19,9 +20,12 @@ export function buildWebpackConfig(options: IBuildOptioins): Configuration {
     module: {
       rules: buildLoaders(options),
     },
-    devtool: isDev ? "inline-source-map" : undefined,
+    devtool: isDev ? "inline-source-map" : "source-map",
     devServer: isDev ? buildDevServer(options) : undefined,
     resolve: buildResolves(options),
     plugins: buildPlugins(options),
+    optimization: {
+      minimizer: [new TerserPlugin()],
+    },
   };
 }

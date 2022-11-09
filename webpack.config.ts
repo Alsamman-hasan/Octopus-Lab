@@ -13,6 +13,7 @@ export default (env: BuildEnv) => {
     redirect: path.resolve(__dirname, "public", "_redirects"),
     src: path.resolve(__dirname, "src"),
     locales: path.resolve(__dirname, "public", "locales"),
+    manifest: path.resolve(__dirname, "public", "manifest.json"),
   };
 
   const mode = env.mode || "development";
