@@ -20,11 +20,12 @@ export function buildWebpackConfig(options: IBuildOptioins): Configuration {
     module: {
       rules: buildLoaders(options),
     },
-    devtool: isDev ? "inline-source-map" : undefined,
+    devtool: isDev ? "inline-source-map" : "source-map",
     devServer: isDev ? buildDevServer(options) : undefined,
     resolve: buildResolves(options),
     plugins: buildPlugins(options),
     optimization: {
+      minimize: !isDev,
       minimizer: [new TerserPlugin()],
     },
   };

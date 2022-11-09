@@ -13,6 +13,20 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
     new HtmlWebpackPlugin({
       template: paths.html,
       favicon: paths.icon,
+      minify: !isDev
+        ? {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+          }
+        : undefined,
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",

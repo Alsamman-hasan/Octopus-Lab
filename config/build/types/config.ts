@@ -10,6 +10,7 @@ export interface BuildPaths {
   redirect: string;
   robots: string;
   manifest: string;
+  public: string;
 }
 
 export interface IBuildOptioins {
