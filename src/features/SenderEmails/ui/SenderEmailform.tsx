@@ -12,7 +12,6 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { IState } from "./types";
 import { inputscollection } from "./constants";
 import {
   senderEmailActions,
@@ -22,13 +21,14 @@ import { getSenderEmailName } from "../model/selectors/getSenderEmailName/getSen
 import { sendEmail } from "../model/service/senderEmail/senderEmail";
 import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoading/getSenderEmailLoading";
 import { getSenderEmailError } from "../model/selectors/getSenderEmailError/getSenderEmailError";
+import { Inputparams } from "../model/types/senderSchema";
 
 const initialReducers: ReducersList = {
   senderEmailes: senderEmailReducer,
   toastUi: uiReduser,
 };
 
-const SenderEmailFormUi = () => {
+const SenderEmailForm = memo(() => {
   const { t } = useTranslation("Footer");
   const dispatch = useAppDispatch();
   const loading = useSelector(getSenderEmailIsLaoding);
@@ -74,7 +74,7 @@ const SenderEmailFormUi = () => {
         {inputItems.map((item) => (
           <div key={item.params}>
             <Input
-              value={sendersData?.[item.params as keyof IState] || ""}
+              value={sendersData?.[item.params as Inputparams] || ""}
               handleChange={onHandelChange}
               label={t(item.label)}
               params={item.params}
@@ -105,6 +105,6 @@ const SenderEmailFormUi = () => {
       </div>
     </DynamicModuleLoader>
   );
-};
+});
 
-export const SenderEmailForm = memo(SenderEmailFormUi);
+export default SenderEmailForm;

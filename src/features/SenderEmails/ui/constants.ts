@@ -1,4 +1,4 @@
-import { IInputItems } from "./types";
+import { IInputItems } from "../model/types/senderSchema";
 
 export const inputscollection: IInputItems[] = [
   {

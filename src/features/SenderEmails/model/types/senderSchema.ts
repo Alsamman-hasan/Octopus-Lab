@@ -8,3 +8,19 @@ export interface SenderSchema {
   loading?: boolean;
   isValidate?: boolean;
 }
+
+export enum Inputparams {
+  "name" = "name",
+  "email" = "email",
+  "phone" = "phone",
+  "company" = "company",
+  "project" = "project",
+}
+
+export interface IInputItems {
+  label: string;
+  params: string;
+  errorMessage?: string;
+  required?: boolean;
+  onChange?: (value: string) => void;
+}
