@@ -36,6 +36,7 @@
   height: 39.375rem;
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .ProjectsGroup {
@@ -63,6 +64,7 @@
 .ProjectsGroup_items {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 35.3rem;
   padding: 1.5rem;
   animation-name: tranformer;
@@ -96,7 +98,7 @@
 }
 
 .ProjectsGroup_links {
-  margin-top: 5.19rem;
+  // margin-top: 5.19rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -110,7 +112,7 @@
 
 @media screen and (max-width: 768px) {
   .Projects {
-    margin-top: 5rem;
+    margin-top: 15rem;
   }
 
   .ProjectsTitle {
@@ -124,6 +126,7 @@
 
   .ProjectsGroup {
     height: 100%;
+    box-shadow: 0 0 6px rgb(17 0 29 / 12%);
   }
 
   .ProjectsGroup_items {
@@ -138,7 +141,7 @@
   }
 
   .ProjectsGroup_links {
-    margin-top: 3.3125rem;
+    // margin-top: 3.3125rem;
     gap: 0.56rem;
   }
 

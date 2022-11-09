@@ -10,6 +10,10 @@
 
 .btn {
   width: 100%;
+  color: #fff;
+  &:hover {
+    color:#450072;
+  }
 }
 
 .errorBtn {
