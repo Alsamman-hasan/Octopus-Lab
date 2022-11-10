@@ -11,17 +11,17 @@ import reportWebVitals from "./reportWebVitals";
 const root = createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <StoreProvider>
     <BrowserRouter>
-      <StoreProvider>
-        <ErrorBoundary>
-          <ThemeProvider>
-            <App />
-          </ThemeProvider>
-        </ErrorBoundary>
-      </StoreProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
     </BrowserRouter>
-  </React.StrictMode>,
+  </StoreProvider>,
+  // </React.StrictMode>,,
 );
 
 reportWebVitals();

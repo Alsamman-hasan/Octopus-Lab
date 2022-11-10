@@ -200,18 +200,19 @@ export default {
   testEnvironment: "jsdom",
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
+  rootDir: "../../",
   moduleDirectories: ["node_modules"],
-  modulePaths: ["<rootDir>src"],
+  modulePaths: ["../../src"],
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
   ],
-  rootDir: "../../",
   setupFilesAfterEnv: ["<rootDir>config/jest/jestSetUpTest.ts"],
   moduleNameMapper: {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
+
   transformIgnorePatterns: ["node_modules/(?!axios)"],
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
