@@ -30,11 +30,7 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
   }, [i18n, pathname]);
 
   return (
-    <div
-      className={classNames(cls.LangSwitcher, { [cls.displaySwit]: isEn }, [
-        className,
-      ])}
-    >
+    <div className={classNames(cls.LangSwitcher, { [cls.displaySwit]: isEn }, [className])}>
       <Button
         type="button"
         theme={ButtonTheme.CLEAR}

@@ -1,11 +1,6 @@
 import "./footerRight.scss";
 import Avatar from "shared/assets/avatar.svg";
-import {
-  FacebookSVG,
-  InstagramSVG,
-  TelegramSVG,
-  VkSVG,
-} from "shared/assets/icons/svg/social";
+import { FacebookSVG, InstagramSVG, TelegramSVG, VkSVG } from "shared/assets/icons/svg/social";
 import { EmailSVG, PhoneSVG } from "shared/assets/icons/svg/desktopSVG";
 import { Button } from "shared/ui/Buttons";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -32,29 +27,21 @@ const FooterRight = memo(() => {
               <span className={classNames("footerRight-manager_onlin")} />
             </div>
             <div className={classNames("footerRight-manager_info")}>
-              <span className={classNames("footerRight-manager_name")}>
-                {t("Иванова Марина")}
-              </span>
+              <span className={classNames("footerRight-manager_name")}>{t("Иванова Марина")}</span>
               <span className={classNames("footerRight-manager_position")}>
                 {t("Менеджер проектов")}
               </span>
             </div>
           </div>
           <div className={classNames("footerRight-btn")}>
-            <Button
-              sizes={ButtonSize.MEDIUM}
-              btnBg={ButtonBgColor.NONCOLOR}
-              className="btn"
-            >
+            <Button sizes={ButtonSize.MEDIUM} btnBg={ButtonBgColor.NONCOLOR} className="btn">
               {t("Написать в чат")}
             </Button>
           </div>
         </div>
       </div>
       <div className={classNames("footerRight-contacts")}>
-        <span className={classNames("footerRight-contacts_header")}>
-          {t("Наши контакты")}
-        </span>
+        <span className={classNames("footerRight-contacts_header")}>{t("Наши контакты")}</span>
         <div className={classNames("footerRight-contacts_item")}>
           <EmailSVG />
           <span>{t("nashapochta@gmail.com")}</span>

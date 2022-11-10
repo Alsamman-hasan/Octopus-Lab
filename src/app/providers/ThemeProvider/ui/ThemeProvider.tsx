@@ -1,10 +1,6 @@
 import React, { FC, useEffect, useMemo, useState } from "react";
 import { useThemeDetector } from "shared/lib/Hooks/useThemeDetector/useThemeDetector";
-import {
-  LOCAL_STORAGE_THEME_KEY,
-  Theme,
-  ThemeContext,
-} from "../lib/ThemeContext";
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../lib/ThemeContext";
 
 // const defayltTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 
@@ -34,16 +30,11 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     setTheme(
       isDarkTheme
         ? Theme.DARK
-        : (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ||
-            Theme.LIGHT,
+        : (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT,
     );
   }, [isDarkTheme]);
 
-  return (
-    <ThemeContext.Provider value={defaultProps}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;

@@ -13,9 +13,7 @@ const FooterLeft = memo(() => {
           {t("Мы готовы обсудить новый проект")}
         </span>
         <span className={classNames(cls.footerLeftHeaderSubTitle)}>
-          {t(
-            "Присылайте ваш проект на оценку. А также мы ответим на ваши вопросы.",
-          )}
+          {t("Присылайте ваш проект на оценку. А также мы ответим на ваши вопросы.")}
         </span>
       </div>
       <SenderEmailForm />

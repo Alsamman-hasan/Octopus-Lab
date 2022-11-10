@@ -25,9 +25,7 @@ const Item = (props: IItems) => {
         animation={classNames(cls.animation)}
       />
       <span className={classNames(cls.PropertiesTitle)}>{t(item.title)}</span>
-      <span className={classNames(cls.PropertiesSubTitle)}>
-        {t(item.subTitle)}
-      </span>
+      <span className={classNames(cls.PropertiesSubTitle)}>{t(item.subTitle)}</span>
     </div>
   );
 };

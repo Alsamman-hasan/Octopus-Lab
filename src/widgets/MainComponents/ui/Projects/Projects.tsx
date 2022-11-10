@@ -11,10 +11,7 @@ export interface ProjectsProps {
 const ProjectsUi = ({ className }: ProjectsProps) => {
   const { t } = useTranslation("common");
   return (
-    <div
-      data-testid="Projects"
-      className={classNames(cls.Projects, {}, [className])}
-    >
+    <div data-testid="Projects" className={classNames(cls.Projects, {}, [className])}>
       <h1 className={classNames(cls.ProjectsTitle)}>
         {t("наши")} <span>{t("проекты")}</span>
       </h1>

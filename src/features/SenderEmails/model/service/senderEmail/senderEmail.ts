@@ -11,21 +11,14 @@ export const sendEmail = createAsyncThunk<string, void, ThunkConfig<string>>(
       return rejectWithValue("email and name are required");
     }
     try {
-      const response = await extra.api.post<string>(
-        "/sender-email",
-        sendersData,
-      );
+      const response = await extra.api.post<string>("/sender-email", sendersData);
       if (!response.data) {
         throw new Error();
       }
-      dispatch(
-        UiActions.setStatus({ message: response.data, status: "success" }),
-      );
+      dispatch(UiActions.setStatus({ message: response.data, status: "success" }));
       return response.data;
     } catch (e: Error | any) {
-      dispatch(
-        UiActions.setStatus({ message: e?.message as string, status: "error" }),
-      );
+      dispatch(UiActions.setStatus({ message: e?.message as string, status: "error" }));
       return rejectWithValue("error");
     }
   },

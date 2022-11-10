@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  DiversitySVG,
-  ManySVG,
-  MedalSVG,
-  StartupSVG,
-} from "shared/assets/icons/svg/desktopSVG";
+import { DiversitySVG, ManySVG, MedalSVG, StartupSVG } from "shared/assets/icons/svg/desktopSVG";
 import { ISvgProps } from "shared/assets/icons/svg/types";
 
 export interface PropertiesItemType {
@@ -40,7 +35,6 @@ export const PropertiesItems: PropertiesItemType[] = [
     SvgItem: ManySVG,
     key: 4,
     title: "Сокращаем расходы на производство",
-    subTitle:
-      "Стараемся быть гибкими, чтобы подстроиться под ваши требования и процессы.",
+    subTitle: "Стараемся быть гибкими, чтобы подстроиться под ваши требования и процессы.",
   },
 ];

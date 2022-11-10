@@ -46,17 +46,11 @@ const ProjectItemUI = () => {
                   src={item.img}
                   alt="project"
                 />
-                <span className={classNames(cls.ProjectsGroup_title)}>
-                  {item.title}
-                </span>
-                <span className={classNames(cls.ProjectsGroup_subTitle)}>
-                  {item.subTitle}
-                </span>
+                <span className={classNames(cls.ProjectsGroup_title)}>{item.title}</span>
+                <span className={classNames(cls.ProjectsGroup_subTitle)}>{item.subTitle}</span>
               </div>
               <div className={classNames(cls.ProjectsGroup_links)}>
-                <p className={classNames(cls.ProjectsGroup_link)}>
-                  {item.link}
-                </p>
+                <p className={classNames(cls.ProjectsGroup_link)}>{item.link}</p>
                 <Vector />
               </div>
             </div>

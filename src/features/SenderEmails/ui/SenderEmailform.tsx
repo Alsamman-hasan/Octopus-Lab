@@ -13,10 +13,7 @@ import {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { inputscollection } from "./constants";
-import {
-  senderEmailActions,
-  senderEmailReducer,
-} from "../model/slice/senderEmailSlice";
+import { senderEmailActions, senderEmailReducer } from "../model/slice/senderEmailSlice";
 import { getSenderEmailName } from "../model/selectors/getSenderEmailName/getSenderEmailName";
 import { sendEmail } from "../model/service/senderEmail/senderEmail";
 import { getSenderEmailIsLaoding } from "../model/selectors/getSenderEmailLoading/getSenderEmailLoading";
@@ -67,10 +64,7 @@ const SenderEmailForm = memo(() => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-      <div
-        className={classNames("senderEmailForm-forms")}
-        data-testid="SenderEmailForm"
-      >
+      <div className={classNames("senderEmailForm-forms")} data-testid="SenderEmailForm">
         {inputItems.map((item) => (
           <div key={item.params}>
             <Input
@@ -98,9 +92,7 @@ const SenderEmailForm = memo(() => {
           </Button>
         </div>
         {error && (
-          <span className={classNames("errorBtn")}>
-            {t("please input email and name")}
-          </span>
+          <span className={classNames("errorBtn")}>{t("please input email and name")}</span>
         )}
       </div>
     </DynamicModuleLoader>

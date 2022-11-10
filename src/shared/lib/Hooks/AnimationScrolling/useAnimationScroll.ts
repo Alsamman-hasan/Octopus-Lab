@@ -6,11 +6,9 @@ export const useAnimations = () => {
   const blockRef = useCallback((node: HTMLDivElement) => {
     if (observer) {
       if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver(
-        (entries: IntersectionObserverEntry[]) => {
-          setIsShow(entries[0].isIntersecting);
-        },
-      );
+      observer.current = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+        setIsShow(entries[0].isIntersecting);
+      });
       if (node) observer.current.observe(node);
     }
   }, []);

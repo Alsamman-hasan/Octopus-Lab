@@ -16,9 +16,7 @@ export const PageError = ({ className }: PageErrorProps) => {
 
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
-      <p className={classNames(cls.info)}>
-        {t("произошла непредвиденная ошибка")}
-      </p>
+      <p className={classNames(cls.info)}>{t("произошла непредвиденная ошибка")}</p>
       <Button
         sizes={ButtonSize.MEDIUM}
         btnBg={ButtonBgColor.BLUE}

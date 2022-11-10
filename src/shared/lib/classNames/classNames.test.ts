@@ -7,14 +7,11 @@ describe("classNamestest", () => {
 
   test("with additional class", () => {
     const expected = "somthing additionalClass1 additionalClass2";
-    expect(
-      classNames("somthing", {}, ["additionalClass1", "additionalClass2"]),
-    ).toBe(expected);
+    expect(classNames("somthing", {}, ["additionalClass1", "additionalClass2"])).toBe(expected);
   });
 
   test("with mods", () => {
-    const expected =
-      "somthing additionalClass1 additionalClass2 hovered scrollble";
+    const expected = "somthing additionalClass1 additionalClass2 hovered scrollble";
     expect(
       classNames("somthing", { hovered: true, scrollble: true }, [
         "additionalClass1",

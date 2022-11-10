@@ -3,12 +3,7 @@ import React, { FC } from "react";
 import { ISvgProps } from "../types";
 
 const StartupSVG: FC<ISvgProps> = ({ className, animation }) => (
-  <svg
-    className={className}
-    viewBox="0 0 58 80"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg className={className} viewBox="0 0 58 80" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_114_6634)">
       <path
         className={animation}

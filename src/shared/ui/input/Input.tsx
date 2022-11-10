@@ -1,11 +1,4 @@
-import {
-  ChangeEvent,
-  memo,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { ChangeEvent, memo, useCallback, useEffect, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import useDebounce from "shared/lib/Hooks/useDebounce/useDebounce";
 import { validatorEmail } from "shared/lib/validation/validationForm";
@@ -74,11 +67,7 @@ export const Input = memo((props: InputsProps) => {
         placeholder="&nbsp;"
         id={params}
       />
-      <label
-        data-shrink={`${!focused}`}
-        className={classNames(cls.label)}
-        htmlFor={params}
-      >
+      <label data-shrink={`${!focused}`} className={classNames(cls.label)} htmlFor={params}>
         {required ? `${label}*` : label}
       </label>
       {validation && (

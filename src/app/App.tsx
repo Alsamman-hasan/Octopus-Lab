@@ -21,16 +21,12 @@ const App = () => {
   const appRef = useRef<HTMLDivElement>(null);
   const onScrollToFooter = useCallback((param: string) => {
     if (param === "footer") {
-      if (footerRef.current)
-        footerRef.current.scrollIntoView({ behavior: "smooth" });
+      if (footerRef.current) footerRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (param === "App") {
       if (appRef.current) appRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
-  const handleSize = useCallback(
-    () => setIsScrolling(Boolean(window.pageYOffset > 350)),
-    [],
-  );
+  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 350)), []);
   useEffect(() => {
     window.addEventListener("scroll", handleSize);
     return () => window.removeEventListener("scroll", handleSize);

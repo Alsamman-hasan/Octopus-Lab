@@ -1,9 +1,6 @@
 import { CSSProperties, InputHTMLAttributes } from "react";
 
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "value" | "onChange"
->;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">;
 
 export interface InputsProps extends HTMLInputProps {
   value: string;

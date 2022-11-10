@@ -1,11 +1,7 @@
 import React, { FC } from "react";
 import { ISvgProps } from "../types";
 
-const EmailSVG: FC<ISvgProps> = ({
-  width = "22",
-  height = "16",
-  fill = "#121212",
-}) => (
+const EmailSVG: FC<ISvgProps> = ({ width = "22", height = "16", fill = "#121212" }) => (
   <svg
     width={width}
     height={height}

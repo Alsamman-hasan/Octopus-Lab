@@ -2,11 +2,7 @@
 import React, { FC } from "react";
 import { ISvgProps } from "../types";
 
-const TelegramSVG: FC<ISvgProps> = ({
-  width = "36",
-  height = "36",
-  fill = "#121212",
-}) => (
+const TelegramSVG: FC<ISvgProps> = ({ width = "36", height = "36", fill = "#121212" }) => (
   <svg
     width={width}
     height={height}

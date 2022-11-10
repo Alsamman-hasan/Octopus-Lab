@@ -22,10 +22,7 @@ export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
   const { t } = useTranslation("common");
   const { width } = useWindowSize("resize");
   const [isScrolling, setIsScrolling] = useState(false);
-  const handleSize = useCallback(
-    () => setIsScrolling(Boolean(window.pageYOffset > 10)),
-    [],
-  );
+  const handleSize = useCallback(() => setIsScrolling(Boolean(window.pageYOffset > 10)), []);
   const onScrolle = useCallback(() => {
     onScrollToFooter?.("footer");
   }, []);
@@ -37,17 +34,11 @@ export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
   return (
     <div
       data-testid="header"
-      className={classNames(
-        cls.headerWrapper,
-        { [cls.scrollEvent]: isScrolling },
-        [className],
-      )}
+      className={classNames(cls.headerWrapper, { [cls.scrollEvent]: isScrolling }, [className])}
       id="coords"
     >
       <div className={classNames(cls.contetn)}>
-        <div className={classNames(cls.logo)}>
-          {width > 768 ? <LogoD /> : <LogoM />}
-        </div>
+        <div className={classNames(cls.logo)}>{width > 768 ? <LogoD /> : <LogoM />}</div>
         <div className={classNames(cls.info)}>
           <div className={classNames(cls.btn)}>
             <Button

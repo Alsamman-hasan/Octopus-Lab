@@ -10,31 +10,29 @@ export interface FooterProps {
   className?: string;
 }
 
-export const Footer = forwardRef(
-  ({ className }: FooterProps, ref: LegacyRef<HTMLDivElement>) => {
-    const { t } = useTranslation();
-    const { isShow, blockRef } = useAnimations();
-    const mods: Record<string, boolean> = {
-      "element-show": isShow,
-      "element-animation": true,
-    };
-    return (
-      <div
-        data-testid="footer"
-        className={classNames(cls.footerWrapper, {}, [className])}
-        id="Footer"
-        ref={ref}
-      >
-        <div ref={blockRef} className={classNames(cls.content, mods)}>
-          <FooterLeft />
-          <FooterRight />
-        </div>
-        <div className={classNames(cls.footer)}>
-          <span>2022</span>
-          <span>{t("Copyright © Octopus Lab")}</span>
-          <span>{t("User Agreement")}</span>
-        </div>
+export const Footer = forwardRef(({ className }: FooterProps, ref: LegacyRef<HTMLDivElement>) => {
+  const { t } = useTranslation();
+  const { isShow, blockRef } = useAnimations();
+  const mods: Record<string, boolean> = {
+    "element-show": isShow,
+    "element-animation": true,
+  };
+  return (
+    <div
+      data-testid="footer"
+      className={classNames(cls.footerWrapper, {}, [className])}
+      id="Footer"
+      ref={ref}
+    >
+      <div ref={blockRef} className={classNames(cls.content, mods)}>
+        <FooterLeft />
+        <FooterRight />
       </div>
-    );
-  },
-);
+      <div className={classNames(cls.footer)}>
+        <span>2022</span>
+        <span>{t("Copyright © Octopus Lab")}</span>
+        <span>{t("User Agreement")}</span>
+      </div>
+    </div>
+  );
+});

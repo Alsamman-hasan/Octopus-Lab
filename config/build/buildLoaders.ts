@@ -25,12 +25,5 @@ export function buildLoaders({ isDev }: IBuildOptioins): webpack.RuleSetRule[] {
     ],
   };
 
-  return [
-    fileLoader,
-    svgLoader,
-    babelLoader,
-    jsonLoader,
-    typesctiptLoader,
-    cssLoader,
-  ];
+  return [fileLoader, svgLoader, babelLoader, jsonLoader, typesctiptLoader, cssLoader];
 }

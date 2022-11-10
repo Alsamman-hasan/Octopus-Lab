@@ -6,12 +6,4 @@ import EmailSVG from "./EmailSVG";
 import ManySVG from "./ManySVG";
 import StartupSVG from "./StartupSVG";
 
-export {
-  MedalSVG,
-  DiversitySVG,
-  LogoDes,
-  PhoneSVG,
-  EmailSVG,
-  ManySVG,
-  StartupSVG,
-};
+export { MedalSVG, DiversitySVG, LogoDes, PhoneSVG, EmailSVG, ManySVG, StartupSVG };

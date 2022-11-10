@@ -31,12 +31,7 @@ export const Illustrations = ({ className }: IllustrationsProps) => {
             <span>{t("работаем")}</span>
           </div>
           <div className={classNames(cls.IllusLeftBlok)}>
-            <img
-              loading="lazy"
-              className={classNames(cls.img)}
-              src={group}
-              alt="animation"
-            />
+            <img loading="lazy" className={classNames(cls.img)} src={group} alt="animation" />
             {/* <AnimationBloc /> */}
           </div>
         </div>

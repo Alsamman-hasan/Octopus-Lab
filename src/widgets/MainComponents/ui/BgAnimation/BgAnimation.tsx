@@ -2,13 +2,7 @@ import { useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import "./BgAnimation.scss";
 import { useWindowSize } from "shared/lib/Hooks/WindowWidth/WindowWidth";
-import {
-  circlePath,
-  shortPath,
-  mediumPAth,
-  longPath,
-  largePath,
-} from "./constants";
+import { circlePath, shortPath, mediumPAth, longPath, largePath } from "./constants";
 
 export interface BgAnimationProps {
   className?: string;
@@ -23,59 +17,29 @@ export const BgAnimation = ({ className }: BgAnimationProps) => {
     const body = document.getElementById("ani");
     let i = 0;
     while (i < amount) {
-      const circle = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg",
-      );
-      const short = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg",
-      );
-      const medium = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg",
-      );
-      const long = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg",
-      );
-      const large = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg",
-      );
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const short = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const medium = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const long = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const large = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
-      const circleElement = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path",
-      );
+      const circleElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
       circleElement.setAttribute("d", circlePath);
       circle.appendChild(circleElement);
 
-      const shortElement = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path",
-      );
+      const shortElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
       shortElement.setAttribute("d", shortPath);
       short.appendChild(shortElement);
 
-      const mediumElement = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path",
-      );
+      const mediumElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
       mediumElement.setAttribute("d", mediumPAth);
       medium.appendChild(mediumElement);
 
-      const longElement = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path",
-      );
+      const longElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
       longElement.setAttribute("d", longPath);
       long.appendChild(longElement);
 
-      const largeElement = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path",
-      );
+      const largeElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
       largeElement.setAttribute("d", largePath);
       large.appendChild(largeElement);
 

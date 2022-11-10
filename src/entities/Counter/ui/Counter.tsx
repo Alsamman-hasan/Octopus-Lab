@@ -18,18 +18,10 @@ export const Counter = () => {
   return (
     <div>
       <h1> value : {counterValue}</h1>
-      <Button
-        sizes={ButtonSize.SMALL}
-        btnBg={ButtonBgColor.PURPLE}
-        onClick={increments}
-      >
+      <Button sizes={ButtonSize.SMALL} btnBg={ButtonBgColor.PURPLE} onClick={increments}>
         increment
       </Button>
-      <Button
-        sizes={ButtonSize.SMALL}
-        btnBg={ButtonBgColor.PURPLE}
-        onClick={decrements}
-      >
+      <Button sizes={ButtonSize.SMALL} btnBg={ButtonBgColor.PURPLE} onClick={decrements}>
         decrement
       </Button>
     </div>
