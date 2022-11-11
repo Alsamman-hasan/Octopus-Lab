@@ -32,7 +32,7 @@ export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
   }, [handleSize]);
 
   return (
-    <div
+    <header
       data-testid="header"
       className={classNames(cls.headerWrapper, { [cls.scrollEvent]: isScrolling }, [className])}
       id="coords"
@@ -54,6 +54,6 @@ export const Header = memo(({ className, onScrollToFooter }: HeaderProps) => {
           <ThemeSwitcher />
         </div>
       </div>
-    </div>
+    </header>
   );
 });

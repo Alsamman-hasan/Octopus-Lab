@@ -18,7 +18,7 @@ export const Footer = forwardRef(({ className }: FooterProps, ref: LegacyRef<HTM
     "element-animation": true,
   };
   return (
-    <div
+    <footer
       data-testid="footer"
       className={classNames(cls.footerWrapper, {}, [className])}
       id="Footer"
@@ -33,6 +33,6 @@ export const Footer = forwardRef(({ className }: FooterProps, ref: LegacyRef<HTM
         <span>{t("Copyright © Octopus Lab")}</span>
         <span>{t("User Agreement")}</span>
       </div>
-    </div>
+    </footer>
   );
 });

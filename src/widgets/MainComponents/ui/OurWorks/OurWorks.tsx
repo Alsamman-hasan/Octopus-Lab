@@ -1,6 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { useAnimations } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
+import { useAnimationssss } from "shared/lib/Hooks/AnimationScrolling/useAnimationScroll";
+import { MutableRefObject, useRef } from "react";
 import cls from "./OurWorks.module.scss";
 import { Item } from "./Item";
 import { ItemsProps } from "./helpers";
@@ -11,18 +12,15 @@ export interface OurWorksProps {
 
 export const OurWorks = ({ className }: OurWorksProps) => {
   const { t } = useTranslation("common");
-  const { isShow, blockRef } = useAnimations();
+  const ref = useRef() as MutableRefObject<HTMLDivElement>;
+  const { isShow } = useAnimationssss(ref);
   const mods: Record<string, boolean> = {
     "element-show": isShow,
     "element-animation": true,
   };
 
   return (
-    <div
-      ref={blockRef}
-      data-testid="OurWorks"
-      className={classNames(cls.OurWorks, mods, [className])}
-    >
+    <div ref={ref} data-testid="OurWorks" className={classNames(cls.OurWorks, mods, [className])}>
       <h1 className={classNames(cls.OurWorksTitle)}>
         {t("Что мы")} <span>{t("делаем")}</span>
       </h1>
